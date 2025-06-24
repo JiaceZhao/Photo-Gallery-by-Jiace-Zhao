@@ -210,13 +210,13 @@ const callFromFieldCollection = ref<Collection>({
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  background: var(--color-background);
+  background: #ffffff;
 }
 
 /* Gallery Header */
 .gallery-header {
   padding: var(--space-20) 0 var(--space-16);
-  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
 }
 
 .header-content {
@@ -265,16 +265,16 @@ const callFromFieldCollection = ref<Collection>({
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 
-    0 20px 40px rgba(0,0,0,0.1),
-    0 0 0 1px rgba(0,0,0,0.05);
+    0 20px 40px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(0,0,0,0.03);
   transition: all var(--transition-slow);
   background: white;
   
   &:hover {
     transform: translateY(-8px);
     box-shadow: 
-      0 30px 60px rgba(0,0,0,0.15),
-      0 0 0 1px rgba(0,0,0,0.05);
+      0 30px 60px rgba(0,0,0,0.12),
+      0 0 0 1px rgba(0,0,0,0.03);
   }
 }
 
@@ -330,8 +330,8 @@ const callFromFieldCollection = ref<Collection>({
   height: 70%;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.8) 0%,
-    rgba(0,0,0,0.4) 50%,
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.2) 50%,
     transparent 100%
   );
 }
@@ -351,7 +351,7 @@ const callFromFieldCollection = ref<Collection>({
   height: 60px;
   border-radius: 8px;
   overflow: hidden;
-  border: 2px solid rgba(255,255,255,0.8);
+  border: 2px solid rgba(255,255,255,0.9);
   backdrop-filter: blur(5px);
   transition: all var(--transition-base);
   
@@ -383,7 +383,7 @@ const callFromFieldCollection = ref<Collection>({
 
 .collection-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
   backdrop-filter: blur(10px);
   padding: var(--space-1) var(--space-3);
   border-radius: 20px;
@@ -454,9 +454,9 @@ const callFromFieldCollection = ref<Collection>({
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.4);
   color: white;
   padding: var(--space-3) var(--space-6);
   border-radius: 30px;
@@ -466,7 +466,7 @@ const callFromFieldCollection = ref<Collection>({
   transition: all var(--transition-base);
   
   &:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.4);
     transform: translateY(-2px);
   }
   
@@ -485,8 +485,8 @@ const callFromFieldCollection = ref<Collection>({
 
 /* Upcoming Collections */
 .upcoming-collection {
-  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
-  border: 2px dashed rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  border: 2px dashed rgba(0,0,0,0.08);
   height: 300px;
   display: flex;
   align-items: center;
@@ -508,7 +508,7 @@ const callFromFieldCollection = ref<Collection>({
 .coming-soon-circle {
   width: 100px;
   height: 100px;
-  border: 2px solid rgba(0,0,0,0.2);
+  border: 2px solid rgba(0,0,0,0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -532,7 +532,7 @@ const callFromFieldCollection = ref<Collection>({
 .circle-inner {
   width: 80px;
   height: 80px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -588,7 +588,7 @@ const callFromFieldCollection = ref<Collection>({
 /* Process Section */
 .process-section {
   padding: var(--space-20) 0;
-  background: linear-gradient(to bottom, var(--color-background), #fafafa);
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
 }
 
 .process-content {
@@ -631,7 +631,7 @@ const callFromFieldCollection = ref<Collection>({
 
 .principle {
   padding: var(--space-4);
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.8);
   border-radius: 12px;
   border-left: 3px solid var(--color-accent);
 }
@@ -736,7 +736,7 @@ const callFromFieldCollection = ref<Collection>({
     justify-content: space-between;
     align-items: center;
     padding: var(--space-2) 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     
     &:last-child {
       border-bottom: none;

@@ -37,7 +37,7 @@ const featuredCollections = ref<Collection[]>([
     year: '2024',
     status: 'upcoming',
     imageCount: 12,
-    coverImage: '/KyushuJapan/IMG_1715.JPG', // Using as placeholder
+    coverImage: '/KyushuJapan/IMG_1715.JPG',
     description: 'Finding moments of silence and reflection within the bustling energy of urban landscapes.',
     location: 'Tokyo, Japan',
     featured: true
@@ -50,17 +50,11 @@ const featuredCollections = ref<Collection[]>([
     year: '2025',
     status: 'planned',
     imageCount: 16,
-    coverImage: '/KyushuJapan/IMG_0015.JPG', // Using as placeholder
+    coverImage: '/KyushuJapan/IMG_0015.JPG',
     description: 'A year-long meditation on solitude, capturing the changing seasons through moments of quiet introspection.',
     location: 'Various',
     featured: true
   }
-])
-
-const portfolioStats = ref([
-  { number: '3', label: 'Collections', suffix: '' },
-  { number: '35', label: 'Photographs', suffix: '+' },
-  { number: '2024', label: 'Active Since', suffix: '' }
 ])
 </script>
 
@@ -115,11 +109,9 @@ const portfolioStats = ref([
       <div class="container">
         <div class="philosophy-content">
           <blockquote class="philosophy-quote">
-            "In the space between breath and stillness, between shadow and light, 
-            lies the essence of what makes us human. My work seeks to preserve 
-            these fleeting moments of profound simplicity."
+            "Not an engineer, a poet; not a scientist, an artist."
           </blockquote>
-          <cite class="philosophy-attribution">— Sarah Chen</cite>
+          <cite class="philosophy-attribution">— Jiace Zhao</cite>
         </div>
       </div>
     </section>
@@ -205,33 +197,6 @@ const portfolioStats = ref([
       </div>
     </section>
 
-    <!-- Portfolio Stats -->
-    <section class="stats">
-      <div class="container">
-        <div class="stats-content">
-          <div class="stats-text">
-            <h2 class="stats-title">Creating Through Mindfulness</h2>
-            <p class="stats-description">
-              Each photograph is born from extended periods of observation and patience. 
-              This contemplative approach allows the deeper rhythms of a place to emerge, 
-              revealing layers of beauty that exist beyond the surface.
-            </p>
-          </div>
-          
-          <div class="stats-grid">
-            <div 
-              v-for="(stat, index) in portfolioStats" 
-              :key="index"
-              class="stat-item"
-            >
-              <div class="stat-number">{{ stat.number }}<span class="suffix">{{ stat.suffix }}</span></div>
-              <div class="stat-label">{{ stat.label }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Call to Action -->
     <section class="cta">
       <div class="container">
@@ -263,7 +228,7 @@ const portfolioStats = ref([
 /* Hero Section */
 .hero {
   padding: var(--space-24) 0 var(--space-20);
-  background: linear-gradient(135deg, #fafafa 0%, #f8f8f8 50%, #f5f5f5 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f8f8f8 100%);
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -277,8 +242,8 @@ const portfolioStats = ref([
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 1px, transparent 1px),
-      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.015) 1px, transparent 1px);
+      radial-gradient(circle at 25% 25%, rgba(0,0,0,0.01) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.008) 1px, transparent 1px);
     background-size: 60px 60px, 100px 100px;
     pointer-events: none;
   }
@@ -367,8 +332,8 @@ const portfolioStats = ref([
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 
-    0 25px 50px -12px rgba(0,0,0,0.25),
-    0 0 0 1px rgba(255,255,255,0.8);
+    0 25px 50px -12px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(255,255,255,0.9);
   transition: transform var(--transition-slow);
   
   &:hover {
@@ -397,7 +362,7 @@ const portfolioStats = ref([
   left: 0;
   right: 0;
   height: 50%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
 }
 
 .image-caption {
@@ -429,7 +394,7 @@ const portfolioStats = ref([
 /* Philosophy Section */
 .philosophy {
   padding: var(--space-20) 0;
-  background: var(--color-background);
+  background: #ffffff;
 }
 
 .philosophy-content {
@@ -437,10 +402,10 @@ const portfolioStats = ref([
   max-width: 800px;
   margin: 0 auto;
   padding: var(--space-12);
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.9);
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .philosophy-quote {
@@ -462,7 +427,7 @@ const portfolioStats = ref([
 /* Featured Collections */
 .collections {
   padding: var(--space-24) 0;
-  background: linear-gradient(to bottom, var(--color-background), #fafafa);
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
 }
 
 .collections-header {
@@ -506,8 +471,8 @@ const portfolioStats = ref([
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 
-    0 20px 40px rgba(0,0,0,0.1),
-    0 0 0 1px rgba(0,0,0,0.05);
+    0 20px 40px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(0,0,0,0.03);
   transition: all var(--transition-slow);
   animation: slideInUp 0.6s ease-out;
   animation-fill-mode: both;
@@ -519,8 +484,8 @@ const portfolioStats = ref([
   &:hover {
     transform: translateY(-12px);
     box-shadow: 
-      0 30px 60px rgba(0,0,0,0.15),
-      0 0 0 1px rgba(0,0,0,0.05);
+      0 30px 60px rgba(0,0,0,0.12),
+      0 0 0 1px rgba(0,0,0,0.03);
   }
   
   &.upcoming,
@@ -557,7 +522,7 @@ const portfolioStats = ref([
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -649,7 +614,7 @@ const portfolioStats = ref([
   justify-content: space-between;
   align-items: center;
   padding: var(--space-2) 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
   
   &:last-child {
     border-bottom: none;
@@ -670,7 +635,7 @@ const portfolioStats = ref([
 
 .collection-action {
   padding-top: var(--space-4);
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0,0,0,0.03);
 }
 
 .view-btn {
@@ -705,86 +670,10 @@ const portfolioStats = ref([
   }
 }
 
-/* Stats Section */
-.stats {
-  padding: var(--space-20) 0;
-  background: var(--color-background);
-}
-
-.stats-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
-  align-items: center;
-  
-  @media (min-width: 768px) {
-    grid-template-columns: 1.5fr 1fr;
-    gap: var(--space-16);
-  }
-}
-
-.stats-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 300;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-6);
-}
-
-.stats-description {
-  font-size: var(--text-lg);
-  line-height: 1.7;
-  color: var(--color-text-secondary);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
-  
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-}
-
-.stat-item {
-  text-align: center;
-  padding: var(--space-6);
-  background: rgba(255,255,255,0.6);
-  border-radius: 16px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.8);
-  
-  @media (min-width: 768px) {
-    text-align: left;
-    padding: var(--space-4) var(--space-6);
-  }
-}
-
-.stat-number {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 300;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-2);
-  
-  .suffix {
-    font-size: 0.7em;
-    color: var(--color-accent);
-  }
-}
-
-.stat-label {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-}
-
 /* Call to Action */
 .cta {
   padding: var(--space-20) 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
   text-align: center;
 }
 
@@ -829,7 +718,29 @@ const portfolioStats = ref([
   font-weight: 600;
   font-size: var(--text-sm);
   transition: all var(--transition-base);
-  border: 2px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
   
   &.btn-lg {
     padding: var(--space-4) var(--space-8);
@@ -837,37 +748,56 @@ const portfolioStats = ref([
   }
   
   &.btn-primary {
-    background: var(--color-accent);
-    color: white;
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--color-accent);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 
+      0 8px 32px rgba(99, 102, 241, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
     
     &:hover {
-      background: var(--color-text-primary);
-      transform: translateY(-2px);
+      background: rgba(99, 102, 241, 0.3);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 12px 40px rgba(99, 102, 241, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
   }
   
   &.btn-secondary {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.15);
     color: var(--color-text-primary);
-    border-color: var(--color-border);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
     
     &:hover {
-      background: var(--color-text-primary);
-      color: white;
-      border-color: var(--color-text-primary);
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
   }
   
   &.btn-outline {
-    background: transparent;
+    background: rgba(99, 102, 241, 0.1);
     color: var(--color-accent);
-    border-color: var(--color-accent);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 
+      0 8px 32px rgba(99, 102, 241, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
     
     &:hover {
-      background: var(--color-accent);
-      color: white;
-      transform: translateY(-2px);
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 12px 40px rgba(99, 102, 241, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
   }
 }
@@ -898,19 +828,6 @@ const portfolioStats = ref([
   
   .collections-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .stats-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stat-item {
-    text-align: center;
   }
 }
 </style>
