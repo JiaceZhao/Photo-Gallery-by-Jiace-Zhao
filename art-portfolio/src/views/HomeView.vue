@@ -1,36 +1,66 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-interface FeaturedWork {
-  id: number
+interface Collection {
+  id: string
   title: string
-  medium: string
-  image: string
+  subtitle: string
+  type: string
+  year: string
+  status: 'published' | 'upcoming' | 'planned'
+  imageCount?: number
+  coverImage: string
   description: string
+  location?: string
+  featured: boolean
 }
 
-const featuredWorks = ref<FeaturedWork[]>([
+const featuredCollections = ref<Collection[]>([
   {
-    id: 1,
-    title: "Mountain's Call",
-    medium: "Photography",
-    image: "/KyushuJapan/IMG_1715.JPG",
-    description: "The ancient mountains of Kyushu speak in whispers of wind and stone"
+    id: 'call-from-the-field',
+    title: 'Call from the Field',
+    subtitle: '野の呼び声',
+    type: 'Photography Series',
+    year: '2024',
+    status: 'published',
+    imageCount: 7,
+    coverImage: '/KyushuJapan/IMG_0012.JPG',
+    description: 'A photographic journey through the rural landscapes of Kyushu, Japan, where ancient rhythms meet eternal skies.',
+    location: 'Kyushu, Japan',
+    featured: true
   },
   {
-    id: 2,
-    title: "Field of Dreams", 
-    medium: "Photography",
-    image: "/KyushuJapan/IMG_0011.JPG",
-    description: "Green fields stretch endlessly, each blade of grass a note in nature's symphony"
+    id: 'urban-contemplations',
+    title: 'Urban Contemplations',
+    subtitle: '都市の静寂',
+    type: 'Photography Series',
+    year: '2024',
+    status: 'upcoming',
+    imageCount: 12,
+    coverImage: '/KyushuJapan/IMG_1715.JPG', // Using as placeholder
+    description: 'Finding moments of silence and reflection within the bustling energy of urban landscapes.',
+    location: 'Tokyo, Japan',
+    featured: true
   },
   {
-    id: 3,
-    title: "Golden Hour Meditation",
-    medium: "Photography",
-    image: "/KyushuJapan/IMG_0015.JPG",
-    description: "As day surrenders to dusk, the golden hour invites contemplation"
+    id: 'seasons-of-solitude',
+    title: 'Seasons of Solitude',
+    subtitle: '孤独の四季',
+    type: 'Photography Series',
+    year: '2025',
+    status: 'planned',
+    imageCount: 16,
+    coverImage: '/KyushuJapan/IMG_0015.JPG', // Using as placeholder
+    description: 'A year-long meditation on solitude, capturing the changing seasons through moments of quiet introspection.',
+    location: 'Various',
+    featured: true
   }
+])
+
+const portfolioStats = ref([
+  { number: '3', label: 'Collections', suffix: '' },
+  { number: '35', label: 'Photographs', suffix: '+' },
+  { number: '2024', label: 'Active Since', suffix: '' }
 ])
 </script>
 
@@ -42,122 +72,182 @@ const featuredWorks = ref<FeaturedWork[]>([
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              Contemporary Art
-              <span class="hero-accent">Through Digital Expression</span>
+              Contemplative
+              <span class="hero-accent">Photography</span>
             </h1>
             <p class="hero-description">
-              Exploring the intersection of traditional aesthetics and modern technology 
-              to create works that invite contemplation and discovery.
+              Creating visual meditations that explore the profound beauty found in everyday moments, 
+              where silence speaks louder than words and simplicity reveals infinite depth.
             </p>
             <div class="hero-actions">
               <router-link to="/gallery" class="btn btn-primary btn-lg">
-                View Gallery
+                Explore Collections
               </router-link>
-              <router-link to="/collections" class="btn btn-secondary btn-lg">
-                Call from the Field
+              <router-link to="/about" class="btn btn-secondary btn-lg">
+                About the Artist
               </router-link>
             </div>
           </div>
           <div class="hero-visual">
-            <div class="hero-image">
-              <img 
-                src="/KyushuJapan/IMG_0012.JPG" 
-                alt="Sacred landscape from the Kyushu series showcasing minimalist aesthetic"
-                class="object-cover"
-              />
+            <div class="hero-image-container">
+              <div class="hero-frame">
+                <img 
+                  :src="featuredCollections[0].coverImage" 
+                  :alt="featuredCollections[0].title"
+                  class="hero-image"
+                />
+                <div class="image-overlay">
+                  <div class="overlay-gradient"></div>
+                  <div class="image-caption">
+                    <span class="caption-collection">{{ featuredCollections[0].title }}</span>
+                    <span class="caption-subtitle">{{ featuredCollections[0].subtitle }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Artist Statement -->
-    <section class="statement">
+    <!-- Artist Philosophy -->
+    <section class="philosophy">
       <div class="container">
-        <div class="statement-content">
-          <blockquote class="statement-quote">
-            "My work emerges from the belief that in our increasingly complex world, 
-            art serves as a sanctuary—a place where we can pause, breathe, and reconnect 
-            with what is essential."
+        <div class="philosophy-content">
+          <blockquote class="philosophy-quote">
+            "In the space between breath and stillness, between shadow and light, 
+            lies the essence of what makes us human. My work seeks to preserve 
+            these fleeting moments of profound simplicity."
           </blockquote>
-          <cite class="statement-attribution">— Sarah Chen</cite>
+          <cite class="philosophy-attribution">— Sarah Chen</cite>
         </div>
       </div>
     </section>
 
-    <!-- Featured Works -->
-    <section class="featured">
+    <!-- Featured Collections -->
+    <section class="collections">
       <div class="container">
-        <div class="featured-header">
-          <h2 class="featured-title text-4xl font-light">Featured Works</h2>
-          <p class="featured-subtitle text-secondary">
-            A selection of recent pieces exploring themes of simplicity, space, and contemplation
+        <div class="collections-header">
+          <h2 class="collections-title">Photographic Collections</h2>
+          <p class="collections-subtitle">
+            Each collection represents a sustained meditation on a particular theme, 
+            place, or state of being—inviting viewers into a deeper conversation with the world around us.
           </p>
         </div>
         
-        <div class="featured-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="collections-grid">
           <article 
-            v-for="work in featuredWorks" 
-            :key="work.id"
-            class="featured-item card"
+            v-for="(collection, index) in featuredCollections" 
+            :key="collection.id"
+            :class="['collection-card', `collection-${index}`, collection.status]"
           >
-            <div class="featured-image">
-              <img 
-                :src="work.image" 
-                :alt="work.title"
-                class="object-cover aspect-portrait"
-              />
+            <div class="collection-visual">
+              <div class="collection-image">
+                <img 
+                  :src="collection.coverImage" 
+                  :alt="collection.title"
+                  class="cover-image"
+                />
+                <div class="collection-overlay">
+                  <div class="overlay-content">
+                    <div class="status-badge" :class="collection.status">
+                      <span v-if="collection.status === 'published'">Available Now</span>
+                      <span v-else-if="collection.status === 'upcoming'">Coming Soon</span>
+                      <span v-else>In Planning</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="featured-info card-body">
-              <h3 class="featured-work-title text-xl font-medium">{{ work.title }}</h3>
-              <p class="featured-medium text-sm text-secondary">{{ work.medium }}</p>
-              <p class="featured-description text-sm text-muted">{{ work.description }}</p>
+            
+            <div class="collection-info">
+              <div class="collection-header">
+                <span class="collection-type">{{ collection.type }}</span>
+                <h3 class="collection-name">{{ collection.title }}</h3>
+                <p class="collection-japanese">{{ collection.subtitle }}</p>
+              </div>
+              
+              <p class="collection-description">{{ collection.description }}</p>
+              
+              <div class="collection-meta">
+                <div class="meta-row">
+                  <span class="meta-label">Year</span>
+                  <span class="meta-value">{{ collection.year }}</span>
+                </div>
+                <div class="meta-row" v-if="collection.location">
+                  <span class="meta-label">Location</span>
+                  <span class="meta-value">{{ collection.location }}</span>
+                </div>
+                <div class="meta-row" v-if="collection.imageCount">
+                  <span class="meta-label">Images</span>
+                  <span class="meta-value">{{ collection.imageCount }}</span>
+                </div>
+              </div>
+              
+              <div class="collection-action">
+                <router-link 
+                  v-if="collection.status === 'published'" 
+                  :to="collection.id === 'call-from-the-field' ? '/collections' : '/gallery'"
+                  class="view-btn"
+                >
+                  View Collection
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </router-link>
+                <div v-else class="coming-soon-btn">
+                  <span>{{ collection.status === 'upcoming' ? 'Coming Soon' : 'In Development' }}</span>
+                </div>
+              </div>
             </div>
           </article>
-        </div>
-        
-        <div class="featured-actions">
-          <router-link to="/gallery" class="btn btn-secondary">
-            View All Works
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </router-link>
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process">
+    <!-- Portfolio Stats -->
+    <section class="stats">
       <div class="container">
-        <div class="process-content">
-          <div class="process-text">
-            <h2 class="process-title text-3xl font-light">Artistic Process</h2>
-            <p class="process-description text-secondary">
-              Each piece begins with observation—finding those quiet moments where light, 
-              form, and space converge to create something greater than their individual parts. 
-              Through digital tools and traditional techniques, I seek to preserve these 
-              ephemeral experiences.
+        <div class="stats-content">
+          <div class="stats-text">
+            <h2 class="stats-title">Creating Through Mindfulness</h2>
+            <p class="stats-description">
+              Each photograph is born from extended periods of observation and patience. 
+              This contemplative approach allows the deeper rhythms of a place to emerge, 
+              revealing layers of beauty that exist beyond the surface.
             </p>
-            <div class="process-stats">
-              <div class="stat">
-                <div class="stat-number text-2xl font-semibold">50+</div>
-                <div class="stat-label text-sm text-muted">Works Created</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number text-2xl font-semibold">5</div>
-                <div class="stat-label text-sm text-muted">Exhibitions</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number text-2xl font-semibold">2024</div>
-                <div class="stat-label text-sm text-muted">Latest Collection</div>
-              </div>
+          </div>
+          
+          <div class="stats-grid">
+            <div 
+              v-for="(stat, index) in portfolioStats" 
+              :key="index"
+              class="stat-item"
+            >
+              <div class="stat-number">{{ stat.number }}<span class="suffix">{{ stat.suffix }}</span></div>
+              <div class="stat-label">{{ stat.label }}</div>
             </div>
           </div>
-          <div class="process-visual">
-            <div class="process-circle">
-              <div class="circle-inner"></div>
-            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Begin Your Journey</h2>
+          <p class="cta-description">
+            Discover the complete photographic collections and immerse yourself 
+            in moments of contemplative beauty.
+          </p>
+          <div class="cta-actions">
+            <router-link to="/gallery" class="btn btn-primary btn-lg">
+              Explore All Collections
+            </router-link>
+            <router-link to="/about" class="btn btn-outline btn-lg">
+              Meet the Artist
+            </router-link>
           </div>
         </div>
       </div>
@@ -172,37 +262,52 @@ const featuredWorks = ref<FeaturedWork[]>([
 
 /* Hero Section */
 .hero {
-  padding: var(--space-20) 0 var(--space-16);
-  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-  min-height: 70vh;
+  padding: var(--space-24) 0 var(--space-20);
+  background: linear-gradient(135deg, #fafafa 0%, #f8f8f8 50%, #f5f5f5 100%);
+  min-height: 80vh;
   display: flex;
   align-items: center;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.015) 1px, transparent 1px);
+    background-size: 60px 60px, 100px 100px;
+    pointer-events: none;
+  }
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
+  gap: var(--space-16);
   align-items: center;
   
   @media (min-width: 768px) {
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-16);
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-20);
   }
 }
 
 .hero-text {
-  order: 2;
   text-align: center;
   
   @media (min-width: 768px) {
-    order: 1;
     text-align: left;
   }
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 300;
   line-height: 1.1;
   color: var(--color-text-primary);
@@ -213,13 +318,12 @@ const featuredWorks = ref<FeaturedWork[]>([
   display: block;
   color: var(--color-accent);
   font-weight: 400;
-  margin-top: var(--space-2);
 }
 
 .hero-description {
   font-size: var(--text-lg);
+  line-height: 1.7;
   color: var(--color-text-secondary);
-  line-height: 1.6;
   margin-bottom: var(--space-8);
   max-width: 500px;
   
@@ -231,7 +335,6 @@ const featuredWorks = ref<FeaturedWork[]>([
 .hero-actions {
   display: flex;
   gap: var(--space-4);
-  flex-wrap: wrap;
   justify-content: center;
   
   @media (min-width: 768px) {
@@ -245,280 +348,570 @@ const featuredWorks = ref<FeaturedWork[]>([
 }
 
 .hero-visual {
-  order: 1;
   display: flex;
   justify-content: center;
   
   @media (min-width: 768px) {
-    order: 2;
     justify-content: flex-end;
+  }
+}
+
+.hero-image-container {
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+}
+
+.hero-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(0,0,0,0.25),
+    0 0 0 1px rgba(255,255,255,0.8);
+  transition: transform var(--transition-slow);
+  
+  &:hover {
+    transform: translateY(-10px) rotateY(5deg);
   }
 }
 
 .hero-image {
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  
-  img {
-    width: 100%;
-    height: 100%;
-    transition: transform var(--transition-slow);
-  }
-  
-  &:hover img {
-    transform: scale(1.05);
-  }
+  height: auto;
+  display: block;
+  transition: transform var(--transition-slow);
 }
 
-/* Statement Section */
-.statement {
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overlay-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  color: white;
+  z-index: 2;
+}
+
+.caption-collection {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.caption-subtitle {
+  display: block;
+  font-size: var(--text-sm);
+  opacity: 0.9;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.hero-frame:hover .hero-image {
+  transform: scale(1.05);
+}
+
+/* Philosophy Section */
+.philosophy {
   padding: var(--space-20) 0;
-  background-color: var(--color-surface-elevated);
+  background: var(--color-background);
 }
 
-.statement-content {
+.philosophy-content {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding: var(--space-12);
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.8);
 }
 
-.statement-quote {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--color-text-primary);
-  margin: 0 0 var(--space-4);
-  position: relative;
-  
-  &::before {
-    content: '"';
-    font-size: 4rem;
-    color: var(--color-accent);
-    position: absolute;
-    top: -1rem;
-    left: -2rem;
-    line-height: 1;
-    opacity: 0.3;
-  }
-}
-
-.statement-attribution {
-  font-size: var(--text-base);
+.philosophy-quote {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1.6;
   color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: var(--space-6);
+  font-weight: 300;
+}
+
+.philosophy-attribution {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
   font-style: normal;
   font-weight: 500;
 }
 
-/* Featured Section */
-.featured {
-  padding: var(--space-20) 0;
+/* Featured Collections */
+.collections {
+  padding: var(--space-24) 0;
+  background: linear-gradient(to bottom, var(--color-background), #fafafa);
 }
 
-.featured-header {
+.collections-header {
   text-align: center;
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-20);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.featured-title {
-  margin-bottom: var(--space-4);
+.collections-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
 }
 
-.featured-subtitle {
-  max-width: 600px;
-  margin: 0 auto;
+.collections-subtitle {
+  font-size: var(--text-lg);
   line-height: 1.6;
+  color: var(--color-text-secondary);
 }
 
-.featured-item {
-  transition: transform var(--transition-base);
+.collections-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-20);
+  }
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.collection-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.1),
+    0 0 0 1px rgba(0,0,0,0.05);
+  transition: all var(--transition-slow);
+  animation: slideInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  
+  &.collection-0 { animation-delay: 0s; }
+  &.collection-1 { animation-delay: 0.2s; }
+  &.collection-2 { animation-delay: 0.4s; }
   
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
+    box-shadow: 
+      0 30px 60px rgba(0,0,0,0.15),
+      0 0 0 1px rgba(0,0,0,0.05);
+  }
+  
+  &.upcoming,
+  &.planned {
+    opacity: 0.8;
+    
+    .collection-image {
+      filter: grayscale(30%);
+    }
   }
 }
 
-.featured-image {
-  width: 100%;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+.collection-visual {
+  position: relative;
+  height: 250px;
   overflow: hidden;
+}
+
+.collection-image {
+  position: relative;
+  height: 100%;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.collection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--space-4);
+}
+
+.overlay-content {
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.collection-card:hover .overlay-content {
+  opacity: 1;
+}
+
+.collection-card:hover .cover-image {
+  transform: scale(1.1);
+}
+
+.status-badge {
+  padding: var(--space-2) var(--space-4);
+  border-radius: 20px;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(10px);
   
-  img {
-    width: 100%;
-    transition: transform var(--transition-slow);
+  &.published {
+    background: rgba(34, 197, 94, 0.8);
   }
   
-  &:hover img {
-    transform: scale(1.05);
+  &.upcoming {
+    background: rgba(251, 191, 36, 0.8);
+  }
+  
+  &.planned {
+    background: rgba(156, 163, 175, 0.8);
   }
 }
 
-.featured-info {
-  border-top: none;
+.collection-info {
+  padding: var(--space-8);
 }
 
-.featured-work-title {
+.collection-header {
+  margin-bottom: var(--space-6);
+}
+
+.collection-type {
+  display: inline-block;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
   margin-bottom: var(--space-2);
 }
 
-.featured-medium {
-  margin-bottom: var(--space-3);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.collection-name {
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+  line-height: 1.2;
+}
+
+.collection-japanese {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  font-family: 'Noto Sans JP', sans-serif;
+  opacity: 0.8;
+}
+
+.collection-description {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.collection-meta {
+  margin-bottom: var(--space-6);
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.meta-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
-.featured-description {
-  line-height: 1.5;
+.meta-value {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
-.featured-actions {
-  text-align: center;
-  margin-top: var(--space-12);
+.collection-action {
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Process Section */
-.process {
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: all var(--transition-base);
+  
+  &:hover {
+    color: var(--color-text-primary);
+    
+    svg {
+      transform: translateX(2px);
+    }
+  }
+  
+  svg {
+    transition: transform var(--transition-base);
+  }
+}
+
+.coming-soon-btn {
+  span {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    font-style: italic;
+  }
+}
+
+/* Stats Section */
+.stats {
   padding: var(--space-20) 0;
-  background-color: var(--color-surface-elevated);
+  background: var(--color-background);
 }
 
-.process-content {
+.stats-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-12);
   align-items: center;
   
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: var(--space-16);
   }
 }
 
-.process-title {
+.stats-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
   margin-bottom: var(--space-6);
 }
 
-.process-description {
+.stats-description {
+  font-size: var(--text-lg);
   line-height: 1.7;
-  margin-bottom: var(--space-8);
+  color: var(--color-text-secondary);
 }
 
-.process-stats {
-  display: flex;
-  gap: var(--space-8);
-  flex-wrap: wrap;
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
 }
 
-.stat {
+.stat-item {
   text-align: center;
-  min-width: 80px;
+  padding: var(--space-6);
+  background: rgba(255,255,255,0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.8);
+  
+  @media (min-width: 768px) {
+    text-align: left;
+    padding: var(--space-4) var(--space-6);
+  }
 }
 
 .stat-number {
-  color: var(--color-accent);
-  margin-bottom: var(--space-1);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  
+  .suffix {
+    font-size: 0.7em;
+    color: var(--color-accent);
+  }
 }
 
 .stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
 }
 
-.process-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Call to Action */
+.cta {
+  padding: var(--space-20) 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  text-align: center;
 }
 
-.process-circle {
-  width: 250px;
-  height: 250px;
-  border: 2px solid var(--color-border);
-  border-radius: 50%;
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.cta-description {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.cta-actions {
   display: flex;
-  align-items: center;
+  gap: var(--space-4);
   justify-content: center;
-  position: relative;
-  animation: rotate 20s linear infinite;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    border: 1px solid var(--color-accent);
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    animation: rotate 8s linear infinite reverse;
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-.circle-inner {
-  width: 150px;
-  height: 150px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  opacity: 0.1;
-  animation: pulse 3s ease-in-out infinite;
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  
+  &.btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+  }
+  
+  &.btn-primary {
+    background: var(--color-accent);
+    color: white;
+    
+    &:hover {
+      background: var(--color-text-primary);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-secondary {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+    
+    &:hover {
+      background: var(--color-text-primary);
+      color: white;
+      border-color: var(--color-text-primary);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-outline {
+    background: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    
+    &:hover {
+      background: var(--color-accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
 }
 
-@keyframes rotate {
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.2;
-  }
-}
-
-/* Responsive Improvements */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 767px) {
   .hero {
     padding: var(--space-16) 0 var(--space-12);
     min-height: 60vh;
   }
   
-  .statement,
-  .featured,
-  .process {
-    padding: var(--space-16) 0;
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
   
-  .process-stats {
-    justify-content: center;
+  .collections-grid {
+    grid-template-columns: 1fr;
   }
   
-  .process-circle {
-    width: 200px;
-    height: 200px;
+  .stats-content {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
   
-  .circle-inner {
-    width: 120px;
-    height: 120px;
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    text-align: center;
   }
 }
-
-/* Utility classes */
-.ml-2 { margin-left: var(--space-2); }
-.w-4 { width: 1rem; }
-.h-4 { height: 1rem; }
 </style>
 

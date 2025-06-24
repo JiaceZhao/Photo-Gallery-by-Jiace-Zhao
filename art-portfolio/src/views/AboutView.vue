@@ -7,17 +7,17 @@
           <div class="hero-image">
             <img 
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
-              alt="Portrait of the artist - a professional headshot showing someone with thoughtful expression"
+              alt="Portrait of Jiace Zhao - a young artist and photographer with thoughtful expression"
             />
           </div>
           <div class="hero-text">
-            <h1 class="about-title">Hi, I'm Sarah Chen</h1>
+            <h1 class="about-title">Hi, I'm Jiace Zhao</h1>
             <p class="about-subtitle">
-              Contemporary artist exploring the intersection of digital media and contemplative practice
+              Artist, photographer, and technologist exploring the intersection of digital innovation and visual storytelling
             </p>
             <p class="about-description">
-              Based in San Francisco, I create minimalist works that invite viewers into moments of stillness and reflection. 
-              My practice spans digital art, photography, and mixed media installations.
+              Based in Beijing, I capture the world through my Hasselblad X1D2, while building the future through code. 
+              My work bridges the gap between artistic expression and technological innovation.
             </p>
             <div class="hero-actions">
               <a href="#contact" class="cta-button primary">Get in Touch</a>
@@ -39,17 +39,19 @@
               <h2 class="section-title">My Journey</h2>
               <div class="story-text">
                 <p class="story-paragraph">
-                  My artistic journey began with a simple question: What remains when everything unnecessary is removed? 
-                  This inquiry has guided my exploration of minimalism, zen aesthetics, and the profound beauty found in restraint.
+                  My artistic journey began at the intersection of two seemingly different worlds: the precise logic of code 
+                  and the fluid creativity of visual storytelling. Armed with my Hasselblad X1D2, I explore how technology 
+                  can enhance rather than replace the human eye.
                 </p>
                 <p class="story-paragraph">
-                  Growing up surrounded by the constant noise of modern life, I found solace in quiet moments—
-                  the way morning light falls across an empty room, the perfect curve of a single brushstroke, 
-                  the profound silence between musical notes. These observations became the foundation of my artistic practice.
+                  As a high school student passionate about both artificial intelligence and photography, I've discovered that 
+                  the best art emerges when technical mastery meets creative vision. Whether I'm developing machine learning 
+                  models or capturing the perfect light, I'm always seeking that moment where precision becomes poetry.
                 </p>
                 <p class="story-paragraph">
-                  Through digital art, photography, and mixed media, I seek to capture these ephemeral moments of clarity. 
-                  Each piece is an invitation to pause, breathe, and discover the extraordinary within the ordinary.
+                  Through my photography portfolio and technical projects, I aim to show how the next generation 
+                  can use technology as a canvas for artistic expression, creating work that is both technically sophisticated 
+                  and emotionally resonant.
                 </p>
               </div>
             </div>
@@ -57,10 +59,10 @@
             <!-- Philosophy Quote -->
             <div class="philosophy-quote-section">
               <blockquote class="main-quote">
-                "In the pursuit of art, we must first learn the art of subtraction. 
-                Only when we remove what is unnecessary can we reveal what is essential."
+                "The future of art lies not in choosing between technology and creativity, 
+                but in discovering how they can amplify each other."
               </blockquote>
-              <cite class="quote-attribution">— Personal philosophy, 2024</cite>
+              <cite class="quote-attribution">— Personal philosophy, 2025</cite>
             </div>
           </div>
 
@@ -71,31 +73,31 @@
               <h2 class="section-title">Background</h2>
               <div class="timeline">
                 <div class="timeline-item">
+                  <div class="timeline-year">2025</div>
+                  <div class="timeline-content">
+                    <h3>Researcher</h3>
+                    <p>Myshell.ai & MIT, led by Zengyi Qin</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-year">2025</div>
+                  <div class="timeline-content">
+                    <h3>Developer</h3>
+                    <p>AdventureX, China's biggest Hackathon</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
                   <div class="timeline-year">2024</div>
                   <div class="timeline-content">
-                    <h3>Solo Exhibition</h3>
-                    <p>"Spaces Between" at Modern Art Gallery, SF</p>
+                    <h3>Founder</h3>
+                    <p>Singularity Academy</p>
                   </div>
                 </div>
                 <div class="timeline-item">
-                  <div class="timeline-year">2023</div>
+                  <div class="timeline-year">2024</div>
                   <div class="timeline-content">
-                    <h3>MFA in Digital Arts</h3>
-                    <p>California College of the Arts, Oakland</p>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-year">2021</div>
-                  <div class="timeline-content">
-                    <h3>Artist Residency</h3>
-                    <p>Zen Mountain Monastery, New York</p>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-year">2019</div>
-                  <div class="timeline-content">
-                    <h3>BA in Fine Arts</h3>
-                    <p>UC Berkeley, Photography & New Media</p>
+                    <h3>Current Studies</h3>
+                    <p>Haidian Kaiwen Academy, Beijing</p>
                   </div>
                 </div>
               </div>
@@ -103,27 +105,34 @@
 
             <!-- Skills & Approach -->
             <div class="skills-overview">
-              <h2 class="section-title">Approach & Medium</h2>
+              <h2 class="section-title">Expertise & Medium</h2>
               <div class="skills-list">
                 <div class="skill-item">
                   <div class="skill-icon">📸</div>
                   <div>
                     <h3>Photography</h3>
-                    <p>Contemplative landscapes and urban minimalism</p>
+                    <p>Medium format photography with Hasselblad X1D2</p>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">🤖</div>
+                  <div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>TensorFlow, PyTorch, and computer vision applications</p>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">💻</div>
+                  <div>
+                    <h3>Software Development</h3>
+                    <p>Swift, Go, TypeScript, Python - building the future</p>
                   </div>
                 </div>
                 <div class="skill-item">
                   <div class="skill-icon">🎨</div>
                   <div>
-                    <h3>Digital Art</h3>
-                    <p>Generative compositions and interactive installations</p>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-icon">🖼️</div>
-                  <div>
-                    <h3>Mixed Media</h3>
-                    <p>Bridging traditional and contemporary techniques</p>
+                    <h3>Design & Engineering</h3>
+                    <p>Figma, Fusion 360, bridging design and implementation</p>
                   </div>
                 </div>
               </div>
@@ -131,11 +140,12 @@
 
             <!-- Recognition -->
             <div class="recognition-section">
-              <h2 class="section-title">Recognition</h2>
+              <h2 class="section-title">Recognition & Research</h2>
               <ul class="recognition-list">
-                <li>Featured in <em>Art in America</em> - "Emerging Digital Artists" (2024)</li>
-                <li>Winner, Bay Area Art Prize for Innovation (2023)</li>
-                <li>Recipient, California Arts Council Individual Artist Fellowship (2022)</li>
+                <li>Co-author: <em>OSGym: Super-Scalable Distributed Data Engine</em> - NeurIPS 2025 submission</li>
+                <li>First Author: <em>Adaptive Robust Learning Control for 6-DOF Robotic Arm</em></li>
+                <li>USACO Gold Medal (2023) - Currently Platinum Division</li>
+                <li>PivotHack & Moonshot48 Hackathons - 3rd Place Winner (2025)</li>
               </ul>
             </div>
           </div>
@@ -149,28 +159,29 @@
         <div class="contact-content">
           <h2 class="section-title">Let's Connect</h2>
           <p class="contact-intro">
-            I welcome conversations about art, collaboration, and the beauty found in simplicity.
-            Whether you're interested in commissioning work, gallery representation, or simply sharing thoughts about art, I'd love to hear from you.
+            I'm always excited to discuss the intersection of art and technology, collaborate on innovative projects, 
+            or share insights about the future of creative expression. Whether you're interested in photography, 
+            AI research, or just want to chat about the possibilities ahead, I'd love to hear from you.
           </p>
           <div class="contact-methods">
-            <a href="mailto:sarah.chen.art@example.com" class="contact-link">
+            <a href="mailto:krypotozhao@gmail.com" class="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <span>sarah.chen.art@example.com</span>
+              <span>krypotozhao@gmail.com</span>
             </a>
-            <a href="https://instagram.com/sarahchen.art" class="contact-link">
+            <a href="tel:+8615566970454" class="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
-              <span>@sarahchen.art</span>
+              <span>+86 15566970454</span>
             </a>
             <a href="/collections" class="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21,15 16,10 5,21"></polyline>
               </svg>
               <span>View Portfolio</span>
             </a>

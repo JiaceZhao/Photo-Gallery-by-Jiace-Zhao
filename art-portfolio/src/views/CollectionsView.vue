@@ -1,244 +1,190 @@
 <template>
   <div class="collection-view">
-    <!-- Artistic Hero Section -->
-    <section class="collection-hero">
-      <div class="hero-background">
-        <div class="background-texture"></div>
-        <div class="floating-elements">
-          <div class="element element-1"></div>
-          <div class="element element-2"></div>
-          <div class="element element-3"></div>
-        </div>
+    <!-- Artistic Portfolio Collage -->
+    <div class="portfolio-collage">
+      <!-- Background Elements -->
+      <div class="collage-background">
+        <div class="texture-layer"></div>
+        <svg class="flowing-lines" viewBox="0 0 1400 1000">
+          <path d="M0,300 Q350,200 700,400 T1400,350" stroke="rgba(0,0,0,0.03)" stroke-width="2" fill="none"/>
+          <path d="M0,600 Q400,500 800,650 T1400,580" stroke="rgba(0,0,0,0.02)" stroke-width="1" fill="none"/>
+        </svg>
       </div>
-      
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <div class="text-backdrop"></div>
-            <h1 class="collection-title">
-              <span class="title-main">Call from the Field</span>
-              <span class="title-subtitle">野の呼び声</span>
-            </h1>
-            <div class="collection-quote">
-              <blockquote>
-                "In the fields of Kyushu, where ancient rhythms meet eternal skies,<br>
-                every blade of grass holds a story of time itself."
-              </blockquote>
-              <cite>— A meditation on landscape</cite>
-            </div>
-            <div class="collection-meta">
-              <div class="meta-item">
-                <span class="meta-icon">📍</span>
-                <div>
-                  <span class="meta-label">Location</span>
-                  <span class="meta-value">Kyushu, Japan</span>
-                </div>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon">📸</span>
-                <div>
-                  <span class="meta-label">Collection</span>
-                  <span class="meta-value">{{ artworks.length }} Photographs</span>
-                </div>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon">🗓</span>
-                <div>
-                  <span class="meta-label">Year</span>
-                  <span class="meta-value">2024</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="featured-frame">
-              <div class="frame-border"></div>
-              <div class="featured-image">
-                <img 
-                  :src="artworks[0].image" 
-                  :alt="artworks[0].title"
-                  class="hero-photo"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-gradient"></div>
-                </div>
-              </div>
-              <div class="image-caption">
-                <span class="caption-title">{{ artworks[0].title }}</span>
-                <span class="caption-text">Opening the collection</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Artist Statement -->
-    <section class="artist-statement">
-      <div class="container">
-        <div class="statement-content">
-          <div class="statement-text">
-            <h2 class="statement-title">The Sacred in the Everyday</h2>
-            <p class="statement-body">
-              This collection emerged from countless mornings spent walking through the rural landscapes 
-              of Kyushu, where the boundary between the cultivated and the wild dissolves into something 
-              profoundly contemplative. Each photograph preserves a moment when light, land, and silence 
-              converged to reveal the sacred hidden within the everyday.
-            </p>
-            <p class="statement-body">
-              The fields here are not merely agricultural spaces, but meditation grounds where centuries 
-              of human care have created a harmony between intention and nature. These images invite 
-              viewers to slow down, to breathe, and to discover their own relationship with the landscape.
-            </p>
-          </div>
-          <div class="statement-visual">
-            <div class="zen-circle">
-              <div class="circle-inner"></div>
-              <div class="circle-reflection"></div>
-            </div>
+      <!-- Main Title Block -->
+      <div class="title-block">
+        <h1 class="main-title">
+          <span class="title-large">CALL</span>
+          <span class="title-from">from the</span>
+          <span class="title-field">FIELD</span>
+        </h1>
+        <div class="subtitle-japanese">野の呼び声</div>
+        <div class="collection-details">
+          <span>Kyushu, Japan • 2024 • 7 Photographs</span>
+        </div>
+      </div>
+
+      <!-- Hero Image - Large Feature -->
+      <div class="hero-piece" @click="openLightbox(artworks[0])">
+        <div class="image-container large-img">
+          <img :src="artworks[0].image" :alt="artworks[0].title" />
+          <div class="img-number">01</div>
+          <div class="img-overlay">
+            <h3>{{ artworks[0].title }}</h3>
+            <p>{{ artworks[0].description.split('.')[0] }}</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Artistic Gallery -->
-    <section class="collection-gallery">
-      <div class="container">
-        <h2 class="gallery-title">The Complete Journey</h2>
-        <div class="artworks-flow">
-          <article
-            v-for="(artwork, index) in artworks"
-            :key="artwork.id"
-            :class="['artwork-frame', `frame-${index % 3}`]"
-            @click="openLightbox(artwork)"
-          >
-            <div class="frame-container">
-              <div class="frame-shadow"></div>
-              <div class="artwork-border">
-                <div class="image-container">
-                  <img 
-                    :src="artwork.image" 
-                    :alt="artwork.title"
-                    class="artwork-image"
-                    :style="{ aspectRatio: 'auto' }"
-                  />
-                  <div class="hover-overlay">
-                    <div class="overlay-content">
-                      <h3 class="artwork-title">{{ artwork.title }}</h3>
-                      <p class="artwork-number">{{ String(index + 1).padStart(2, '0') }}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="artwork-info">
-                <h3 class="info-title">{{ artwork.title }}</h3>
-                <p class="info-description">{{ artwork.description }}</p>
-                <div class="info-details">
-                  <span class="detail-number">{{ String(index + 1).padStart(2, '0') }}</span>
-                  <span class="detail-separator">•</span>
-                  <span class="detail-filename">{{ artwork.filename }}</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+      <!-- Quote Block -->
+      <div class="quote-section">
+        <blockquote>
+          "In the fields of Kyushu, where ancient rhythms meet eternal skies"
+        </blockquote>
+        <div class="quote-accent"></div>
       </div>
-    </section>
 
-    <!-- Enhanced Lightbox Modal -->
-    <div v-if="selectedArtwork" class="lightbox-overlay" @click="closeLightbox">
-      <div class="lightbox-content" @click.stop>
-        <div class="lightbox-background">
-          <div class="bg-texture"></div>
+      <!-- Medium Image Pair -->
+      <div class="medium-pair">
+        <div class="medium-img img-left" @click="openLightbox(artworks[1])">
+          <img :src="artworks[1].image" :alt="artworks[1].title" />
+          <div class="img-label">
+            <span class="label-num">02</span>
+            <span class="label-title">{{ artworks[1].title }}</span>
+          </div>
         </div>
         
+        <div class="medium-img img-right" @click="openLightbox(artworks[2])">
+          <img :src="artworks[2].image" :alt="artworks[2].title" />
+          <div class="img-label">
+            <span class="label-num">03</span>
+            <span class="label-title">{{ artworks[2].title }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flowing Text Element -->
+      <div class="flowing-text">
+        <span class="text-accent">every blade of grass</span>
+        <span class="text-main">holds a story of time itself</span>
+      </div>
+
+      <!-- Three Small Images Cluster -->
+      <div class="small-cluster">
+        <div class="small-img img-a" @click="openLightbox(artworks[3])">
+          <img :src="artworks[3].image" :alt="artworks[3].title" />
+          <div class="small-number">04</div>
+        </div>
+        
+        <div class="small-img img-b" @click="openLightbox(artworks[4])">
+          <img :src="artworks[4].image" :alt="artworks[4].title" />
+          <div class="small-number">05</div>
+        </div>
+        
+        <div class="text-between">
+          <div class="vertical-text">WHISPERS</div>
+          <div class="location-mark">Kyushu</div>
+        </div>
+      </div>
+
+      <!-- Final Large Images -->
+      <div class="final-spread">
+        <div class="signature-img" @click="openLightbox(artworks[5])">
+          <img :src="artworks[5].image" :alt="artworks[5].title" />
+          <div class="signature-overlay">
+            <span class="sig-num">06</span>
+            <h3 class="sig-title">{{ artworks[5].title }}</h3>
+            <p class="sig-desc">{{ artworks[5].description.split('.')[0] }}</p>
+          </div>
+        </div>
+        
+        <div class="closing-img" @click="openLightbox(artworks[6])">
+          <img :src="artworks[6].image" :alt="artworks[6].title" />
+          <div class="closing-mark">
+            <span class="closing-num">07</span>
+            <span class="closing-title">{{ artworks[6].title }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Year Signature -->
+      <div class="year-signature">
+        <div class="year-large">2024</div>
+        <div class="signature-line"></div>
+      </div>
+
+      <!-- Corner Elements -->
+      <div class="corner-accents">
+        <div class="corner-tl"></div>
+        <div class="corner-br"></div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div 
+      v-if="lightboxVisible" 
+      class="lightbox-overlay" 
+      @click="closeLightbox"
+      @keydown.esc="closeLightbox"
+    >
+      <div class="lightbox-container" @click.stop>
         <button class="lightbox-close" @click="closeLightbox">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
         
-        <!-- Navigation -->
-        <div class="lightbox-nav">
+        <div class="lightbox-content">
+          <div class="lightbox-image">
+            <img 
+              :src="currentArtwork?.image" 
+              :alt="currentArtwork?.title"
+            />
+          </div>
+          
+          <div class="lightbox-info">
+            <h3 class="lightbox-title">{{ currentArtwork?.title }}</h3>
+            <p class="lightbox-description">{{ currentArtwork?.description }}</p>
+            <div class="lightbox-meta">
+              <span class="meta-item">{{ currentArtwork?.filename }}</span>
+              <span class="meta-item">{{ currentArtwork?.location }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lightbox-navigation">
           <button 
-            @click="previousImage" 
-            :disabled="currentImageIndex === 0"
-            class="nav-button nav-prev"
+            class="nav-btn prev-btn" 
+            @click="previousImage"
+            :disabled="currentIndex === 0"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="15,18 9,12 15,6"></polyline>
             </svg>
           </button>
           
-          <div class="image-counter">
-            <span class="current">{{ String(currentImageIndex + 1).padStart(2, '0') }}</span>
-            <span class="separator">/</span>
-            <span class="total">{{ String(artworks.length).padStart(2, '0') }}</span>
+          <div class="nav-thumbnails">
+            <div 
+              v-for="(artwork, index) in artworks" 
+              :key="artwork.id"
+              class="nav-thumb"
+              :class="{ active: index === currentIndex }"
+              @click="setCurrentImage(index)"
+            >
+              <img :src="artwork.image" :alt="artwork.title" />
+            </div>
           </div>
           
           <button 
-            @click="nextImage" 
-            :disabled="currentImageIndex === artworks.length - 1"
-            class="nav-button nav-next"
+            class="nav-btn next-btn" 
+            @click="nextImage"
+            :disabled="currentIndex === artworks.length - 1"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="9,18 15,12 9,6"></polyline>
             </svg>
           </button>
-        </div>
-
-        <!-- Main Image with Original Dimensions -->
-        <div class="lightbox-image">
-          <div class="image-frame">
-            <img 
-              :src="selectedArtwork.image" 
-              :alt="selectedArtwork.title"
-              class="lightbox-photo"
-              :style="{ maxWidth: '100%', height: 'auto' }"
-            />
-          </div>
-        </div>
-
-        <!-- Enhanced Image Info -->
-        <div class="lightbox-info">
-          <div class="info-main">
-            <h2 class="lightbox-title">{{ selectedArtwork.title }}</h2>
-            <p class="lightbox-description">{{ selectedArtwork.description }}</p>
-          </div>
-          <div class="info-meta">
-            <div class="meta-group">
-              <span class="meta-label">Location</span>
-              <span class="meta-value">{{ selectedArtwork.location }}</span>
-            </div>
-            <div class="meta-group">
-              <span class="meta-label">Year</span>
-              <span class="meta-value">{{ selectedArtwork.year }}</span>
-            </div>
-            <div class="meta-group">
-              <span class="meta-label">File</span>
-              <span class="meta-value">{{ selectedArtwork.filename }}</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Elegant Thumbnail Navigation -->
-        <div class="thumbnail-nav">
-          <div class="thumbnails-container">
-            <div
-              v-for="(artwork, index) in artworks"
-              :key="artwork.id"
-              :class="['thumbnail', { active: index === currentImageIndex }]"
-              @click="goToImage(index)"
-            >
-              <div class="thumbnail-frame">
-                <img :src="artwork.image" :alt="artwork.title" class="thumbnail-image" />
-                <div class="thumbnail-overlay">
-                  <span class="thumbnail-number">{{ String(index + 1).padStart(2, '0') }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -246,121 +192,110 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 interface Artwork {
   id: number
   title: string
-  filename: string
-  image: string
   description: string
+  image: string
+  filename: string
   location: string
-  year: string
 }
 
-const selectedArtwork = ref<Artwork | null>(null)
-const currentImageIndex = ref(0)
-
-// Using the actual KyushuJapan photos
 const artworks = ref<Artwork[]>([
   {
     id: 1,
     title: "Mountain's Call",
-    filename: "IMG_1715.JPG",
+    description: "Where earth meets sky in perfect harmony, speaking in the ancient language of stone and cloud.",
     image: "/KyushuJapan/IMG_1715.JPG",
-    description: "The ancient mountains of Kyushu speak in whispers of wind and stone, calling to those who listen with patient hearts.",
-    location: "Kyushu, Japan",
-    year: "2024"
+    filename: "IMG_1715.JPG",
+    location: "Kyushu, Japan"
   },
   {
     id: 2,
     title: "Field of Dreams",
-    filename: "IMG_0011.JPG", 
+    description: "Rolling landscapes unfold like memories, each hill a chapter in the story of the land.",
     image: "/KyushuJapan/IMG_0011.JPG",
-    description: "Green fields stretch endlessly, each blade of grass a note in nature's symphony of growth and renewal.",
-    location: "Kyushu, Japan",
-    year: "2024"
+    filename: "IMG_0011.JPG",
+    location: "Kyushu, Japan"
   },
   {
     id: 3,
     title: "Sacred Landscape",
+    description: "In this moment, the ordinary becomes extraordinary, revealing the sacred hidden in plain sight.",
+    image: "/KyushuJapan/IMG_0012.JPG",
     filename: "IMG_0012.JPG",
-    image: "/KyushuJapan/IMG_0012.JPG", 
-    description: "Where earth meets sky, the sacred and mundane dissolve into a single moment of profound beauty.",
-    location: "Kyushu, Japan",
-    year: "2024"
+    location: "Kyushu, Japan"
   },
   {
     id: 4,
     title: "Whispers of the Valley",
-    filename: "IMG_0013.JPG",
+    description: "The valley holds secrets whispered by wind through grass, stories only the patient heart can hear.",
     image: "/KyushuJapan/IMG_0013.JPG",
-    description: "In the valley's embrace, stories of countless seasons echo through mist and morning light.",
-    location: "Kyushu, Japan", 
-    year: "2024"
+    filename: "IMG_0013.JPG",
+    location: "Kyushu, Japan"
   },
   {
     id: 5,
     title: "Horizon's Promise",
-    filename: "IMG_0014.JPG",
+    description: "Where the horizon meets hope, infinite possibilities stretch beyond the visible world.",
     image: "/KyushuJapan/IMG_0014.JPG",
-    description: "The horizon holds promises of tomorrow, painted in the soft hues of endless possibility.",
-    location: "Kyushu, Japan",
-    year: "2024"
+    filename: "IMG_0014.JPG",
+    location: "Kyushu, Japan"
   },
   {
     id: 6,
     title: "Golden Hour Meditation",
-    filename: "IMG_0015.JPG",
+    description: "In the golden hour, light becomes prayer, transforming the landscape into cathedral.",
     image: "/KyushuJapan/IMG_0015.JPG",
-    description: "As day surrenders to dusk, the golden hour invites contemplation of time's gentle passage.",
-    location: "Kyushu, Japan",
-    year: "2024"
+    filename: "IMG_0015.JPG",
+    location: "Kyushu, Japan"
   },
   {
     id: 7,
     title: "Silent Witness",
-    filename: "IMG_0016.JPG",
+    description: "Standing as a silent witness to time's passage, this moment captures eternity in a single frame.",
     image: "/KyushuJapan/IMG_0016.JPG",
-    description: "Standing as silent witness to the eternal dance between earth and heavens, timeless and serene.",
-    location: "Kyushu, Japan",
-    year: "2024"
+    filename: "IMG_0016.JPG",
+    location: "Kyushu, Japan"
   }
 ])
 
+const lightboxVisible = ref(false)
+const currentIndex = ref(0)
+
+const currentArtwork = computed(() => artworks.value[currentIndex.value])
+
 const openLightbox = (artwork: Artwork) => {
-  selectedArtwork.value = artwork
-  currentImageIndex.value = artworks.value.findIndex(work => work.id === artwork.id)
+  currentIndex.value = artworks.value.findIndex(a => a.id === artwork.id)
+  lightboxVisible.value = true
   document.body.style.overflow = 'hidden'
 }
 
 const closeLightbox = () => {
-  selectedArtwork.value = null
+  lightboxVisible.value = false
   document.body.style.overflow = 'auto'
 }
 
-const previousImage = () => {
-  if (currentImageIndex.value > 0) {
-    currentImageIndex.value--
-    selectedArtwork.value = artworks.value[currentImageIndex.value]
-  }
-}
-
 const nextImage = () => {
-  if (currentImageIndex.value < artworks.value.length - 1) {
-    currentImageIndex.value++
-    selectedArtwork.value = artworks.value[currentImageIndex.value]
+  if (currentIndex.value < artworks.value.length - 1) {
+    currentIndex.value++
   }
 }
 
-const goToImage = (index: number) => {
-  currentImageIndex.value = index
-  selectedArtwork.value = artworks.value[index]
+const previousImage = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value--
+  }
 }
 
-// Keyboard navigation
+const setCurrentImage = (index: number) => {
+  currentIndex.value = index
+}
+
 const handleKeydown = (event: KeyboardEvent) => {
-  if (!selectedArtwork.value) return
+  if (!lightboxVisible.value) return
   
   switch (event.key) {
     case 'Escape':
@@ -381,671 +316,684 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
+  document.body.style.overflow = 'auto'
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
+// Print-ready portfolio collage styles
 .collection-view {
   min-height: 100vh;
-  background: var(--color-background);
+  background: #fff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Artistic Hero Section */
-.collection-hero {
+.portfolio-collage {
   position: relative;
-  padding: var(--space-24) 0 var(--space-20);
-  background: linear-gradient(135deg, #fafafa 0%, #f8f8f8 50%, #f5f5f5 100%);
-  overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.background-texture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.02) 1px, transparent 1px),
-    radial-gradient(circle at 80% 80%, rgba(0,0,0,0.015) 1px, transparent 1px);
-  background-size: 50px 50px, 80px 80px;
-}
-
-.floating-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
-
-.element {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.01);
-  animation: float 20s ease-in-out infinite;
-  
-  &.element-1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-  
-  &.element-2 {
-    width: 200px;
-    height: 200px;
-    top: 60%;
-    right: 15%;
-    animation-delay: -7s;
-  }
-  
-  &.element-3 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    left: 60%;
-    animation-delay: -14s;
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(120deg); }
-  66% { transform: translateY(10px) rotate(240deg); }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-16);
-  align-items: center;
-  
-  @media (min-width: 768px) {
-    grid-template-columns: 1.3fr 1fr;
-    gap: var(--space-20);
-  }
-}
-
-.hero-text {
-  position: relative;
-  text-align: center;
-  
-  @media (min-width: 768px) {
-    text-align: left;
-  }
-}
-
-.text-backdrop {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  z-index: -1;
-}
-
-.collection-title {
-  margin-bottom: var(--space-8);
-}
-
-.title-main {
-  display: block;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 300;
-  line-height: 1;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-2);
-}
-
-.title-subtitle {
-  display: block;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-weight: 400;
-  color: var(--color-accent);
-  font-family: 'Noto Sans JP', sans-serif;
-  opacity: 0.8;
-}
-
-.collection-quote {
-  margin: var(--space-8) 0;
-  padding: var(--space-6);
-  background: rgba(255,255,255,0.5);
-  border-left: 3px solid var(--color-accent);
-  border-radius: 0 10px 10px 0;
-  
-  blockquote {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-    font-style: italic;
-    margin-bottom: var(--space-3);
-  }
-  
-  cite {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    font-style: normal;
-    font-weight: 500;
-  }
-}
-
-.collection-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-8);
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4);
-  background: rgba(255,255,255,0.6);
-  border-radius: 12px;
-  backdrop-filter: blur(5px);
-}
-
-.meta-icon {
-  font-size: 1.2rem;
-  opacity: 0.7;
-}
-
-.meta-label {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-}
-
-.meta-value {
-  display: block;
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-  font-weight: 600;
-  margin-top: 2px;
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  
-  @media (min-width: 768px) {
-    justify-content: flex-end;
-  }
-}
-
-.featured-frame {
-  position: relative;
-  max-width: 400px;
-  width: 100%;
-}
-
-.frame-border {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  right: -15px;
-  bottom: -15px;
-  border: 2px solid rgba(0,0,0,0.1);
-  border-radius: 20px;
-  z-index: 1;
-}
-
-.featured-image {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 
-    0 25px 50px -12px rgba(0,0,0,0.25),
-    0 0 0 1px rgba(255,255,255,0.5);
-}
-
-.hero-photo {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
-
-.overlay-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-}
-
-.image-caption {
-  position: absolute;
-  bottom: var(--space-4);
-  left: var(--space-4);
-  right: var(--space-4);
-  color: white;
-  z-index: 2;
-}
-
-.caption-title {
-  display: block;
-  font-size: var(--text-lg);
-  font-weight: 500;
-  margin-bottom: 2px;
-}
-
-.caption-text {
-  display: block;
-  font-size: var(--text-sm);
-  opacity: 0.9;
-}
-
-.featured-frame:hover .hero-photo {
-  transform: scale(1.05);
-}
-
-/* Artist Statement */
-.artist-statement {
-  padding: var(--space-20) 0;
-  background: var(--color-background);
-}
-
-.statement-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
-  align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: 200vh;
   
-  @media (min-width: 768px) {
-    grid-template-columns: 2fr 1fr;
-    gap: var(--space-16);
+  // Print optimization
+  @media print {
+    padding: 1in;
+    page-break-inside: avoid;
+    
+    * {
+      color: #000 !important;
+      background: transparent !important;
+    }
   }
 }
 
-.statement-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 300;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-6);
-}
-
-.statement-body {
-  font-size: var(--text-lg);
-  line-height: 1.7;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-6);
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.statement-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.zen-circle {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border: 2px solid rgba(0,0,0,0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle-inner {
-  width: 100px;
-  height: 100px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.circle-reflection {
+// Background Elements
+.collage-background {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 50px;
-  height: 50px;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  filter: blur(10px);
-}
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.1); opacity: 0.6; }
-}
+  .texture-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.01) 1px, transparent 1px),
+      radial-gradient(circle at 80% 70%, rgba(0,0,0,0.01) 1px, transparent 1px);
+    background-size: 50px 50px, 75px 75px;
+  }
 
-/* Artistic Gallery */
-.collection-gallery {
-  padding: var(--space-20) 0;
-  background: linear-gradient(to bottom, var(--color-background), #fafafa);
-}
-
-.gallery-title {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 300;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-16);
-}
-
-.artworks-flow {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-16);
-  max-width: 800px;
-  margin: 0 auto;
-  
-  @media (min-width: 768px) {
-    gap: var(--space-20);
+  .flowing-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
   }
 }
 
-.artwork-frame {
+// Main Title
+.title-block {
+  position: absolute;
+  top: 4rem;
+  left: 2rem;
+  z-index: 10;
+
+  .main-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
+    line-height: 0.85;
+    margin: 0;
+    letter-spacing: -0.02em;
+
+    .title-large {
+      display: block;
+      color: #000;
+    }
+
+    .title-from {
+      display: block;
+      font-size: 0.4em;
+      font-weight: 300;
+      color: #666;
+      margin: 0.2em 0;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .title-field {
+      display: block;
+      color: #000;
+    }
+  }
+
+  .subtitle-japanese {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 300;
+  }
+
+  .collection-details {
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+}
+
+// Hero Image
+.hero-piece {
+  position: absolute;
+  top: 12rem;
+  right: 4rem;
+  width: 500px;
+  height: 350px;
+  z-index: 5;
   cursor: pointer;
-  transition: all var(--transition-slow);
   
-  &.frame-0 {
-    transform: translateX(0);
+  @media (max-width: 768px) {
+    position: relative;
+    top: 8rem;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    margin: 2rem 0;
   }
-  
-  &.frame-1 {
-    transform: translateX(20px);
-    
-    @media (min-width: 768px) {
-      transform: translateX(40px);
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+
+      .img-overlay {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-number {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255,255,255,0.9);
+      color: #000;
+      padding: 0.5rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 2rem 1.5rem 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.4;
+      }
     }
   }
-  
-  &.frame-2 {
-    transform: translateX(-20px);
-    
-    @media (min-width: 768px) {
-      transform: translateX(-40px);
+}
+
+// Quote Section
+.quote-section {
+  position: absolute;
+  top: 28rem;
+  left: 2rem;
+  width: 350px;
+  z-index: 8;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 300;
+    position: relative;
+
+    &::before {
+      content: '"';
+      font-size: 3rem;
+      color: #ddd;
+      position: absolute;
+      top: -1rem;
+      left: -1.5rem;
+      font-family: serif;
     }
   }
-  
-  &:hover {
-    transform: translateX(0) translateY(-10px);
+
+  .quote-accent {
+    width: 80px;
+    height: 2px;
+    background: #000;
+    margin-top: 1rem;
   }
 }
 
-.frame-container {
-  position: relative;
-}
-
-.frame-shadow {
+// Medium Image Pair
+.medium-pair {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  right: -10px;
-  bottom: -10px;
-  background: rgba(0,0,0,0.1);
-  border-radius: 15px;
-  filter: blur(20px);
-  z-index: 1;
+  top: 45rem;
+  left: 6rem;
+  right: 6rem;
+  display: flex;
+  gap: 3rem;
+  z-index: 6;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .medium-img {
+    flex: 1;
+    height: 280px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.95);
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+
+      .label-num {
+        font-weight: 700;
+        color: #000;
+        margin-right: 0.5rem;
+      }
+
+      .label-title {
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .img-left {
+    transform: rotate(-1deg);
+  }
+
+  .img-right {
+    transform: rotate(1deg);
+  }
 }
 
-.artwork-border {
-  position: relative;
-  z-index: 2;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 
-    0 10px 30px rgba(0,0,0,0.1),
-    0 0 0 1px rgba(0,0,0,0.05);
-}
-
-.image-container {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #f5f5f5;
-}
-
-.artwork-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform var(--transition-base);
-}
-
-.hover-overlay {
+// Flowing Text
+.flowing-text {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  top: 75rem;
+  right: 8rem;
+  width: 300px;
+  z-index: 9;
+  text-align: right;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 4rem;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  .text-accent {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-main {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.2;
+  }
 }
 
-.overlay-content {
-  text-align: center;
-  color: white;
+// Small Cluster
+.small-cluster {
+  position: absolute;
+  top: 85rem;
+  left: 4rem;
+  right: 4rem;
+  display: grid;
+  grid-template-columns: 200px 200px 1fr;
+  grid-template-rows: 150px 150px;
+  gap: 2rem;
+  z-index: 7;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 3rem 0;
+  }
+
+  .small-img {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .small-number {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+
+  .img-a {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(-2deg);
+  }
+
+  .img-b {
+    grid-column: 2;
+    grid-row: 2;
+    transform: rotate(3deg);
+  }
+
+  .text-between {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      grid-column: 1 / 3;
+      grid-row: 3;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 2rem;
+      font-weight: 200;
+      color: #ccc;
+      letter-spacing: 0.5rem;
+      margin-bottom: 2rem;
+
+      @media (max-width: 768px) {
+        writing-mode: horizontal-tb;
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+    }
+
+    .location-mark {
+      font-size: 1rem;
+      color: #666;
+      transform: rotate(-90deg);
+
+      @media (max-width: 768px) {
+        transform: none;
+      }
+    }
+  }
 }
 
-.artwork-title {
-  font-size: var(--text-xl);
-  font-weight: 500;
-  margin-bottom: var(--space-2);
+// Final Spread
+.final-spread {
+  position: absolute;
+  top: 115rem;
+  left: 2rem;
+  right: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  z-index: 8;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    grid-template-columns: 1fr;
+    margin: 4rem 0;
+  }
+
+  .signature-img {
+    height: 400px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+
+      .signature-overlay {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .signature-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+      color: white;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      .sig-num {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        opacity: 0.8;
+      }
+
+      .sig-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+      }
+
+      .sig-desc {
+        font-size: 1rem;
+        opacity: 0.9;
+        line-height: 1.4;
+        margin: 0;
+      }
+    }
+  }
+
+  .closing-img {
+    height: 250px;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    align-self: end;
+    transform: rotate(2deg);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .closing-mark {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.95);
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+
+      .closing-num {
+        font-weight: 700;
+        color: #000;
+        margin-right: 0.5rem;
+      }
+
+      .closing-title {
+        color: #333;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
 
-.artwork-number {
-  font-size: var(--text-lg);
-  font-weight: 300;
-  opacity: 0.8;
+// Year Signature
+.year-signature {
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  z-index: 10;
+
+  .year-large {
+    font-size: 6rem;
+    font-weight: 100;
+    color: #eee;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .signature-line {
+    width: 120px;
+    height: 1px;
+    background: #ccc;
+  }
 }
 
-.artwork-frame:hover .hover-overlay {
-  opacity: 1;
+// Corner Accents
+.corner-accents {
+  .corner-tl, .corner-br {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #f0f0f0;
+  }
+
+  .corner-tl {
+    top: 1rem;
+    left: 1rem;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .corner-br {
+    bottom: 1rem;
+    right: 1rem;
+    border-left: none;
+    border-top: none;
+  }
 }
 
-.artwork-frame:hover .artwork-image {
-  transform: scale(1.05);
-}
-
-.artwork-info {
-  padding: var(--space-6) 0 0;
-}
-
-.info-title {
-  font-size: var(--text-xl);
-  font-weight: 500;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-3);
-}
-
-.info-description {
-  font-size: var(--text-base);
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-4);
-}
-
-.info-details {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-.detail-number {
-  font-weight: 600;
-  color: var(--color-accent);
-}
-
-.detail-separator {
-  opacity: 0.5;
-}
-
-.detail-filename {
-  font-family: 'Monaco', 'Menlo', monospace;
-  font-size: var(--text-xs);
-}
-
-/* Enhanced Lightbox */
+// Lightbox Styles
 .lightbox-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: var(--space-4);
+  backdrop-filter: blur(10px);
 }
 
-.lightbox-content {
+.lightbox-container {
   position: relative;
-  width: 100%;
   max-width: 90vw;
   max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.lightbox-background {
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-  z-index: -1;
-}
-
-.bg-texture {
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.02) 1px, transparent 1px),
-    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.015) 1px, transparent 1px);
-  background-size: 60px 60px, 100px 100px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
 .lightbox-close {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   z-index: 10;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  
+  transition: background 0.2s ease;
+
   &:hover {
-    background: rgba(255,255,255,0.2);
-    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.9);
   }
 }
 
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+.lightbox-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 var(--space-4);
-  z-index: 5;
-  pointer-events: none;
-}
+  max-height: 70vh;
 
-.nav-button {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  pointer-events: auto;
-  
-  &:hover:not(:disabled) {
-    background: rgba(255,255,255,0.2);
-    transform: scale(1.1);
-  }
-  
-  &:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-}
-
-.image-counter {
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  padding: var(--space-2) var(--space-4);
-  border-radius: 20px;
-  font-size: var(--text-sm);
-  color: white;
-  font-weight: 500;
-  pointer-events: auto;
-  
-  .separator {
-    margin: 0 var(--space-1);
-    opacity: 0.5;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
@@ -1054,211 +1002,169 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: var(--space-8) 0;
-}
+  background: #f8f9fa;
 
-.image-frame {
-  position: relative;
-  max-width: 100%;
-  max-height: 70vh;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 
-    0 25px 50px -12px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(255,255,255,0.1);
-}
-
-.lightbox-photo {
-  display: block;
-  max-width: 100%;
-  max-height: 70vh;
-  width: auto;
-  height: auto;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 }
 
 .lightbox-info {
-  text-align: center;
-  color: white;
-  max-width: 600px;
-  margin-bottom: var(--space-6);
-}
-
-.info-main {
-  margin-bottom: var(--space-4);
-}
-
-.lightbox-title {
-  font-size: var(--text-2xl);
-  font-weight: 500;
-  margin-bottom: var(--space-3);
-}
-
-.lightbox-description {
-  font-size: var(--text-base);
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.info-meta {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-6);
-  flex-wrap: wrap;
-}
-
-.meta-group {
+  width: 300px;
+  padding: 2rem;
+  background: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.meta-label {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.7;
-  margin-bottom: 2px;
-}
-
-.meta-value {
-  font-size: var(--text-sm);
-  font-weight: 500;
-}
-
-.thumbnail-nav {
-  width: 100%;
-  max-width: 600px;
-}
-
-.thumbnails-container {
-  display: flex;
-  gap: var(--space-2);
   justify-content: center;
-  overflow-x: auto;
-  padding: var(--space-2);
-}
 
-.thumbnail {
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  
-  &.active {
-    transform: scale(1.1);
+  @media (max-width: 768px) {
+    width: 100%;
   }
-}
 
-.thumbnail-frame {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 2px solid transparent;
-  transition: border-color var(--transition-base);
-}
-
-.thumbnail.active .thumbnail-frame {
-  border-color: white;
-}
-
-.thumbnail-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.thumbnail-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.thumbnail-number {
-  color: white;
-  font-size: var(--text-xs);
-  font-weight: 500;
-}
-
-.thumbnail:hover .thumbnail-overlay {
-  opacity: 1;
-}
-
-/* Responsive Design */
-@media (max-width: 767px) {
-  .lightbox-nav {
-    position: static;
-    margin-bottom: var(--space-4);
-    padding: 0;
-    pointer-events: auto;
+  .lightbox-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #333;
   }
-  
-  .nav-button {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .lightbox-image {
-    margin: var(--space-4) 0;
-  }
-  
-  .image-frame {
-    max-height: 50vh;
-  }
-  
-  .thumbnails-container {
-    gap: var(--space-1);
-  }
-  
-  .thumbnail-frame {
-    width: 50px;
-    height: 50px;
-  }
-}
 
-/* Animation Enhancements */
-.zen-fade-in {
-  animation: fadeIn 0.8s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  .lightbox-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0 0 1.5rem 0;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.artwork-frame {
-  animation: slideInUp 0.6s ease-out;
-  animation-fill-mode: both;
-  
-  @for $i from 1 through 7 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{($i - 1) * 0.1}s;
+  .lightbox-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .meta-item {
+      font-size: 0.9rem;
+      color: #999;
     }
   }
 }
 
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) translateX(var(--offset, 0));
+.lightbox-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #f8f9fa;
+  border-top: 1px solid #eee;
+
+  .nav-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background: #f0f0f0;
+      border-color: #ccc;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) translateX(var(--offset, 0));
+
+  .nav-thumbnails {
+    flex: 1;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0 1rem;
+
+    .nav-thumb {
+      width: 60px;
+      height: 40px;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s ease;
+
+      &.active {
+        border-color: #007bff;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }
+
+// Responsive Design
+@media (max-width: 768px) {
+  .portfolio-collage {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .title-block {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 2rem;
+  }
+
+  // Reset all absolute positioning for mobile
+  .hero-piece,
+  .quote-section,
+  .medium-pair,
+  .flowing-text,
+  .small-cluster,
+  .final-spread {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 2rem 0;
+  }
+
+  .year-signature {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+  }
+}
+
+// Print styles
+@media print {
+  .portfolio-collage {
+    background: white !important;
+    color: black !important;
+    padding: 0.5in;
+    page-break-inside: avoid;
+  }
+
+  .lightbox-overlay {
+    display: none !important;
+  }
+
+  .collage-background {
+    display: none;
+  }
+
+  .corner-accents {
+    display: none;
+  }
+ }
 </style> 
