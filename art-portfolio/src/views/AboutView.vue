@@ -53,10 +53,6 @@
                 <p>High School Student at Haidian Kaiwen Academy, Beijing</p>
               </div>
               <div class="overview-item">
-                <h3>🔬 Research</h3>
-                <p>AI Researcher at Myshell.ai & MIT, Co-author at NeurIPS 2025</p>
-              </div>
-              <div class="overview-item">
                 <h3>🚀 Entrepreneurship</h3>
                 <p>Founder of Singularity Academy</p>
               </div>
@@ -127,15 +123,15 @@
                 <div class="achievement-item">
                   <div class="achievement-icon">🚀</div>
                   <div class="achievement-content">
-                    <h4>Hackathon Winner</h4>
-                    <p>3rd Place: PivotHack & Moonshot48 (2025)</p>
+                    <h4>3rd Place Winner</h4>
+                    <p>Hackathon PivotHack(2025)</p>
                   </div>
                 </div>
                 <div class="achievement-item">
-                  <div class="achievement-icon">📝</div>
+                  <div class="achievement-icon">🚀</div>
                   <div class="achievement-content">
-                    <h4>NeurIPS 2025</h4>
-                    <p>Co-author on AI research submission</p>
+                    <h4>3rd Place Winner</h4>
+                    <p>Hackathon Moonshot48 (2025)</p>
                   </div>
                 </div>
               </div>
