@@ -30,15 +30,7 @@
                     <div class="overlay-gradient"></div>
                   </div>
                 </div>
-                <div class="preview-grid">
-                  <div 
-                    v-for="(image, index) in callFromFieldCollection.previewImages.slice(0, 3)"
-                    :key="index"
-                    class="preview-item"
-                  >
-                    <img :src="image.src" :alt="image.alt" class="preview-image" />
-                  </div>
-                </div>
+
               </div>
               
               <div class="collection-content">
@@ -181,7 +173,7 @@ interface Collection {
   year: string
   imageCount: number
   coverImage: string
-  previewImages: Array<{ src: string; alt: string }>
+
   status: 'published' | 'upcoming' | 'planned'
 }
 
@@ -196,11 +188,6 @@ const callFromFieldCollection = ref<Collection>({
   year: '2024',
   imageCount: 7,
   coverImage: '/KyushuJapan/IMG_0012.JPG',
-  previewImages: [
-    { src: '/KyushuJapan/IMG_1715.JPG', alt: "Mountain's Call" },
-    { src: '/KyushuJapan/IMG_0011.JPG', alt: 'Field of Dreams' },
-    { src: '/KyushuJapan/IMG_0015.JPG', alt: 'Golden Hour Meditation' }
-  ],
   status: 'published'
 })
 </script>
@@ -336,36 +323,7 @@ const callFromFieldCollection = ref<Collection>({
   );
 }
 
-.preview-grid {
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
 
-.preview-item {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 2px solid rgba(255,255,255,0.9);
-  backdrop-filter: blur(5px);
-  transition: all var(--transition-base);
-  
-  &:hover {
-    transform: scale(1.1);
-    border-color: white;
-  }
-}
-
-.preview-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .collection-content {
   position: absolute;

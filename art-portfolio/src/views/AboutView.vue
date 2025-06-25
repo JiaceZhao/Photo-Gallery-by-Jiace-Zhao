@@ -307,7 +307,7 @@
 
 <style lang="scss" scoped>
 .about-view {
-  min-height: 100vh;
+    min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f8f8f8 100%);
@@ -1160,6 +1160,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-      }
   }
+}
 </style>
