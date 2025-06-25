@@ -12,7 +12,7 @@ const currentYear = computed(() => new Date().getFullYear())
         <nav class="nav">
           <router-link to="/" class="logo">
             <span class="logo-icon">◦</span>
-            <span class="logo-text">PORTFOLIO</span>
+            <span class="logo-text">JIACE ZHAO</span>
           </router-link>
           
           <div class="nav-links">
@@ -36,15 +36,15 @@ const currentYear = computed(() => new Date().getFullYear())
         <div class="footer-content">
           <div class="footer-info">
             <p class="footer-quote text-muted">
-              "The art of creating is the art of discovering what is essential"
+              "Not an engineer, a poet; not a scientist, an artist."
             </p>
             <p class="footer-copyright text-muted">
-              © {{ currentYear }} Sarah Chen • All rights reserved
+              © {{ currentYear }} Jiace Zhao • All rights reserved
             </p>
           </div>
           <div class="footer-links">
-            <a href="mailto:sarah.chen.art@example.com" class="footer-link">Contact</a>
-            <a href="https://instagram.com/sarahchen.art" class="footer-link">Instagram</a>
+            <a href="mailto:krypotozhao@gmail.com" class="footer-link">Contact</a>
+            <a href="tel:+8615566970454" class="footer-link">Phone</a>
             <a href="/about" class="footer-link">About</a>
           </div>
         </div>

@@ -7,7 +7,7 @@
           <div class="hero-image">
             <div class="image-frame">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                src="/about/jc.jpg" 
                 alt="Portrait of Jiace Zhao - a young artist and photographer with thoughtful expression"
               />
               <div class="image-glow"></div>
@@ -87,22 +87,7 @@
                     <div class="timeline-year">January 2025 - Now</div>
                     <h3>Researcher</h3>
                     <p>Myshell.ai & MIT, lead by Zengyi Qin</p>
-                    <ul class="timeline-details">
-                      <li>Personalize your work experience to the job ad and incorporate important achievements to stand out.</li>
-                      <li>Use strong verbs to describe your responsibilities.</li>
-                      <li>Keep your description to three or four main points.</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-year">June 2025 - Now</div>
-                    <h3>Dev.</h3>
-                    <p>AdventureX, biggest Hackathon in China</p>
-                    <ul class="timeline-details">
-                      <li>Developed the webpage.</li>
-                    </ul>
+
                   </div>
                 </div>
                 <div class="timeline-item">
@@ -111,9 +96,7 @@
                     <div class="timeline-year">Nov. 2024 - Now</div>
                     <h3>Founder</h3>
                     <p>Singularity Academy</p>
-                    <ul class="timeline-details">
-                      <li>Personalize your work experience to the job ad and incorporate important achievements to stand out.</li>
-                    </ul>
+             
                   </div>
                 </div>
               </div>
@@ -315,7 +298,7 @@
 
 // About Hero
 .about-hero {
-  padding: clamp(4rem, 8vw, 6rem) 0 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 0;
   position: relative;
   background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
 }
@@ -323,16 +306,16 @@
 .hero-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    gap: 2.5rem;
     text-align: left;
   }
 }
@@ -348,10 +331,10 @@
   }
 }
 
-.image-frame {
+  .image-frame {
   position: relative;
-  width: clamp(200px, 35vw, 350px);
-  height: clamp(200px, 35vw, 350px);
+  width: clamp(150px, 25vw, 250px);
+  height: clamp(150px, 25vw, 250px);
 
   img {
     width: 100%;
@@ -399,31 +382,31 @@
 }
 
 .about-title {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 300;
   color: var(--zen-black);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1.1;
 }
 
 .about-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--zen-dark-gray);
   font-weight: 400;
   font-style: italic;
   line-height: 1.4;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .about-description {
-  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.95rem, 2vw, 1rem);
   color: var(--zen-dark-gray);
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
   max-width: 500px;
 
   @media (max-width: 767px) {
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
   }
 }
 
@@ -526,41 +509,41 @@
 
 // Philosophy Floating
 .philosophy-floating {
-  padding: 2rem 0 4rem;
+  padding: 1rem 0 2rem;
   position: relative;
   z-index: 10;
 }
 
 .philosophy-card {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(30px);
-  border-radius: 24px;
+  border-radius: 16px;
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.5);
   text-align: center;
-  transform: translateY(-2rem);
+  transform: translateY(-1rem);
 }
 
 .main-quote {
-  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   font-style: italic;
   color: var(--zen-black);
-  line-height: 1.5;
-  margin: 0 0 1.5rem;
+  line-height: 1.4;
+  margin: 0 0 1rem;
   position: relative;
 
   &::before {
     content: '"';
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--zen-accent);
     position: absolute;
-    top: -1rem;
-    left: -1rem;
+    top: -0.5rem;
+    left: -0.5rem;
     line-height: 1;
     opacity: 0.3;
   }
@@ -575,7 +558,7 @@
 
 // Main Content Flow
 .main-content {
-  padding: 2rem 0 4rem;
+  padding: 1rem 0 2rem;
   background: transparent;
 }
 
@@ -583,14 +566,14 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 2.5rem;
+  border-radius: 12px;
+  padding: 1.5rem;
   box-shadow: 
     0 15px 45px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -605,19 +588,19 @@
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 300;
   color: var(--zen-black);
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
+    width: 40px;
     height: 2px;
     background: linear-gradient(90deg, var(--zen-accent), transparent);
   }
@@ -626,7 +609,7 @@
 // Experience Blend
 .experience-blend {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   
   @media (min-width: 968px) {
     grid-template-columns: 1fr 1fr;
@@ -640,10 +623,10 @@
 
 .timeline-item {
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   position: relative;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -703,16 +686,16 @@
 // Skills Grid
 .skills-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .skill-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: 0.8rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 
   &:hover {
@@ -760,19 +743,19 @@
 .education-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .education-item {
-  padding: 1.5rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  border-left: 4px solid var(--zen-accent);
+  border-radius: 8px;
+  border-left: 3px solid var(--zen-accent);
   transition: all 0.3s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.7);
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
 
   .education-content {
@@ -873,22 +856,22 @@
 
 // Research Section
 .research-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .research-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .research-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: 0.8rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 
   &:hover {
@@ -922,25 +905,25 @@
 
 // Achievements Section
 .achievements-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .achievements-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   
   @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
 .achievement-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: 0.8rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 
   &:hover {
@@ -1022,12 +1005,12 @@
 .contact-section {
   position: relative;
   background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-  padding: 0 0 4rem;
+  padding: 0 0 2rem;
 }
 
 .contact-flow {
   position: relative;
-  height: 120px;
+  height: 80px;
   overflow: hidden;
   
   svg {
@@ -1038,31 +1021,31 @@
 }
 
 .contact-content {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .contact-intro {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--zen-dark-gray);
-  margin-bottom: 3rem;
-  line-height: 1.6;
-  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .contact-methods {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   grid-template-columns: 1fr;
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 600px;
     margin: 0 auto;
   }
 }
@@ -1070,13 +1053,13 @@
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   color: var(--zen-dark-gray);
   text-decoration: none;
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-  padding: 1.5rem 2rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 1rem 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
+  border-radius: 12px;
   transition: all 0.4s ease;
   justify-content: center;
   background: rgba(255, 255, 255, 0.4);
@@ -1111,10 +1094,10 @@
 }
 
 .story-paragraph {
-  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.95rem, 2vw, 1rem);
   color: var(--zen-dark-gray);
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 
   &:last-child {
     margin-bottom: 0;
@@ -1132,18 +1115,18 @@
   }
   
   .glass-card {
-    padding: 2rem;
+    padding: 1rem;
   }
   
   .philosophy-card {
-    padding: 2rem 1.5rem;
-    transform: translateY(-1rem);
+    padding: 1.5rem 1rem;
+    transform: translateY(-0.5rem);
   }
   
   .main-quote::before {
-    font-size: 3rem;
-    top: -0.5rem;
-    left: -0.5rem;
+    font-size: 2.5rem;
+    top: -0.3rem;
+    left: -0.3rem;
   }
 }
 
