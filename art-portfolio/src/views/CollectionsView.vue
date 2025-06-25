@@ -64,71 +64,57 @@
       </div>
     </section>
 
-    <!-- Main Gallery Section -->
-    <section class="panoramic-gallery">
-      <div class="container">
-        <div class="gallery-header">
-          <h2 class="gallery-title">Portfolio Collection</h2>
-          <div class="gallery-subtitle">Hasselblad XPan • Panoramic Format</div>
+    <!-- Zen Gallery Section -->
+    <section class="zen-gallery">
+      <div class="gallery-flow">
+        <!-- Minimalist Header -->
+        <div class="zen-header">
+          <div class="header-line"></div>
+          <h2 class="zen-title">Seven Moments</h2>
+          <p class="zen-subtitle">Kyushu, Japan • 2024</p>
+          <div class="header-line"></div>
         </div>
 
-        <div class="photographs-grid">
-          <article
+        <!-- Photo Stream -->
+        <div class="photo-stream">
+          <div
             v-for="(artwork, index) in artworks"
             :key="artwork.id"
-            class="photograph-item"
-            :class="{ 'reverse-layout': index % 2 === 1 }"
+            class="photo-moment"
+            @click="openLightbox(artwork)"
           >
-            <!-- Photograph Container -->
-            <div class="photograph-container" @click="openLightbox(artwork)">
-              <div class="image-frame">
+            <!-- The Photograph (Protagonist) -->
+            <div class="photo-container">
+              <div class="photo-frame">
                 <img 
                   :src="artwork.image" 
                   :alt="artwork.title"
-                  class="panoramic-image"
+                  class="zen-image"
                 />
-                <div class="image-number">{{ String(index + 1).padStart(2, '0') }}</div>
-              </div>
-            </div>
-
-            <!-- Glass Info Box -->
-            <div class="info-glass-box">
-              <div class="glass-background"></div>
-              <div class="info-content">
-                <h3 class="artwork-title">{{ artwork.title }}</h3>
-                <p class="artwork-description">{{ artwork.description }}</p>
-                <div class="artwork-details">
-                  <div class="detail-row">
-                    <span class="detail-label">File</span>
-                    <span class="detail-value">{{ artwork.filename }}</span>
-                  </div>
-                  <div class="detail-row">
-                    <span class="detail-label">Location</span>
-                    <span class="detail-value">{{ artwork.location }}</span>
-                  </div>
-                  <div class="detail-row">
-                    <span class="detail-label">Format</span>
-                    <span class="detail-value">Panoramic 65:24</span>
-                  </div>
+                <div class="photo-overlay">
+                  <div class="moment-number">{{ String(index + 1).padStart(2, '0') }}</div>
                 </div>
               </div>
             </div>
 
-            <!-- Artistic Divider -->
-            <div class="artistic-divider" v-if="index < artworks.length - 1">
-              <svg class="divider-svg" viewBox="0 0 800 40">
-                <defs>
-                  <linearGradient id="dividerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgba(0,0,0,0);stop-opacity:0" />
-                    <stop offset="50%" style="stop-color:rgba(0,0,0,0.2);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgba(0,0,0,0);stop-opacity:0" />
-                  </linearGradient>
-                </defs>
-                <path d="M0,20 Q200,10 400,20 T800,20" stroke="url(#dividerGradient)" stroke-width="1" fill="none"/>
-                <circle cx="400" cy="20" r="2" fill="rgba(0,0,0,0.3)" />
-              </svg>
+            <!-- Subtle Info (Supporting) -->
+            <div class="moment-essence">
+              <h3 class="moment-title">{{ artwork.title }}</h3>
+              <p class="moment-whisper">{{ artwork.description }}</p>
+              
+              <!-- Hidden details that appear on hover -->
+              <div class="moment-details">
+                <span class="detail-whisper">{{ artwork.filename }}</span>
+                <span class="detail-dot">•</span>
+                <span class="detail-whisper">{{ artwork.location }}</span>
+              </div>
             </div>
-          </article>
+
+            <!-- Zen Breathing Space -->
+            <div class="breathing-space" v-if="index < artworks.length - 1">
+              <div class="zen-breath"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -578,142 +564,98 @@ onUnmounted(() => {
   transform: scale(1.05);
 }
 
-// Panoramic Gallery Section
-.panoramic-gallery {
-  padding: var(--space-24) 0;
-  background: white;
+// Zen Gallery Section
+.zen-gallery {
+  padding: var(--space-20) 0 var(--space-32);
+  background: linear-gradient(180deg, white 0%, #fafafa 50%, white 100%);
+  min-height: 100vh;
 }
 
-.gallery-header {
+.gallery-flow {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+// Zen Header
+.zen-header {
   text-align: center;
   margin-bottom: var(--space-20);
-  padding-bottom: var(--space-8);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: relative;
+  padding: var(--space-12) 0;
 }
 
-.gallery-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 300;
+.header-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.3), transparent);
+  margin: 0 auto var(--space-6);
+}
+
+.zen-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 200;
   color: var(--color-text-primary);
-  margin-bottom: var(--space-2);
-  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
 }
 
-.gallery-subtitle {
-  font-size: var(--text-lg);
+.zen-subtitle {
+  font-size: var(--text-base);
   color: var(--color-text-muted);
   font-weight: 400;
-  font-style: italic;
+  margin-bottom: var(--space-6);
+  opacity: 0.8;
 }
 
-// Photographs Grid
-.photographs-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.photograph-item {
-  margin-bottom: var(--space-24);
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--space-12);
-  align-items: center;
-
-  &.reverse-layout {
-    grid-template-columns: 1fr 2fr;
-    
-    .photograph-container {
-      order: 2;
-    }
-    
-    .info-glass-box {
-      order: 1;
-    }
-  }
-
-  @media (max-width: 968px) {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    text-align: center;
-    
-    &.reverse-layout {
-      grid-template-columns: 1fr;
-      
-      .photograph-container,
-      .info-glass-box {
-        order: initial;
-      }
-    }
-  }
-}
-
-// Photograph Container
-.photograph-container {
-  position: relative;
-  cursor: pointer;
-  transition: transform var(--transition-base);
-
-  &:hover {
-    transform: translateY(-5px);
-    
-    .image-frame {
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    }
-  }
-}
-
-.image-frame {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  transition: box-shadow var(--transition-base);
-}
-
-.panoramic-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 65/24; // Hasselblad XPan ratio
-  object-fit: cover;
-}
-
-.image-number {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: rgba(255,255,255,0.9);
-  color: #000;
-  padding: 0.5rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  backdrop-filter: blur(10px);
-  z-index: 2;
-}
-
-// Glass Info Box
-.info-glass-box {
-  position: relative;
-  height: 100%;
-  min-height: 300px;
+// Photo Stream
+.photo-stream {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0;
 }
 
-.glass-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 16px;
+.photo-moment {
+  width: 100%;
+  max-width: 1200px;
+  cursor: pointer;
+  position: relative;
+  
+  &:hover {
+    .zen-image {
+      transform: scale(1.01);
+      filter: contrast(1.05) saturate(1.05);
+    }
+    
+    .moment-details {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .photo-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+// Photo Container (Protagonist)
+.photo-container {
+  width: 100%;
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
   box-shadow: 
-    0 8px 32px rgba(0,0,0,0.1),
-    inset 0 1px 0 rgba(255,255,255,0.5);
+    0 20px 40px -10px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(0,0,0,0.05);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   
   &::before {
     content: '';
@@ -722,84 +664,195 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 1px, transparent 1px),
-      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 20px 20px, 40px 40px;
-    border-radius: inherit;
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+    animation: shimmer 1.2s ease-out;
   }
 }
 
-.info-content {
-  position: relative;
-  z-index: 2;
-  padding: var(--space-8);
-  width: 100%;
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-.artwork-title {
-  font-size: var(--text-2xl);
+.zen-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 65/24; // Panoramic XPan ratio
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  filter: contrast(1.02) saturate(0.98);
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0,0,0,0.1) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(255,255,255,0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.moment-number {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: rgba(255,255,255,0.95);
+  color: var(--color-text-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 20px;
   font-weight: 500;
+  font-size: var(--text-sm);
+  font-family: 'Monaco', monospace;
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+// Moment Essence (Supporting)
+.moment-essence {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.moment-title {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-weight: 300;
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
-  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
-.artwork-description {
+.moment-whisper {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-6);
   font-style: italic;
+  margin-bottom: var(--space-4);
+  opacity: 0.85;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.artwork-details {
+.moment-details {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-bottom: var(--space-2);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
+  gap: var(--space-3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
 }
 
-.detail-label {
-  font-size: var(--text-sm);
+.detail-whisper {
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
+  font-family: 'Monaco', monospace;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.detail-value {
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-  font-weight: 600;
-  font-family: 'Monaco', 'Menlo', monospace;
+.detail-dot {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  font-size: var(--text-xs);
 }
 
-// Artistic Divider
-.artistic-divider {
-  grid-column: 1 / -1;
-  margin: var(--space-16) 0;
-  display: flex;
-  justify-content: center;
-}
-
-.divider-svg {
+// Breathing Space
+.breathing-space {
   width: 100%;
-  max-width: 800px;
-  height: 40px;
-  opacity: 0.7;
+  height: var(--space-32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-16) 0;
+}
+
+.zen-breath {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0,0,0,0.1) 20%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.1) 80%,
+    transparent 100%
+  );
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background: var(--color-text-muted);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .gallery-flow {
+    padding: 0 var(--space-4);
+  }
+  
+  .zen-header {
+    margin-bottom: var(--space-12);
+  }
+  
+  .moment-number {
+    top: var(--space-4);
+    right: var(--space-4);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+  }
+  
+  .moment-essence {
+    padding: var(--space-4) var(--space-2);
+  }
+  
+  .breathing-space {
+    height: var(--space-20);
+    margin: var(--space-8) 0;
+  }
+  
+  .zen-breath {
+    width: 80px;
+  }
+}
+
+// Enhanced Photo Focus
+@media (min-width: 1200px) {
+  .photo-frame:hover {
+    box-shadow: 
+      0 40px 80px -20px rgba(0,0,0,0.2),
+      0 0 0 1px rgba(0,0,0,0.05);
+  }
 }
 
 // Lightbox Styles (keeping existing)
