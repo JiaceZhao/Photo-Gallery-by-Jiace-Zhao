@@ -50,15 +50,11 @@
             <div class="overview-grid">
               <div class="overview-item">
                 <h3>🎓 Education</h3>
-                <p>High School Student at Haidian Kaiwen Academy, Beijing</p>
-              </div>
-              <div class="overview-item">
-                <h3>🚀 Entrepreneurship</h3>
-                <p>Founder of Singularity Academy</p>
+                <p>High School Student at Haidian Kaiwen Academy, Beijing. Previously enrolled in the <strong>Science Innovation Program</strong> at <strong>Tsinghua International School Daoxiang Lake</strong>, a selective STEM-focused curriculum.</p>
               </div>
               <div class="overview-item">
                 <h3>🏆 Achievements</h3>
-                <p>USACO Gold Medal, Multiple Hackathon Winner</p>
+                <p>USA Computing Olympiad Gold Medal, Multiple Hackathon Winner</p>
               </div>
             </div>
           </div>
@@ -107,6 +103,15 @@
                     <p class="role-desc">Educational platform focused on AI and technology advancement</p>
                   </div>
                 </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-year">Nov 2024 - Present</div>
+                    <h3>Co-Founder</h3>
+                    <p><strong>Apply4College</strong></p>
+                    <p class="role-desc">College Application Helper</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -116,7 +121,7 @@
                 <div class="achievement-item">
                   <div class="achievement-icon">🏆</div>
                   <div class="achievement-content">
-                    <h4>USACO Gold Medal</h4>
+                    <h4>USA Computing Olympiad Gold Medal</h4>
                     <p>2023 · Currently Platinum Division</p>
                   </div>
                 </div>
@@ -578,6 +583,28 @@
   color: var(--zen-dark-gray) !important;
   margin-top: 0.3rem !important;
   font-style: italic;
+}
+
+// Strong text styling
+strong {
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+}
+
+// Ensure strong tags work in all contexts
+.overview-item strong,
+.research-content strong,
+.timeline-content strong,
+.achievement-content strong,
+.glass-card strong {
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+}
+
+// Specifically target paragraph strong tags
+p strong {
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
 }
 
 // Timeline
