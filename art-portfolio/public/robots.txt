@@ -1,0 +1,36 @@
+# Robots.txt for Jiace Zhao Photography Portfolio
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Allow specific search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# Disallow crawling of potential sensitive areas (if any)
+Disallow: /admin/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /src/
+
+# Point to sitemap
+Sitemap: https://jczhao.info/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1 

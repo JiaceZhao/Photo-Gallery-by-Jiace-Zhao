@@ -1,0 +1,41 @@
+# The humans responsible & technology colophon
+
+/* TEAM */
+
+Photographer & Visual Artist: Jiace Zhao (赵嘉策)
+Contact: krypotozhao@gmail.com
+Phone: +86 15566970454
+Location: Kyushu, Japan
+Quote: "Not an engineer, a poet; not a scientist, an artist."
+
+/* THANKS */
+
+Inspiration: The natural landscapes of Asū, Kyushu, Japan
+Philosophy: "In the fields of Asū, Kyushu, escaping from the rumbustious city, I found the call from the field, the inner piece."
+
+/* SITE */
+
+Last update: 2024/12/25
+Language: English / 中文 / 日本語
+Doctype: HTML5
+IDE: Visual Studio Code
+
+/* TECHNOLOGIES */
+
+Frontend: Vue.js 3, TypeScript, Vite
+Styling: SCSS, CSS Custom Properties
+Photography: Film and Digital
+Collection: "Call from the Field / 野の呼び声"
+Featured Location: Asū, Kyushu, Japan
+Date: January 2024
+
+/* ART STATEMENT */
+
+Photography Style: Landscape, Nature, Fine Art
+Aesthetic: Minimalist, Zen-inspired, Contemplative
+Equipment: Various film and digital cameras
+Subject Matter: Rural landscapes, mountains, traditional architecture
+Color Palette: Natural earth tones, seasonal variations
+Composition: Wide panoramic formats, intimate square compositions
+
+"Every frame captures a moment of dialogue between human consciousness and the natural world." 
