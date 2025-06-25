@@ -12,17 +12,17 @@
             </h1>
             <div class="collection-quote">
               <blockquote>
-                "In the fields of Kyushu, where ancient rhythms meet eternal skies,<br>
-                every blade of grass holds a story of time itself."
+                "In the fields of Asū, Kyushu, escaping from the rumbustious city,<br>
+                I found the call from the field, the inner piece."
               </blockquote>
-              <cite>— A meditation on landscape</cite>
+              <cite>— Jiace Zhao ｜ 赵嘉策</cite>
             </div>
             <div class="collection-meta">
               <div class="meta-item">
                 <span class="meta-icon">📍</span>
                 <div>
                   <span class="meta-label">Location</span>
-                  <span class="meta-value">Kyushu, Japan</span>
+                  <span class="meta-value">Asū, Kyushu, Japan</span>
                 </div>
               </div>
               <div class="meta-item">
@@ -36,30 +36,12 @@
                 <span class="meta-icon">🗓</span>
                 <div>
                   <span class="meta-label">Year</span>
-                  <span class="meta-value">2024</span>
+                  <span class="meta-value">Jan, 2024</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="hero-visual">
-            <div class="featured-frame">
-              <div class="frame-border"></div>
-              <div class="featured-image">
-                <img 
-                  :src="artworks[0].image" 
-                  :alt="artworks[0].title"
-                  class="hero-photo"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-gradient"></div>
-                </div>
-              </div>
-              <div class="image-caption">
-                <span class="caption-title">{{ artworks[0].title }}</span>
-                <span class="caption-text">Opening the collection</span>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
     </section>
@@ -70,51 +52,82 @@
         <!-- Minimalist Header -->
         <div class="zen-header">
           <div class="header-line"></div>
-          <h2 class="zen-title">Seven Moments</h2>
-          <p class="zen-subtitle">Kyushu, Japan • 2024</p>
+          <h2 class="zen-title">Nine Moments</h2>
+          <p class="zen-subtitle">Asū, Kyushu, Japan • Jan, 2024</p>
           <div class="header-line"></div>
         </div>
 
-        <!-- Photo Stream -->
+                <!-- Photo Stream -->
         <div class="photo-stream">
-          <div
-            v-for="(artwork, index) in artworks"
-            :key="artwork.id"
-            class="photo-moment"
-            @click="openLightbox(artwork)"
-          >
-            <!-- The Photograph (Protagonist) -->
-            <div class="photo-container">
-              <div class="photo-frame">
-                <img 
-                  :src="artwork.image" 
-                  :alt="artwork.title"
-                  class="zen-image"
-                />
-                <div class="photo-overlay">
-                  <div class="moment-number">{{ String(index + 1).padStart(2, '0') }}</div>
+          <template v-for="(group, groupIndex) in groupedArtworks" :key="`group-${groupIndex}`">
+            <!-- Single Panoramic Image -->
+            <div
+              v-if="group.type === 'single'"
+              class="photo-moment"
+              @click="openLightbox(group.artworks[0])"
+            >
+              <div class="photo-container">
+                <div class="photo-frame">
+                  <img 
+                    :src="group.artworks[0].image" 
+                    :alt="group.artworks[0].title"
+                    class="zen-image"
+                  />
+                  <div class="moment-number">{{ String(group.artworks[0].originalIndex + 1).padStart(2, '0') }}</div>
+                </div>
+              </div>
+
+              <div class="moment-essence">
+                <h3 class="moment-title">{{ group.artworks[0].title }}</h3>
+                <p class="moment-whisper">{{ group.artworks[0].description }}</p>
+                
+                <div class="moment-details">
+                  <span class="detail-whisper">{{ group.artworks[0].filename }}</span>
+                  <span class="detail-dot">•</span>
+                  <span class="detail-whisper">{{ group.artworks[0].location }}</span>
                 </div>
               </div>
             </div>
 
-            <!-- Subtle Info (Supporting) -->
-            <div class="moment-essence">
-              <h3 class="moment-title">{{ artwork.title }}</h3>
-              <p class="moment-whisper">{{ artwork.description }}</p>
-              
-              <!-- Hidden details that appear on hover -->
-              <div class="moment-details">
-                <span class="detail-whisper">{{ artwork.filename }}</span>
-                <span class="detail-dot">•</span>
-                <span class="detail-whisper">{{ artwork.location }}</span>
+            <!-- Dual Square Images -->
+            <div
+              v-else-if="group.type === 'dual'"
+              class="photo-moment dual-moment"
+            >
+              <div class="dual-photo-container">
+                <div 
+                  v-for="artwork in group.artworks" 
+                  :key="artwork.id"
+                  class="square-photo-frame"
+                  @click="openLightbox(artwork)"
+                >
+                  <img 
+                    :src="artwork.image" 
+                    :alt="artwork.title"
+                    class="zen-square-image"
+                  />
+                  <div class="moment-number">{{ String(artwork.originalIndex + 1).padStart(2, '0') }}</div>
+                </div>
+              </div>
+
+              <div class="dual-moment-essence">
+                <div class="dual-titles">
+                  <h3 class="moment-title">{{ group.artworks[0].title }}</h3>
+                  <span class="title-divider">×</span>
+                  <h3 class="moment-title">{{ group.artworks[1].title }}</h3>
+                </div>
+                <div class="dual-descriptions">
+                  <p class="moment-whisper">{{ group.artworks[0].description }}</p>
+                  <p class="moment-whisper">{{ group.artworks[1].description }}</p>
+                </div>
               </div>
             </div>
 
             <!-- Zen Breathing Space -->
-            <div class="breathing-space" v-if="index < artworks.length - 1">
+            <div class="breathing-space" v-if="groupIndex < groupedArtworks.length - 1">
               <div class="zen-breath"></div>
             </div>
-          </div>
+          </template>
         </div>
       </div>
     </section>
@@ -200,21 +213,22 @@ interface Artwork {
   image: string
   filename: string
   location: string
+  format?: 'square' | 'panoramic'
 }
 
 const artworks = ref<Artwork[]>([
   {
     id: 1,
-    title: "Mountain's Call",
-    description: "Where earth meets sky in perfect harmony, speaking in the ancient language of stone and cloud.",
-    image: "/KyushuJapan/IMG_1715.JPG",
+    title: "Under the Mountain",
+    description: "Mountain Range cuts the sky in half, one for the peasants, one for the gods.",
+    image: "/KyushuJapan/IMG_0016.JPG",
     filename: "IMG_1715.JPG",
     location: "Kyushu, Japan"
   },
   {
     id: 2,
-    title: "Field of Dreams",
-    description: "Rolling landscapes unfold like memories, each hill a chapter in the story of the land.",
+    title: "Weeds",
+    description: "Growing",
     image: "/KyushuJapan/IMG_0011.JPG",
     filename: "IMG_0011.JPG",
     location: "Kyushu, Japan"
@@ -237,8 +251,8 @@ const artworks = ref<Artwork[]>([
   },
   {
     id: 5,
-    title: "Horizon's Promise",
-    description: "Where the horizon meets hope, infinite possibilities stretch beyond the visible world.",
+    title: "Next to the Mountain",
+    description: "Swelling upon the ground, next to the mountain.",
     image: "/KyushuJapan/IMG_0014.JPG",
     filename: "IMG_0014.JPG",
     location: "Kyushu, Japan"
@@ -251,11 +265,30 @@ const artworks = ref<Artwork[]>([
     filename: "IMG_0015.JPG",
     location: "Kyushu, Japan"
   },
+
   {
     id: 7,
-    title: "Silent Witness",
-    description: "Standing as a silent witness to time's passage, this moment captures eternity in a single frame.",
-    image: "/KyushuJapan/IMG_0016.JPG",
+    title: "Lakeside",
+    description: "Where tradition meets nature, a peaceful dwelling rests beside still waters, embraced by autumn's palette.",
+    image: "/KyushuJapan/IMG_5343.JPG",
+    filename: "IMG_5343.JPG",
+    location: "Asū, Kyushu, Japan",
+    format: "square"
+  },
+  {
+    id: 8,
+    title: "无题",
+    description: ".",
+    image: "/KyushuJapan/IMG_5344.JPG",
+    filename: "IMG_5344.JPG", 
+    location: "Asū, Kyushu, Japan",
+    format: "square"
+  },
+  {
+    id: 9,
+    title: "Living in the Green House",
+    description: "Nurture, grow, and live.",
+    image: "/KyushuJapan/IMG_1715.JPG",
     filename: "IMG_0016.JPG",
     location: "Kyushu, Japan"
   }
@@ -265,6 +298,38 @@ const lightboxVisible = ref(false)
 const currentIndex = ref(0)
 
 const currentArtwork = computed(() => artworks.value[currentIndex.value])
+
+// Group artworks for display
+const groupedArtworks = computed(() => {
+  const groups = []
+  const artworksWithIndex = artworks.value.map((artwork, index) => ({
+    ...artwork,
+    originalIndex: index
+  }))
+  
+  let i = 0
+  while (i < artworksWithIndex.length) {
+    const current = artworksWithIndex[i]
+    const next = artworksWithIndex[i + 1]
+    
+    // Check if current and next are both square images
+    if (current.format === 'square' && next?.format === 'square') {
+      groups.push({
+        type: 'dual',
+        artworks: [current, next]
+      })
+      i += 2
+    } else {
+      groups.push({
+        type: 'single',
+        artworks: [current]
+      })
+      i += 1
+    }
+  }
+  
+  return groups
+})
 
 const openLightbox = (artwork: Artwork) => {
   currentIndex.value = artworks.value.findIndex(a => a.id === artwork.id)
@@ -624,18 +689,9 @@ onUnmounted(() => {
   position: relative;
   
   &:hover {
-    .zen-image {
-      transform: scale(1.01);
-      filter: contrast(1.05) saturate(1.05);
-    }
-    
     .moment-details {
       opacity: 1;
       transform: translateY(0);
-    }
-    
-    .photo-overlay {
-      opacity: 1;
     }
   }
 }
@@ -655,32 +711,9 @@ onUnmounted(() => {
   box-shadow: 
     0 20px 40px -10px rgba(0,0,0,0.15),
     0 0 0 1px rgba(0,0,0,0.05);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: 2;
-    pointer-events: none;
-  }
-  
-  &:hover::before {
-    opacity: 1;
-    animation: shimmer 1.2s ease-out;
-  }
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
+
 
 .zen-image {
   width: 100%;
@@ -688,27 +721,107 @@ onUnmounted(() => {
   display: block;
   aspect-ratio: 65/24; // Panoramic XPan ratio
   object-fit: cover;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  filter: contrast(1.02) saturate(0.98);
 }
 
-.photo-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(0,0,0,0.1) 0%,
-    transparent 30%,
-    transparent 70%,
-    rgba(255,255,255,0.05) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
+// Dual Square Images Layout
+.dual-moment {
+  .photo-container {
+    display: none; // Hide the regular container for dual layout
+  }
 }
+
+.dual-photo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  width: 100%;
+  margin-bottom: var(--space-8);
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.square-photo-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px -10px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.zen-square-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1; // Square ratio
+  object-fit: cover;
+}
+
+.dual-moment-essence {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dual-titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: var(--space-2);
+    
+    .title-divider {
+      display: none;
+    }
+  }
+  
+  .moment-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+}
+
+.title-divider {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  opacity: 0.5;
+  font-weight: 300;
+}
+
+.dual-descriptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  
+  .moment-whisper {
+    margin: 0;
+    font-size: var(--text-sm);
+    max-width: none;
+  }
+}
+
+
 
 .moment-number {
   position: absolute;
@@ -846,14 +959,7 @@ onUnmounted(() => {
   }
 }
 
-// Enhanced Photo Focus
-@media (min-width: 1200px) {
-  .photo-frame:hover {
-    box-shadow: 
-      0 40px 80px -20px rgba(0,0,0,0.2),
-      0 0 0 1px rgba(0,0,0,0.05);
-  }
-}
+
 
 // Lightbox Styles (keeping existing)
 .lightbox-overlay {
