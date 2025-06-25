@@ -38,158 +38,38 @@
       </div>
     </section>
 
-    <!-- Philosophy Quote - Floating -->
-    <section class="philosophy-floating">
-      <div class="zen-section">
-        <div class="philosophy-card">
-          <blockquote class="main-quote">
-            "Not an engineer, a poet; not a scientist, an artist."
-          </blockquote>
-          <cite class="quote-attribution">— Personal philosophy, 2025</cite>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Main Content - Organic Flow -->
     <section class="main-content">
       <div class="zen-section">
         <div class="content-flow">
-          <!-- Story & Journey -->
-          <div class="story-section glass-card">
-            <h2 class="section-title">My Journey</h2>
-            <div class="story-text">
-              <p class="story-paragraph">
-                My artistic journey began at the intersection of two seemingly different worlds: the precise logic of code 
-                and the fluid creativity of visual storytelling. Armed with my Hasselblad X1D2, I explore how technology 
-                can enhance rather than replace the human eye.
-              </p>
-              <p class="story-paragraph">
-                As a high school student passionate about both artificial intelligence and photography, I've discovered that 
-                the best art emerges when technical mastery meets creative vision. Whether I'm developing machine learning 
-                models or capturing the perfect light, I'm always seeking that moment where precision becomes poetry.
-              </p>
-              <p class="story-paragraph">
-                Through my photography portfolio and technical projects, I aim to show how the next generation 
-                can use technology as a canvas for artistic expression, creating work that is both technically sophisticated 
-                and emotionally resonant.
-              </p>
-            </div>
-          </div>
-
-          <!-- Timeline & Skills Blend -->
-          <div class="experience-blend">
-            <div class="timeline-section glass-card">
-              <h2 class="section-title">Work Experience</h2>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-year">January 2025 - Now</div>
-                    <h3>Researcher</h3>
-                    <p>Myshell.ai & MIT, lead by Zengyi Qin</p>
-
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-year">Nov. 2024 - Now</div>
-                    <h3>Founder</h3>
-                    <p>Singularity Academy</p>
-             
-                  </div>
-                </div>
+          <!-- Quick Overview -->
+          <div class="overview-section glass-card">
+            <h2 class="section-title">Overview</h2>
+            <div class="overview-grid">
+              <div class="overview-item">
+                <h3>🎓 Education</h3>
+                <p>High School Student at Haidian Kaiwen Academy, Beijing</p>
               </div>
-            </div>
-
-            <div class="skills-section glass-card">
-              <h2 class="section-title">Skills</h2>
-              <div class="skills-grid">
-                <div class="skill-item">
-                  <div class="skill-icon">💻</div>
-                  <div class="skill-content">
-                    <h3>Software Engineering <span class="skill-level">◾◾◾◾</span></h3>
-                    <p>Swift, Xcode, Go/Gin, TypeScript, JavaScript, Vue, Python, Java, C++</p>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-icon">🔧</div>
-                  <div class="skill-content">
-                    <h3>Hardware Engineering <span class="skill-level">◾◾</span></h3>
-                    <p>Fusion 360, EDA Tools, PCB Design</p>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-icon">🎨</div>
-                  <div class="skill-content">
-                    <h3>Design <span class="skill-level">◾◾</span></h3>
-                    <p>Figma, Adobe Illustrator</p>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-icon">🤖</div>
-                  <div class="skill-content">
-                    <h3>Deep Learning <span class="skill-level">◾◾◾◾</span></h3>
-                    <p>TensorFlow, PyTorch</p>
-                  </div>
-                </div>
+              <div class="overview-item">
+                <h3>🔬 Research</h3>
+                <p>AI Researcher at Myshell.ai & MIT, Co-author at NeurIPS 2025</p>
+              </div>
+              <div class="overview-item">
+                <h3>🚀 Entrepreneurship</h3>
+                <p>Founder of Singularity Academy</p>
+              </div>
+              <div class="overview-item">
+                <h3>🏆 Achievements</h3>
+                <p>USACO Gold Medal, Multiple Hackathon Winner</p>
               </div>
             </div>
           </div>
 
-          <!-- Education & Languages -->
-          <div class="experience-blend">
-            <div class="education-section glass-card">
-              <h2 class="section-title">Education</h2>
-              <div class="education-grid">
-                <div class="education-item">
-                  <div class="education-content">
-                    <div class="education-year">2024-2026</div>
-                    <h3>Haidian Kaiwen Academy</h3>
-                    <p>Highschool, Grades 11-12</p>
-                    <p class="education-location">Beijing, China</p>
-                  </div>
-                </div>
-                <div class="education-item">
-                  <div class="education-content">
-                    <div class="education-year">2022-2024</div>
-                    <h3>Tsinghua International School Daoxiang Lake</h3>
-                    <p>High School, Grades 9-10</p>
-                    <p class="education-location">Beijing, China</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="languages-section glass-card">
-              <h2 class="section-title">Languages</h2>
-              <div class="languages-grid">
-                <div class="language-item">
-                  <h3>Chinese <span class="skill-level">◾◾◾◾◾</span></h3>
-                </div>
-                <div class="language-item">
-                  <h3>English <span class="skill-level">◾◾◾◾</span></h3>
-                </div>
-                <div class="language-item">
-                  <h3>Spanish <span class="skill-level">◾</span></h3>
-                </div>
-              </div>
-
-              <h2 class="section-title" style="margin-top: 2rem;">Side Hustles</h2>
-              <div class="side-hustles">
-                <div class="hustle-item">
-                  <h3>Project Name</h3>
-                  <ul>
-                    <li>Photography Portfolio</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Research -->
+          <!-- Research Highlights -->
           <div class="research-section glass-card">
-            <h2 class="section-title">Research</h2>
+            <h2 class="section-title">Research & Publications</h2>
             <div class="research-grid">
               <div class="research-item">
                 <div class="research-icon">📝</div>
@@ -208,30 +88,79 @@
             </div>
           </div>
 
-          <!-- Achievements -->
-          <div class="achievements-section glass-card">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achievements-grid">
-              <div class="achievement-item">
-                <div class="achievement-icon">🏆</div>
-                <div class="achievement-content">
-                  <h4>USA Computing Olympiad (USACO)</h4>
-                  <p>Gold Medal, 2023. Currently Platinum Division</p>
+          <!-- Work Experience & Achievements -->
+          <div class="experience-blend">
+            <div class="timeline-section glass-card">
+              <h2 class="section-title">Experience</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-year">Jan 2025 - Present</div>
+                    <h3>AI Researcher</h3>
+                    <p><strong>Myshell.ai & MIT</strong> · Led by Zengyi Qin</p>
+                    <p class="role-desc">Developing super-scalable distributed data engines for generalizable computer agents</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-year">Nov 2024 - Present</div>
+                    <h3>Founder</h3>
+                    <p><strong>Singularity Academy</strong></p>
+                    <p class="role-desc">Educational platform focused on AI and technology advancement</p>
+                  </div>
                 </div>
               </div>
-              <div class="achievement-item">
-                <div class="achievement-icon">🚀</div>
-                <div class="achievement-content">
-                  <h4>PivotHack Hackathon</h4>
-                  <p>3rd Place Winner, 2025</p>
+            </div>
+
+            <div class="achievements-section glass-card">
+              <h2 class="section-title">Key Achievements</h2>
+              <div class="achievements-grid">
+                <div class="achievement-item">
+                  <div class="achievement-icon">🏆</div>
+                  <div class="achievement-content">
+                    <h4>USACO Gold Medal</h4>
+                    <p>2023 · Currently Platinum Division</p>
+                  </div>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-icon">🚀</div>
+                  <div class="achievement-content">
+                    <h4>Hackathon Winner</h4>
+                    <p>3rd Place: PivotHack & Moonshot48 (2025)</p>
+                  </div>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-icon">📝</div>
+                  <div class="achievement-content">
+                    <h4>NeurIPS 2025</h4>
+                    <p>Co-author on AI research submission</p>
+                  </div>
                 </div>
               </div>
-              <div class="achievement-item">
-                <div class="achievement-icon">🌙</div>
-                <div class="achievement-content">
-                  <h4>Moonshot48 Hackathon</h4>
-                  <p>3rd Place Winner, 2025</p>
-                </div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="skills-section glass-card">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-compact">
+              <div class="skill-category">
+                <h3>Programming</h3>
+                <p>Python, Swift, Go, TypeScript, JavaScript, Java, C++</p>
+              </div>
+              <div class="skill-category">
+                <h3>AI/ML</h3>
+                <p>TensorFlow, PyTorch, Computer Vision, Robotics</p>
+              </div>
+              <div class="skill-category">
+                <h3>Development</h3>
+                <p>Vue.js, Xcode, Git, Web Technologies</p>
+              </div>
+              <div class="skill-category">
+                <h3>Design & Hardware</h3>
+                <p>Figma, Fusion 360, PCB Design, EDA Tools</p>
               </div>
             </div>
           </div>
@@ -507,58 +436,11 @@
   }
 }
 
-// Philosophy Floating
-.philosophy-floating {
-  padding: 1rem 0 2rem;
-  position: relative;
-  z-index: 10;
-}
 
-.philosophy-card {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(30px);
-  border-radius: 16px;
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  transform: translateY(-1rem);
-}
-
-.main-quote {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  font-style: italic;
-  color: var(--zen-black);
-  line-height: 1.4;
-  margin: 0 0 1rem;
-  position: relative;
-
-  &::before {
-    content: '"';
-    font-size: 3rem;
-    color: var(--zen-accent);
-    position: absolute;
-    top: -0.5rem;
-    left: -0.5rem;
-    line-height: 1;
-    opacity: 0.3;
-  }
-}
-
-.quote-attribution {
-  font-size: 1rem;
-  color: var(--zen-gray);
-  font-style: normal;
-  font-weight: 500;
-}
 
 // Main Content Flow
 .main-content {
-  padding: 1rem 0 2rem;
+  padding: 0.5rem 0 1rem;
   background: transparent;
 }
 
@@ -566,7 +448,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .glass-card {
@@ -614,6 +496,92 @@
   @media (min-width: 968px) {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+// Overview Section
+.overview-section {
+  margin-bottom: 0.5rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.overview-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border-left: 3px solid var(--zen-accent);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--zen-black);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: var(--zen-dark-gray);
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Compact Skills
+.skills-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill-category {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--zen-black);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: var(--zen-dark-gray);
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Role descriptions
+.role-desc {
+  font-size: 0.85rem !important;
+  color: var(--zen-dark-gray) !important;
+  margin-top: 0.3rem !important;
+  font-style: italic;
 }
 
 // Timeline
@@ -787,72 +755,7 @@
   }
 }
 
-// Languages Section
-.languages-section {
-  flex: 1;
-}
 
-.languages-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.language-item {
-  padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.7);
-    transform: translateY(-2px);
-  }
-
-  h3 {
-    font-size: 1rem;
-    color: var(--zen-black);
-    margin: 0;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-}
-
-.side-hustles {
-  .hustle-item {
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.7);
-      transform: translateY(-2px);
-    }
-
-    h3 {
-      font-size: 1rem;
-      color: var(--zen-black);
-      margin: 0 0 0.5rem 0;
-      font-weight: 600;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 1.2rem;
-      list-style-type: disc;
-
-      li {
-        font-size: 0.95rem;
-        color: var(--zen-dark-gray);
-        line-height: 1.5;
-      }
-    }
-  }
-}
 
 // Research Section
 .research-section {
@@ -1088,21 +991,7 @@
   }
 }
 
-// Story Text
-.story-text {
-  line-height: 1.7;
-}
 
-.story-paragraph {
-  font-size: clamp(0.95rem, 2vw, 1rem);
-  color: var(--zen-dark-gray);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
 // Mobile Optimizations
 @media (max-width: 768px) {
@@ -1110,23 +999,16 @@
     grid-template-columns: 1fr;
   }
   
-  .recognition-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .glass-card {
     padding: 1rem;
   }
   
-  .philosophy-card {
-    padding: 1.5rem 1rem;
-    transform: translateY(-0.5rem);
+  .overview-grid {
+    grid-template-columns: 1fr;
   }
   
-  .main-quote::before {
-    font-size: 2.5rem;
-    top: -0.3rem;
-    left: -0.3rem;
+  .skills-compact {
+    grid-template-columns: 1fr;
   }
 }
 
