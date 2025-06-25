@@ -30,7 +30,7 @@ Disallow: /node_modules/
 Disallow: /src/
 
 # Point to sitemap
-Sitemap: https://jczhao.info/sitemap.xml
+Sitemap: https://www.jczhao.info/sitemap.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1 
