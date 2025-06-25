@@ -91,4 +91,17 @@
     </image:image>
   </url>
 
+  <!-- Static Assets - Important Images -->
+  <url>
+    <loc>https://jczhao.info/favicon-photo.jpg</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://jczhao.info/favicon-photo.jpg</image:loc>
+      <image:title>Jiace Zhao Photography Favicon</image:title>
+      <image:caption>Site favicon featuring representative photography by Jiace Zhao</image:caption>
+    </image:image>
+  </url>
+
 </urlset> 
