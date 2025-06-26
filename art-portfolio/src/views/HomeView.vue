@@ -236,25 +236,7 @@ const featuredCollections = ref<Collection[]>([
     </section>
 
     <!-- Call to Action -->
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2 class="cta-title">Begin Your Journey</h2>
-          <p class="cta-description">
-            Discover the complete photographic collections and immerse yourself 
-            in moments of contemplative beauty.
-          </p>
-          <div class="cta-actions">
-            <router-link to="/collections" class="btn btn-primary btn-lg">
-              View Call from the Field
-            </router-link>
-            <router-link to="/about" class="btn btn-outline btn-lg">
-              Meet the Artist
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
+    
   </div>
 </template>
 
