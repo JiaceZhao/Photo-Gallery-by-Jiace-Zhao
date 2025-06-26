@@ -11,8 +11,7 @@ const router = createRouter({
     },
     {
       path: '/gallery',
-      name: 'gallery',
-      component: () => import('../views/GalleryView.vue'),
+      redirect: '/'
     },
     {
       path: '/collections',

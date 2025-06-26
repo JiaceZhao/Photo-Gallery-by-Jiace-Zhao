@@ -74,7 +74,7 @@ const featuredCollections = ref<Collection[]>([
               where silence speaks louder than words and simplicity reveals infinite depth.
             </p>
             <div class="hero-actions">
-              <router-link to="/gallery" class="btn btn-primary btn-lg">
+              <router-link to="/collections" class="btn btn-primary btn-lg">
                 Explore Collections
               </router-link>
               <router-link to="/about" class="btn btn-secondary btn-lg">
@@ -179,7 +179,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'call-from-the-field' ? '/collections' : '/gallery'"
+                  :to="collection.id === 'call-from-the-field' ? '/collections' : '/collections'"
                   class="view-btn"
                 >
                   View Collection
@@ -197,6 +197,44 @@ const featuredCollections = ref<Collection[]>([
       </div>
     </section>
 
+    <!-- Collection Philosophy -->
+    <section class="process-section">
+      <div class="container">
+        <div class="process-content">
+          <div class="process-text">
+            <h2 class="process-title">The Collection Philosophy</h2>
+            <p class="process-description">
+              Each collection represents a sustained meditation on a particular theme or place. 
+              Rather than individual moments, these series capture the deeper rhythms and 
+              patterns that emerge when we spend time truly observing and listening to our environment.
+            </p>
+            <div class="process-principles">
+              <div class="principle">
+                <h4 class="principle-title">Immersion</h4>
+                <p class="principle-text">Extended time spent in place, allowing the landscape to reveal its secrets</p>
+              </div>
+              <div class="principle">
+                <h4 class="principle-title">Patience</h4>
+                <p class="principle-text">Waiting for the moment when light, form, and meaning converge</p>
+              </div>
+              <div class="principle">
+                <h4 class="principle-title">Reverence</h4>
+                <p class="principle-text">Approaching each scene with respect for its inherent beauty and wisdom</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="process-visual">
+            <div class="visual-elements">
+              <div class="element-circle"></div>
+              <div class="element-line"></div>
+              <div class="element-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Call to Action -->
     <section class="cta">
       <div class="container">
@@ -207,8 +245,8 @@ const featuredCollections = ref<Collection[]>([
             in moments of contemplative beauty.
           </p>
           <div class="cta-actions">
-            <router-link to="/gallery" class="btn btn-primary btn-lg">
-              Explore All Collections
+            <router-link to="/collections" class="btn btn-primary btn-lg">
+              View Call from the Field
             </router-link>
             <router-link to="/about" class="btn btn-outline btn-lg">
               Meet the Artist
@@ -670,6 +708,140 @@ const featuredCollections = ref<Collection[]>([
   }
 }
 
+/* Process Section */
+.process-section {
+  padding: var(--space-20) 0;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+}
+
+.process-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-16);
+  }
+}
+
+.process-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.process-description {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.process-principles {
+  display: grid;
+  gap: var(--space-6);
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+.principle {
+  padding: var(--space-4);
+  background: rgba(255,255,255,0.8);
+  border-radius: 12px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.principle-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.principle-text {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.process-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-elements {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.element-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.element-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 0.5;
+  transform: translateY(-50%);
+}
+
+.element-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px var(--color-accent);
+    opacity: 0.8;
+  }
+  to {
+    box-shadow: 0 0 20px var(--color-accent);
+    opacity: 1;
+  }
+}
+
 /* Call to Action */
 .cta {
   padding: var(--space-20) 0;
@@ -827,6 +999,14 @@ const featuredCollections = ref<Collection[]>([
   }
   
   .collections-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-principles {
     grid-template-columns: 1fr;
   }
 }

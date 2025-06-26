@@ -17,7 +17,6 @@ const currentYear = computed(() => new Date().getFullYear())
           
           <div class="nav-links">
             <router-link to="/" class="nav-link">Home</router-link>
-            <router-link to="/gallery" class="nav-link">Collections</router-link>
             <router-link to="/collections" class="nav-link">Call from the Field</router-link>
             <router-link to="/about" class="nav-link">About</router-link>
           </div>

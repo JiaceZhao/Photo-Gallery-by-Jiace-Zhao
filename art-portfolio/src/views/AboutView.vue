@@ -24,7 +24,7 @@
             </p>
             <div class="hero-actions">
               <a href="#contact" class="cta-button primary">Get in Touch</a>
-              <a href="/gallery" class="cta-button secondary">View Work</a>
+              <a href="/collections" class="cta-button secondary">View Work</a>
             </div>
           </div>
         </div>
