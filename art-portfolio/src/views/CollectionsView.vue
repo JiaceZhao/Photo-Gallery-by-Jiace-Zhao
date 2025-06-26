@@ -12,7 +12,7 @@
             </h1>
             <div class="collection-quote">
               <blockquote>
-                "In the fields of Asū, Kyushu, escaping from the rumbustious city,<br>
+                "In the fields of Aso, Kyushu, escaping from the rumbustious city,<br>
                 I found the call from the field, the inner piece."
               </blockquote>
               <cite>— Jiace Zhao ｜ 赵嘉策</cite>
@@ -22,7 +22,7 @@
                 <span class="meta-icon">📍</span>
                 <div>
                   <span class="meta-label">Location</span>
-                  <span class="meta-value">Asū, Kyushu, Japan</span>
+                  <span class="meta-value">阿蘇 | Aso, Kyushu, Japan </span>
                 </div>
               </div>
               <div class="meta-item">
@@ -53,7 +53,7 @@
         <div class="zen-header">
           <div class="header-line"></div>
           <h2 class="zen-title">Nine Moments</h2>
-          <p class="zen-subtitle">Asū, Kyushu, Japan • Jan, 2024</p>
+          <p class="zen-subtitle">Aso, Kyushu, Japan • Jan, 2024</p>
           <div class="header-line"></div>
         </div>
 
@@ -272,7 +272,7 @@ const artworks = ref<Artwork[]>([
     description: "Where tradition meets nature, a peaceful dwelling rests beside still waters, embraced by autumn's palette.",
     image: "/KyushuJapan/IMG_5343.JPG",
     filename: "IMG_5343.JPG",
-    location: "Asū, Kyushu, Japan",
+    location: "Aso, Kyushu, Japan",
     format: "square"
   },
   {
@@ -281,7 +281,7 @@ const artworks = ref<Artwork[]>([
     description: ".",
     image: "/KyushuJapan/IMG_5344.JPG",
     filename: "IMG_5344.JPG", 
-    location: "Asū, Kyushu, Japan",
+    location: "Aso, Kyushu, Japan",
     format: "square"
   },
   {
