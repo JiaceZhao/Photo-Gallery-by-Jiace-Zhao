@@ -108,7 +108,7 @@
                   <div class="timeline-content">
                     <div class="timeline-year">Nov 2024 - Present</div>
                     <h3>Co-Founder</h3>
-                    <p><strong>Apply4College</strong></p>
+                    <p><strong><a href="https://apply4college.org/" target="_blank" rel="noopener noreferrer" class="project-link">Apply4College</a></strong></p>
                     <p class="role-desc">College Application Helper</p>
                   </div>
                 </div>
@@ -117,7 +117,7 @@
                   <div class="timeline-content">
                     <div class="timeline-year">Aug 2024 - Present</div>
                     <h3>Founder</h3>
-                    <p><strong>ClickMood</strong></p>
+                    <p><strong><a href="https://clickmood.krymusic.top/" target="_blank" rel="noopener noreferrer" class="project-link">ClickMood</a></strong></p>
                     <p class="role-desc">An iOS mood tracking app</p>
                   </div>
                 </div>
@@ -250,6 +250,12 @@
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
               <span>krypotozhao@gmail.com</span>
+            </a>
+            <a href="https://x.com/KrypotoZ" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              <span>@KrypotoZ</span>
             </a>
             <a href="tel:+8615566970454" class="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -663,6 +669,34 @@ strong {
 p strong {
   font-weight: 700 !important;
   color: #1a1a1a !important;
+}
+
+// Project links styling
+.project-link {
+  color: var(--zen-accent) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  &:hover {
+    color: #4f46e5 !important;
+    text-decoration: none;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--zen-accent);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 // Timeline
