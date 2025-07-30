@@ -148,6 +148,20 @@
                     <p>Hackathon Moonshot48 (2025)</p>
                   </div>
                 </div>
+                <div class="achievement-item">
+                  <div class="achievement-icon">🚀</div>
+                  <div class="achievement-content">
+                    <h4>1st Place Winner</h4>
+                    <p>AdventureX Moonshot AI Kimi Track (2025) · 10,000 RMB</p>
+                  </div>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-icon">🚀</div>
+                  <div class="achievement-content">
+                    <h4>2nd Place Winner</h4>
+                    <p>AdventureX SupCon Track (2025) · 10,000 RMB</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
