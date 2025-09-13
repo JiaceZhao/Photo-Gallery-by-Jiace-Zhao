@@ -146,12 +146,6 @@
           <p>Currently Platinum Division</p>
         </div>
         <div class="award-item">
-          <h3>PivotHack Hackathon – 3rd Place Winner, 2025</h3>
-        </div>
-        <div class="award-item">
-          <h3>Moonshot48 Hackathon – 3rd Place Winner, 2025</h3>
-        </div>
-        <div class="award-item">
           <h3>AdventureX 2025 Moonshot AI Kimi Track – 1st Place Winner</h3>
         </div>
         <div class="award-item">
