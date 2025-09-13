@@ -28,55 +28,6 @@
         A start-uper, a poet, a human being, an engineer, an artist, a photographer, a martian, a hacker, a daydreamer —always hopeful for change.
       </p>
     </section>
-
-    <!-- Skills -->
-    <section class="cv-section">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Software Engineering</h3>
-          <p>Swift, Xcode, Go/Gin, TypeScript, JavaScript, React, Python, Java, C++</p>
-          <div class="skill-level">◾◾◾◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>Hardware Engineering</h3>
-          <p>Fusion 360, LiChuang EDA, PCB Design</p>
-          <div class="skill-level">◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>AI</h3>
-          <p>TensorFlow, PyTorch, CUDA</p>
-          <div class="skill-level">◾◾◾◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>Design</h3>
-          <p>Figma, Adobe Illustrator, Blender, Photography</p>
-          <div class="skill-level">◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <div class="language-skills">
-            <div class="language-item">
-              <span>Chinese</span>
-              <span class="skill-level">◾◾◾◾◾</span>
-            </div>
-            <div class="language-item">
-              <span>English</span>
-              <span class="skill-level">◾◾◾◾</span>
-            </div>
-            <div class="language-item">
-              <span>Spanish</span>
-              <span class="skill-level">◾</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Side Hustles</h3>
-          <p>Jiace's Gallery, Photography Collections, Cardistry</p>
-        </div>
-      </div>
-    </section>
-
     <!-- Experience -->
     <section class="cv-section">
       <h2>Experience</h2>
@@ -205,6 +156,53 @@
         </div>
         <div class="award-item">
           <h3>AdventureX 2025 中控技术 (SUPCON) Track - 2nd Place Winner</h3>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <section class="cv-section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Software Engineering</h3>
+          <p>Swift, Xcode, Go/Gin, TypeScript, JavaScript, React, Python, Java, C++</p>
+          <div class="skill-level">◾◾◾◾◾</div>
+        </div>
+        <div class="skill-category">
+          <h3>Hardware Engineering</h3>
+          <p>Fusion 360, LiChuang EDA, PCB Design</p>
+          <div class="skill-level">◾◾</div>
+        </div>
+        <div class="skill-category">
+          <h3>AI</h3>
+          <p>TensorFlow, PyTorch, CUDA</p>
+          <div class="skill-level">◾◾◾◾◾</div>
+        </div>
+        <div class="skill-category">
+          <h3>Design</h3>
+          <p>Figma, Adobe Illustrator, Blender, Photography</p>
+          <div class="skill-level">◾◾</div>
+        </div>
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <div class="language-skills">
+            <div class="language-item">
+              <span>Chinese</span>
+              <span class="skill-level">◾◾◾◾◾</span>
+            </div>
+            <div class="language-item">
+              <span>English</span>
+              <span class="skill-level">◾◾◾◾</span>
+            </div>
+            <div class="language-item">
+              <span>Spanish</span>
+              <span class="skill-level">◾</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Side Hustles</h3>
+          <p>Jiace's Gallery, Photography Collections, Cardistry</p>
         </div>
       </div>
     </section>
