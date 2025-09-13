@@ -112,7 +112,7 @@
 
         <div class="education-item">
           <div class="education-header">
-            <h3>Tsinghua International School Daoxiang Lake</h3>
+            <h3>Tsinghua International School DL</h3>
             <span class="period">2022-2024</span>
           </div>
           <p>Science Innovation Program, High School, Grades 9-10</p>
