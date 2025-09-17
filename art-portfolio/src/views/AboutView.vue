@@ -98,29 +98,7 @@
     </section>
 
     <!-- Education -->
-    <section class="cv-section">
-      <h2>Education</h2>
-      <div class="education-list">
-        <div class="education-item">
-          <div class="education-header">
-            <h3>Haidian Kaiwen Academy</h3>
-            <span class="period">2024-2026</span>
-          </div>
-          <p>High School, Grades 11-12</p>
-          <p class="location">Beijing, China</p>
-        </div>
-
-        <div class="education-item">
-          <div class="education-header">
-            <h3>Tsinghua International School DL</h3>
-            <span class="period">2022-2024</span>
-          </div>
-          <p>Science Innovation Program, High School, Grades 9-10</p>
-          <p class="location">Beijing, China</p>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- Research -->
     <section class="cv-section">
       <h2>Research</h2>
