@@ -67,7 +67,7 @@
             >
               <div class="photo-container">
                 <div class="photo-frame" :class="group.artworks[0].format === 'square' ? 'square' : 'panoramic'">
-                  <div class="ratio-box">
+                  <div class="ratio-box" :style="{ aspectRatio: group.artworks[0].aspectRatio ? group.artworks[0].aspectRatio : (group.artworks[0].format === 'square' ? '1 / 1' : '65 / 24') }">
                     <img 
                       :src="group.artworks[0].image" 
                       :alt="group.artworks[0].title"
@@ -185,6 +185,7 @@ interface Artwork {
   filename: string
   location: string
   format?: 'square' | 'panoramic'
+  aspectRatio?: string
 }
 
 // 仅使用浏览器可显示的图片格式（JPG/PNG），RAW(.ARW)不会在浏览器中显示
@@ -275,12 +276,20 @@ const handleKeydown = (event: KeyboardEvent) => {
 // Detect image aspect ratios to set format per artwork
 const detectFormats = () => {
   artworks.value.forEach((artwork, index) => {
+    // 跳过已设置 format 的项（尊重手动标注）
+    if (artworks.value[index].format) return
     const img = new Image()
     img.src = artwork.image
     img.onload = () => {
-      const ratio = img.naturalWidth / img.naturalHeight
+      const w = img.naturalWidth
+      const h = img.naturalHeight
+      const ratio = w / h
       const isSquare = ratio > 0.98 && ratio < 1.02
-      artworks.value[index] = { ...artwork, format: isSquare ? 'square' : 'panoramic' }
+      artworks.value[index] = { 
+        ...artwork, 
+        format: isSquare ? 'square' : 'panoramic', 
+        aspectRatio: `${w} / ${h}`
+      }
     }
   })
 }
