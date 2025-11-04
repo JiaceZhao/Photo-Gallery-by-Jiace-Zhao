@@ -66,12 +66,14 @@
               @click="openLightbox(group.artworks[0])"
             >
               <div class="photo-container">
-                <div class="photo-frame">
-                  <img 
-                    :src="group.artworks[0].image" 
-                    :alt="group.artworks[0].title"
-                    :class="['zen-image', group.artworks[0].format === 'square' ? 'square' : 'panoramic']"
-                  />
+                <div class="photo-frame" :class="group.artworks[0].format === 'square' ? 'square' : 'panoramic'">
+                  <div class="ratio-box">
+                    <img 
+                      :src="group.artworks[0].image" 
+                      :alt="group.artworks[0].title"
+                      class="zen-image"
+                    />
+                  </div>
                   <div class="moment-number">{{ String(group.artworks[0].originalIndex + 1).padStart(2, '0') }}</div>
                 </div>
               </div>
@@ -276,7 +278,8 @@ const detectFormats = () => {
     const img = new Image()
     img.src = artwork.image
     img.onload = () => {
-      const isSquare = Math.abs(img.naturalWidth - img.naturalHeight) < 2
+      const ratio = img.naturalWidth / img.naturalHeight
+      const isSquare = ratio > 0.98 && ratio < 1.02
       artworks.value[index] = { ...artwork, format: isSquare ? 'square' : 'panoramic' }
     }
   })
@@ -341,7 +344,12 @@ onUnmounted(() => {
 .photo-moment { width: 100%; max-width: 1200px; cursor: pointer; position: relative; }
 .photo-container { width: 100%; margin-bottom: var(--space-8); position: relative; }
 .photo-frame { position: relative; width: 100%; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05); }
-.zen-image { width: 100%; height: auto; display: block; aspect-ratio: 65/24; object-fit: cover; }
+.ratio-box { width: 100%; }
+.photo-frame.square .ratio-box { aspect-ratio: 1 / 1; }
+.photo-frame.panoramic .ratio-box { aspect-ratio: 65 / 24; }
+.zen-image { width: 100%; height: 100%; display: block; object-fit: cover; }
+.zen-image.square { aspect-ratio: 1 / 1; }
+.zen-image.panoramic { aspect-ratio: 65 / 24; }
 
 .moment-number { position: absolute; top: var(--space-6); right: var(--space-6); background: rgba(255,255,255,0.95); color: var(--color-text-primary); padding: var(--space-2) var(--space-4); border-radius: 20px; font-weight: 500; font-size: var(--text-sm); font-family: 'Monaco', monospace; backdrop-filter: blur(10px); letter-spacing: 0.1em; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 

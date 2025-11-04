@@ -65,12 +65,14 @@
               @click="openLightbox(group.artworks[0])"
             >
               <div class="photo-container">
-                <div class="photo-frame">
-                  <img 
-                    :src="group.artworks[0].image" 
-                    :alt="group.artworks[0].title"
-                    :class="['zen-image', group.artworks[0].format === 'square' ? 'square' : 'panoramic']"
-                  />
+                <div class="photo-frame" :class="group.artworks[0].format === 'square' ? 'square' : 'panoramic'">
+                  <div class="ratio-box" :style="{ aspectRatio: group.artworks[0].format === 'square' ? '1 / 1' : '65 / 24' }">
+                    <img 
+                      :src="group.artworks[0].image" 
+                      :alt="group.artworks[0].title"
+                      class="zen-image"
+                    />
+                  </div>
                   <div class="moment-number">{{ String(group.artworks[0].originalIndex + 1).padStart(2, '0') }}</div>
                 </div>
               </div>
@@ -186,10 +188,10 @@ interface Artwork {
 
 // 使用浏览器可显示的图片格式（JPG/PNG）。文件名中空格将由浏览器自动进行 URL 编码。
 const artworks = ref<Artwork[]>([
-  { id: 1, title: 'Imperial Geometry #01', description: '轴线与秩序中的光影。', image: '/forbidden city/B00031453FR1731160373 2.JPG', filename: 'B00031453FR1731160373 2.JPG', location: 'Beijing' },
+  { id: 1, title: 'Imperial Geometry #01', description: '轴线与秩序中的光影。', image: '/forbidden city/B00031453FR1731160373 2.JPG', filename: 'B00031453FR1731160373 2.JPG', location: 'Beijing', format: 'square' },
   { id: 2, title: 'Imperial Geometry #02', description: '石阶与城墙的对话。', image: '/forbidden city/B00031473FR1731160480 2.JPG', filename: 'B00031473FR1731160480 2.JPG', location: 'Beijing' },
   { id: 3, title: 'Imperial Geometry #03', description: '门扉与屋檐的呼吸。', image: '/forbidden city/B00031503FR1731160686 2.JPG', filename: 'B00031503FR1731160686 2.JPG', location: 'Beijing' },
-  { id: 4, title: 'Imperial Geometry #04', description: '静默之中，形与意的平衡。', image: '/forbidden city/B00031723FR1731166151 2.JPG', filename: 'B00031723FR1731166151 2.JPG', location: 'Beijing' },
+  { id: 4, title: 'Imperial Geometry #04', description: '静默之中，形与意的平衡。', image: '/forbidden city/B00031723FR1731166151 2.JPG', filename: 'B00031723FR1731166151 2.JPG', location: 'Beijing', format: 'square' },
 ])
 
 const lightboxVisible = ref(false)
@@ -224,10 +226,13 @@ const groupedArtworks = computed(() => {
 // Detect image aspect ratios to set format per artwork
 const detectFormats = () => {
   artworks.value.forEach((artwork, index) => {
+    // Respect manual overrides
+    if (artworks.value[index].format) return
     const img = new Image()
     img.src = artwork.image
     img.onload = () => {
-      const isSquare = Math.abs(img.naturalWidth - img.naturalHeight) < 2
+      const ratio = img.naturalWidth / img.naturalHeight
+      const isSquare = ratio > 0.98 && ratio < 1.02
       artworks.value[index] = { ...artwork, format: isSquare ? 'square' : 'panoramic' }
     }
   })
@@ -335,7 +340,10 @@ onUnmounted(() => {
 .photo-moment { width: 100%; max-width: 1200px; cursor: pointer; position: relative; }
 .photo-container { width: 100%; margin-bottom: var(--space-8); position: relative; }
 .photo-frame { position: relative; width: 100%; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05); }
-.zen-image { width: 100%; height: auto; display: block; object-fit: cover; }
+.ratio-box { width: 100%; }
+.photo-frame.square .ratio-box { aspect-ratio: 1 / 1; }
+.photo-frame.panoramic .ratio-box { aspect-ratio: 65 / 24; }
+.zen-image { width: 100%; height: 100%; display: block; object-fit: cover; }
 .zen-image.square { aspect-ratio: 1 / 1; }
 .zen-image.panoramic { aspect-ratio: 65 / 24; }
 

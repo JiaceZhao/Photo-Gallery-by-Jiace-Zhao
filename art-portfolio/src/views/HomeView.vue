@@ -43,6 +43,19 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   },
   {
+    id: 'forbidden-city',
+    title: 'Forbidden City',
+    subtitle: '紫禁城',
+    type: 'Photography Series',
+    year: '2024',
+    status: 'published',
+    imageCount: 4,
+    coverImage: '/forbidden city/B00031723FR1731166151 2.JPG',
+    description: 'A study of imperial symmetry — light and shadow tracing centuries-old walls.',
+    location: 'Beijing, China',
+    featured: true
+  },
+  {
     id: 'seasons-of-solitude',
     title: 'Seasons of Solitude',
     subtitle: '孤独の四季',
@@ -179,7 +192,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : '/collections'"
+                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : '/collections')"
                   class="view-btn"
                 >
                   View Collection
