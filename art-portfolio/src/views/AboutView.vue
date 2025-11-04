@@ -244,6 +244,9 @@
         <div class="link-item">
           <strong>OpenReview:</strong> <a href="https://openreview.net/profile?id=~Jiace_Zhao1" target="_blank" rel="noopener noreferrer">https://openreview.net/profile?id=~Jiace_Zhao1</a>
         </div>
+        <div class="link-item">
+          <strong>Cardistry Orbit:</strong> <router-link to="/cardistry-orbit">View the collection</router-link>
+        </div>
       </div>
     </section>
   </div>

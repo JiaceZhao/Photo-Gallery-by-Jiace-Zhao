@@ -30,16 +30,16 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   },
   {
-    id: 'urban-contemplations',
-    title: 'Urban Contemplations',
-    subtitle: '都市の静寂',
+    id: 'cardistry-orbit',
+    title: 'Cardistry Orbit',
+    subtitle: '卡牌艺术 · 轨道',
     type: 'Photography Series',
     year: '2024',
-    status: 'upcoming',
-    imageCount: 12,
-    coverImage: '/KyushuJapan/IMG_1715.JPG',
-    description: 'Finding moments of silence and reflection within the bustling energy of urban landscapes.',
-    location: 'Tokyo, Japan',
+    status: 'published',
+    imageCount: 1,
+    coverImage: '/Cardistry_Orbit/DSC03892.jpg',
+    description: 'Cardistry captured as orbiting motion — balance, flow, and elegance in every move.',
+    location: 'Studio',
     featured: true
   },
   {
@@ -179,7 +179,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'call-from-the-field' ? '/collections' : '/collections'"
+                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : '/collections'"
                   class="view-btn"
                 >
                   View Collection

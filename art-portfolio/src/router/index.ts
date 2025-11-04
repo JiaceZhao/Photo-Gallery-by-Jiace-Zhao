@@ -23,6 +23,16 @@ const router = createRouter({
       name: 'about',
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/cardistry-orbit',
+      name: 'cardistry-orbit',
+      component: () => import('../views/CardistryOrbitView.vue'),
+    },
+    {
+      path: '/forbidden-city',
+      name: 'forbidden-city',
+      component: () => import('../views/ForbiddenCityView.vue'),
+    },
   ],
 })
 
