@@ -33,6 +33,11 @@ const router = createRouter({
       name: 'forbidden-city',
       component: () => import('../views/ForbiddenCityView.vue'),
     },
+    {
+      path: '/summer-palace-late-autumn',
+      name: 'summer-palace-late-autumn',
+      component: () => import('../views/SummerPalaceLateAutumView.vue'),
+    },
   ],
 })
 
