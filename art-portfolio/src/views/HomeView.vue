@@ -30,6 +30,19 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   },
   {
+    id: 'white-pagoda',
+    title: 'White Pagoda · Monochrome',
+    subtitle: '白塔 · 黑白摄影',
+    type: 'Photography Series',
+    year: '2024',
+    status: 'published',
+    imageCount: 5,
+    coverImage: '/WhitePagoda/B0001087 2.jpg',
+    description: '黑与白之间，形与光的呼吸更加清晰。',
+    location: 'Beijing, China',
+    featured: true
+  },
+  {
     id: 'cardistry-orbit',
     title: 'Cardistry Orbit',
     subtitle: '卡牌艺术 · 轨道',
@@ -205,7 +218,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : (collection.id === 'summer-palace-late-autumn' ? '/summer-palace-late-autumn' : '/collections'))"
+                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : (collection.id === 'summer-palace-late-autumn' ? '/summer-palace-late-autumn' : (collection.id === 'white-pagoda' ? '/white-pagoda' : '/collections')))"
                   class="view-btn"
                 >
                   View Collection

@@ -38,6 +38,11 @@ const router = createRouter({
       name: 'summer-palace-late-autumn',
       component: () => import('../views/SummerPalaceLateAutumView.vue'),
     },
+    {
+      path: '/white-pagoda',
+      name: 'white-pagoda',
+      component: () => import('../views/WhitePagodaView.vue'),
+    },
   ],
 })
 
