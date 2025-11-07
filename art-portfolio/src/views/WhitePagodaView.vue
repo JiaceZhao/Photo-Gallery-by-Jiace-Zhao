@@ -34,7 +34,7 @@
         <div class="photo-stream">
           <div v-for="(art, idx) in artworksWithIndex" :key="art.id" class="photo-moment" @click="openLightbox(art)">
             <div class="photo-container">
-              <div class="photo-frame" :class="art.format === 'square' ? 'square' : 'panoramic'">
+              <div class="photo-frame" :class="art.format === 'square' ? 'square' : 'panoramic'" :style="{ '--ratio': art.numericRatio ?? (art.format === 'square' ? 1 : 65/24), width: 'min(1000px, 90vw, calc(70vh * var(--ratio)))' }">
                 <div class="ratio-box" :style="{ aspectRatio: art.aspectRatio ? art.aspectRatio : (art.format === 'square' ? '1 / 1' : '65 / 24') }">
                   <img :src="art.image" :alt="art.title" class="zen-image" />
                 </div>
@@ -118,6 +118,7 @@ interface Artwork {
   location: string
   format?: 'square' | 'panoramic'
   aspectRatio?: string
+  numericRatio?: number
 }
 
 const artworks = ref<Artwork[]>([
@@ -148,7 +149,8 @@ const detectFormats = () => {
       artworks.value[index] = { 
         ...artwork, 
         format: isSquare ? 'square' : 'panoramic',
-        aspectRatio: `${w} / ${h}`
+        aspectRatio: `${w} / ${h}`,
+        numericRatio: ratio
       }
     }
   })
@@ -210,7 +212,7 @@ onUnmounted(() => {
 
 .photo-stream { display: flex; flex-direction: column; align-items: center; gap: 0; }
 .photo-moment { width: 100%; max-width: 1200px; cursor: pointer; position: relative; }
-.photo-container { width: 100%; margin-bottom: var(--space-8); position: relative; }
+.photo-container { width: 100%; margin-bottom: var(--space-8); position: relative; display: flex; justify-content: center; }
 .photo-frame { position: relative; width: 100%; border-radius: 6px; overflow: hidden; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05); background: #101010; }
 .ratio-box { width: 100%; }
 .zen-image { width: 100%; height: 100%; display: block; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
