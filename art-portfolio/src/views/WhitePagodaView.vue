@@ -124,9 +124,9 @@ interface Artwork {
 const artworks = ref<Artwork[]>([
   { id: 1, title: 'Monochrome #01', description: '形与光的呼吸。', image: '/WhitePagoda/B0001087 2.jpg', filename: 'B0001087 2.jpg', location: 'Beijing' },
   { id: 2, title: 'Monochrome #02', description: '石与影的交界。', image: '/WhitePagoda/B0001088 2.jpg', filename: 'B0001088 2.jpg', location: 'Beijing' },
-  { id: 3, title: 'Monochrome #03', description: '静默的坡度。', image: '/WhitePagoda/B0001101 2.jpg', filename: 'B0001101 2.jpg', location: 'Beijing' },
+  { id: 3, title: 'Monochrome #03', description: '空', image: '/WhitePagoda/B0001101 2.jpg', filename: 'B0001101 2.jpg', location: 'Beijing' },
   { id: 4, title: 'Monochrome #04', description: '远与近的对话。', image: '/WhitePagoda/B0001104 2.jpg', filename: 'B0001104 2.jpg', location: 'Beijing' },
-  { id: 5, title: 'Monochrome #05', description: '苍穹下的塔影。', image: '/WhitePagoda/B0001136 2.jpg', filename: 'B0001136 2.jpg', location: 'Beijing' },
+  { id: 5, title: 'Monochrome #05', description: '向上看', image: '/WhitePagoda/B0001136 2.jpg', filename: 'B0001136 2.jpg', location: 'Beijing' },
 ])
 
 const lightboxVisible = ref(false)
