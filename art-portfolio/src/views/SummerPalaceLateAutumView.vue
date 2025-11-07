@@ -54,6 +54,28 @@
               </div>
             </div>
 
+            <!-- Dual layout for two consecutive square photos -->
+            <div v-else-if="group.type === 'dual'" class="photo-moment dual">
+              <div v-for="art in group.artworks" :key="art.id" class="photo-container" @click="openLightbox(art)">
+                <div class="photo-frame" :class="art.format === 'square' ? 'square' : 'panoramic'">
+                  <div class="ratio-box" :style="{ aspectRatio: art.aspectRatio ? art.aspectRatio : (art.format === 'square' ? '1 / 1' : '65 / 24') }">
+                    <img :src="art.image" :alt="art.title" class="zen-image" />
+                  </div>
+                  <div class="moment-number">{{ String(art.originalIndex + 1).padStart(2, '0') }}</div>
+                </div>
+
+                <div class="moment-essence">
+                  <h3 class="moment-title">{{ art.title }}</h3>
+                  <p class="moment-whisper">{{ art.description }}</p>
+                  <div class="moment-details">
+                    <span class="detail-whisper">{{ art.filename }}</span>
+                    <span class="detail-dot">•</span>
+                    <span class="detail-whisper">{{ art.location }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="breathing-space" v-if="groupIndex < groupedArtworks.length - 1">
               <div class="zen-breath"></div>
             </div>
@@ -124,8 +146,8 @@ interface Artwork {
 
 const artworks = ref<Artwork[]>([
   { id: 1, title: 'Late Autumn #01', description: '水面与红叶的轻声。', image: '/SummerPalaceLateAutum/SummerPalace1.JPG', filename: 'SummerPalace1.JPG', location: 'Beijing' },
-  { id: 2, title: 'Late Autumn #02', description: '薄雾与石桥。', image: '/SummerPalaceLateAutum/SummerPalace2.JPG', filename: 'SummerPalace2.JPG', location: 'Beijing' },
-  { id: 3, title: 'Late Autumn #03', description: '林影与斜阳。', image: '/SummerPalaceLateAutum/SummerPalace3.JPG', filename: 'SummerPalace3.JPG', location: 'Beijing' },
+  { id: 2, title: 'Late Autumn #02', description: '薄雾与石桥。', image: '/SummerPalaceLateAutum/ummerPalace2.JPG', filename: 'SummerPalace2.JPG', location: 'Beijing' },
+  { id: 3, title: 'Late Autumn #03', description: '林影与斜阳。', image: '/SummerPalaceLateAutum/ummerPalace3.JPG', filename: 'SummerPalace3.JPG', location: 'Beijing' },
   { id: 4, title: 'Late Autumn #04', description: '银杏的金色呼吸。', image: '/SummerPalaceLateAutum/SummerPalace4.JPG', filename: 'SummerPalace4.JPG', location: 'Beijing' },
 ])
 
@@ -265,3 +287,5 @@ onUnmounted(() => {
 .breathing-space { width: 100%; display: flex; justify-content: center; padding: var(--space-8) 0; }
 .zen-breath { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.2), transparent); }
 </style>
+.photo-moment.dual { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: start; }
+@media (max-width: 768px) { .photo-moment.dual { grid-template-columns: 1fr; } }
