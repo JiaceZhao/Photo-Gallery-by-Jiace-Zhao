@@ -253,12 +253,7 @@
 </template>
 
 <script setup lang="ts">
-interface FeaturedCollection {
-  title: string
-}
-const featureCollections: FeaturedCollection[] = [
-  { title: '北平的秋' }
-]
+// No reactive data needed for this static CV page
 </script>
 
 <style lang="scss" scoped>

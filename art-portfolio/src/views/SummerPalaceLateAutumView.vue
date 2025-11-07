@@ -124,8 +124,8 @@ interface Artwork {
 
 const artworks = ref<Artwork[]>([
   { id: 1, title: 'Late Autumn #01', description: '水面与红叶的轻声。', image: '/SummerPalaceLateAutum/SummerPalace1.JPG', filename: 'SummerPalace1.JPG', location: 'Beijing' },
-  { id: 2, title: 'Late Autumn #02', description: '薄雾与石桥。', image: '/SummerPalaceLateAutum/ummerPalace2.JPG', filename: 'ummerPalace2.JPG', location: 'Beijing' },
-  { id: 3, title: 'Late Autumn #03', description: '林影与斜阳。', image: '/SummerPalaceLateAutum/ummerPalace3.JPG', filename: 'ummerPalace3.JPG', location: 'Beijing' },
+  { id: 2, title: 'Late Autumn #02', description: '薄雾与石桥。', image: '/SummerPalaceLateAutum/SummerPalace2.JPG', filename: 'SummerPalace2.JPG', location: 'Beijing' },
+  { id: 3, title: 'Late Autumn #03', description: '林影与斜阳。', image: '/SummerPalaceLateAutum/SummerPalace3.JPG', filename: 'SummerPalace3.JPG', location: 'Beijing' },
   { id: 4, title: 'Late Autumn #04', description: '银杏的金色呼吸。', image: '/SummerPalaceLateAutum/SummerPalace4.JPG', filename: 'SummerPalace4.JPG', location: 'Beijing' },
 ])
 

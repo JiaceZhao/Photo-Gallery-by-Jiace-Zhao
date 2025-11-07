@@ -56,6 +56,19 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   },
   {
+    id: 'summer-palace-late-autumn',
+    title: '北平的秋',
+    subtitle: '北平的秋',
+    type: 'Photography Series',
+    year: '2024',
+    status: 'published',
+    imageCount: 4,
+    coverImage: '/SummerPalaceLateAutum/SummerPalace1.JPG',
+    description: '深秋的北平，光与风在屋檐与湖面之间缓慢呼吸。',
+    location: 'Beijing, China',
+    featured: true
+  },
+  {
     id: 'seasons-of-solitude',
     title: 'Seasons of Solitude',
     subtitle: '孤独の四季',
@@ -192,7 +205,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : '/collections')"
+                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : (collection.id === 'summer-palace-late-autumn' ? '/summer-palace-late-autumn' : '/collections'))"
                   class="view-btn"
                 >
                   View Collection
