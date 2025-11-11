@@ -108,6 +108,16 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   }
 ])
+
+// Helper: resolve collection id to route path (cleaner than nested ternaries)
+const routeMap: Record<string, string> = {
+  'cardistry-orbit': '/cardistry-orbit',
+  'forbidden-city': '/forbidden-city',
+  'summer-palace-late-autumn': '/summer-palace-late-autumn',
+  'white-pagoda': '/white-pagoda',
+  'summer-palace-summer': '/summer-palace-summer',
+}
+const resolveRoute = (id: string) => routeMap[id] ?? '/collections'
 </script>
 
 <template>
@@ -231,7 +241,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : (collection.id === 'summer-palace-late-autumn' ? '/summer-palace-late-autumn' : (collection.id === 'white-pagoda' ? '/white-pagoda' : (collection.id === 'summer-palace-summer' ? '/summer-palace-summer' : '/collections')))))"
+                  :to="resolveRoute(collection.id)"
                   class="view-btn"
                 >
                   View Collection
