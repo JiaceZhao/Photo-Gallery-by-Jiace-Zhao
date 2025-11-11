@@ -56,6 +56,19 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   },
   {
+    id: 'temples-collection',
+    title: 'Temples Collection · PDF',
+    subtitle: '寺院集 · PDF 合辑',
+    type: 'PDF Album',
+    year: '2024',
+    status: 'published',
+    imageCount: 1,
+    coverImage: '/le.jpg',
+    description: 'A contemplative compilation of temples and time in PDF format.',
+    location: 'Various',
+    featured: true
+  },
+  {
     id: 'cardistry-orbit',
     title: 'Cardistry Orbit',
     subtitle: '卡牌艺术 · 轨道',
@@ -116,6 +129,7 @@ const routeMap: Record<string, string> = {
   'summer-palace-late-autumn': '/summer-palace-late-autumn',
   'white-pagoda': '/white-pagoda',
   'summer-palace-summer': '/summer-palace-summer',
+  'temples-collection': '/temples-collection',
 }
 const resolveRoute = (id: string) => routeMap[id] ?? '/collections'
 </script>

@@ -48,6 +48,11 @@ const router = createRouter({
       name: 'summer-palace-summer',
       component: () => import('../views/SummerPalaceSummerView.vue'),
     },
+    {
+      path: '/temples-collection',
+      name: 'temples-collection',
+      component: () => import('../views/TemplesCollectionView.vue'),
+    },
   ],
 })
 
