@@ -43,6 +43,19 @@ const featuredCollections = ref<Collection[]>([
     featured: true
   },
   {
+    id: 'summer-palace-summer',
+    title: 'Summer Palace · Summer',
+    subtitle: '颐和园 · 夏日摄影',
+    type: 'Photography Series',
+    year: '2024',
+    status: 'published',
+    imageCount: 7,
+    coverImage: '/SummerpalaceSummer/IMG_0584.jpeg',
+    description: '水与叶之间，夏日的光线轻声低语。',
+    location: 'Beijing, China',
+    featured: true
+  },
+  {
     id: 'cardistry-orbit',
     title: 'Cardistry Orbit',
     subtitle: '卡牌艺术 · 轨道',
@@ -218,7 +231,7 @@ const featuredCollections = ref<Collection[]>([
               <div class="collection-action">
                 <router-link 
                   v-if="collection.status === 'published'" 
-                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : (collection.id === 'summer-palace-late-autumn' ? '/summer-palace-late-autumn' : (collection.id === 'white-pagoda' ? '/white-pagoda' : '/collections')))"
+                  :to="collection.id === 'cardistry-orbit' ? '/cardistry-orbit' : (collection.id === 'forbidden-city' ? '/forbidden-city' : (collection.id === 'summer-palace-late-autumn' ? '/summer-palace-late-autumn' : (collection.id === 'white-pagoda' ? '/white-pagoda' : (collection.id === 'summer-palace-summer' ? '/summer-palace-summer' : '/collections')))))"
                   class="view-btn"
                 >
                   View Collection
