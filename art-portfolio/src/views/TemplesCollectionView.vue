@@ -8,8 +8,8 @@ const pdfSrc = '/templesCollection/collection.pdf'
     <section class="collection-hero">
       <div class="hero-container">
         <div class="hero-text">
-          <h1 class="hero-title">Temples Collection · PDF Album</h1>
-          <p class="hero-subtitle">寺院集 · PDF 合辑</p>
+          <h1 class="hero-title">寺院集</h1>
+          <p class="hero-subtitle">PDF 合辑</p>
           <p class="hero-description">
             A contemplative compilation exploring temples and time. View inline below or download the PDF.
           </p>
@@ -27,7 +27,7 @@ const pdfSrc = '/templesCollection/collection.pdf'
         <iframe 
           class="pdf-frame"
           :src="`${pdfSrc}#toolbar=1&navpanes=0&view=FitH`"
-          title="Temples Collection PDF"
+          title="寺院集 PDF"
         ></iframe>
         <div class="pdf-fallback">
           <p>

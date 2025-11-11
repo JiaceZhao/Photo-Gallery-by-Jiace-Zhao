@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 interface Collection {
   id: string
@@ -57,13 +57,13 @@ const featuredCollections = ref<Collection[]>([
   },
   {
     id: 'temples-collection',
-    title: 'Temples Collection · PDF',
-    subtitle: '寺院集 · PDF 合辑',
+    title: '寺院集',
+    subtitle: 'PDF 合辑',
     type: 'PDF Album',
     year: '2024',
     status: 'published',
     imageCount: 1,
-    coverImage: '/le.jpg',
+    coverImage: '/PDF/covertae.jpg',
     description: 'A contemplative compilation of temples and time in PDF format.',
     location: 'Various',
     featured: true
@@ -122,6 +122,11 @@ const featuredCollections = ref<Collection[]>([
   }
 ])
 
+// 在首页 Hero 中突出“寺院集”
+const bestCollection = computed(() =>
+  featuredCollections.value.find(c => c.id === 'temples-collection') ?? featuredCollections.value[0]
+)
+
 // Helper: resolve collection id to route path (cleaner than nested ternaries)
 const routeMap: Record<string, string> = {
   'cardistry-orbit': '/cardistry-orbit',
@@ -146,12 +151,10 @@ const resolveRoute = (id: string) => routeMap[id] ?? '/collections'
               <span class="hero-accent">Photography</span>
             </h1>
             <p class="hero-description">
-              Creating visual meditations that explore the profound beauty found in everyday moments, 
-              where silence speaks louder than words and simplicity reveals infinite depth.
-            </p>
+            I am a photographer captivated by the quiet symmetry of Chinese architecture and the meditative stillness of temples. My work traces the across tiled roofs, weathered courtyards, and the slow breath of incense in morning air.</p>
             <div class="hero-actions">
-              <router-link to="/collections" class="btn btn-primary btn-lg">
-                Explore Collections
+              <router-link to="/temples-collection" class="btn btn-primary btn-lg">
+                TEMPLES and ETERNITY
               </router-link>
               <router-link to="/about" class="btn btn-secondary btn-lg">
                 About the Artist
@@ -162,15 +165,15 @@ const resolveRoute = (id: string) => routeMap[id] ?? '/collections'
             <div class="hero-image-container">
               <div class="hero-frame">
                 <img 
-                  :src="featuredCollections[0].coverImage" 
-                  :alt="featuredCollections[0].title"
+                  :src="bestCollection.coverImage" 
+                  :alt="bestCollection.title"
                   class="hero-image"
                 />
                 <div class="image-overlay">
                   <div class="overlay-gradient"></div>
                   <div class="image-caption">
-                    <span class="caption-collection">{{ featuredCollections[0].title }}</span>
-                    <span class="caption-subtitle">{{ featuredCollections[0].subtitle }}</span>
+                    <span class="caption-collection">{{ bestCollection.title }}</span>
+                    <span class="caption-subtitle">{{ bestCollection.subtitle }}</span>
                   </div>
                 </div>
               </div>
