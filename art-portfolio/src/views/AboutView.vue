@@ -1,400 +1,398 @@
 <template>
   <div class="about-view">
-    <!-- Header -->
-    <header class="cv-header">
-      <div class="header-content">
-        <div class="profile-section">
+    <div class="about-layout">
+      <aside class="about-sidebar">
+        <div class="sidebar-profile">
           <div class="profile-image">
-            <img 
-              src="/favicon-photo.jpg" 
-              alt="Jiace Zhao - Portrait"
-            />
+            <img src="/favicon-photo.jpg" alt="Jiace Zhao" />
           </div>
-          <div class="name-title">
-            <h1>Jiace Zhao</h1>
-          </div>
-        </div>
-        <div class="contact-info">
-          <p>Haidian, Beijing, China</p>
-          <p>Born: February 2008</p>
-        </div>
-      </div>
-    </header>
-
-    <aside class="identity-sidebar">
-      <div class="identity-title">Profiles</div>
-      <div class="identity-links">
-        <a href="https://scholar.google.com/citations?user=FLmG3JYAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer" class="identity-link-item">Google Scholar</a>
-        <a href="https://openreview.net/profile?id=~Jiace_Zhao1" target="_blank" rel="noopener noreferrer" class="identity-link-item">OpenReview</a>
-        <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer" class="identity-link-item">GitHub</a>
-      </div>
-    </aside>
-
-    <!-- Profile -->
-    <section class="cv-section">
-      <h2>Profile</h2>
-      <p class="profile-text">
-        A start-uper, a poet, a human being, an engineer, an artist, a photographer, a martian, a hacker, a daydreamer —always hopeful for change.
-      </p>
-    </section>
-
-    <section class="cv-section">
-      <h2>Initiatives & Activities</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Co-founder & Lead Developer</h3>
-            <span class="company">Singularity Academy</span>
-            <span class="period">All Year</span>
-          </div>
-          <p>Built an AI platform that auto-generates tutor videos and personalized learning. Awarded a $10k grant from Miracle-Plus (prev. Y Combinator China). Adopted by 230 teachers across 5 schools; reached 50k people with 1.3k users. In discussion with Khan Academy and 3Blue1Brown.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>AI Curriculum Designer & Volunteer Teacher</h3>
-            <span class="company">Stepping Stone (Shanghai Education NPO)</span>
-            <span class="period">School</span>
-          </div>
-          <p>Designed 5 AI teaching agents across core subjects to ease teacher shortages. Delivered 270k+ hours of tutoring to 1.5k+ underprivileged students.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Investigator</h3>
-            <span class="company">Field Study on Beijing Homeschool Communities</span>
-            <span class="period">Break</span>
-          </div>
-          <p>Interviewed and lived with 100+ families in China’s largest homeschool network. Built 20+ personalized programs for homeschoolers and wrote a report on education gaps.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Co-author & Research Intern</h3>
-            <span class="company">MIT CSAIL Project (OSGym), Dr. Zengyi Qin’s Lab</span>
-            <span class="period">School & Break</span>
-          </div>
-          <p>Networked into MIT CSAIL via AI conference; built data pipeline and collected 9k+ datapoints for training generalizable computer agents. Research submitted to NeurIPS.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder & Podcast Host</h3>
-            <span class="company">“What Comes before Startup” (Singularity Voices)</span>
-            <span class="period">Break</span>
-          </div>
-          <p>Founded an AI ethics/alignment podcast. Interviewed 3 founders (incl. a unicorn). Published 20+ episodes with 210k+ views; distilled actionable alignment takeaways.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder</h3>
-            <span class="company">Hackclub Beijing</span>
-            <span class="period">School</span>
-          </div>
-          <p>Launched the first Hack Club chapter in Northern China. Led 160+ members; grew into the largest student-led hackathon club in Northern China. Hosted 43+ hackathons, 60+ seminars, and 3 tech talks.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder & Developer</h3>
-            <span class="company">ClickMood (App Store)</span>
-            <span class="period">School</span>
-          </div>
-          <p>Built a mental health app for Chinese high school students using Swift & SwiftUI. Designed a calming interface. Reached 280+ daily active users with overall 5-star ratings.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Engineer</h3>
-            <span class="company">AI Robotic Arm (Self-directed)</span>
-            <span class="period">School & Break</span>
-          </div>
-          <p>Built a prototype AI-enabled 6-DOF robotic arm with improved algorithms and real-time object detection (YOLOv10). Enhanced precision, efficiency, and robustness. Published on ACE.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Trumpeter, Guitarist, Composer</h3>
-            <span class="company">Music</span>
-            <span class="period">Break</span>
-          </div>
-          <p>Played trumpet in Tsinghua International School Orchestra since 8th grade; self-taught guitar; composed electronic music for podcasts and videos.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Photographer</h3>
-            <span class="company">“Call from the Field” & other collections</span>
-            <span class="period">All Year</span>
-          </div>
-          <p>Documented Beijing’s historical alleys and temples; explored urban–rural contrasts in China and Japan through three published photo albums. <a href="https://www.jczhao.info/" target="_blank" rel="noopener noreferrer">Portfolio</a></p>
-        </div>
-      </div>
-    </section>
-    <!-- Experience -->
-    <section class="cv-section">
-      <h2>Experience</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder</h3>
-            <span class="company">Singularity Spaces</span>
-            <span class="period">Nov. 2024 - Now</span>
-          </div>
-          <p>Singularity Spaces is the best hacker space across China under the SINGULARITY banner: a high-caliber, values-driven community uniting top researchers, industry leaders, talented students, and bold startup founders—focused on pushing boundaries, building impactful projects, and shaping the future of technology together.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder</h3>
-            <span class="company">Singularity Voices</span>
-            <span class="period">Nov. 2024 - Now</span>
-          </div>
-          <p>Singularity Voices is a deep-dive interview series under the SINGULARITY banner, featuring conversations with pioneering AI entrepreneurs, researchers, and innovators, aimed at inspiring and connecting the next generation of builders and thinkers.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder</h3>
-            <span class="company">Singularity Academy</span>
-            <span class="period">Jan. 2024 - Now</span>
-          </div>
-          <p>Singularity Academy is an AI-powered educational platform under the SINGULARITY banner. Singularity Academy integrates personalized AI tutoring, adaptive learning paths, and immersive social learning spaces to empower students with meaningful, purpose-driven education beyond traditional test-focused systems. Helped 100+ homeschooling families.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Founder</h3>
-            <span class="company">ClickMood</span>
-            <span class="period">Sept. 2024 - Now</span>
-          </div>
-          <p>ClickMood is a mood-tracking App on iOS/MacOS/iPadOS AppStore. Helped users to manage and appreciate their moods with feedback.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Researcher</h3>
-            <span class="company">Myshell.ai & MIT CSAIL, led by Zengyi Qin</span>
-            <span class="period">Jan. 2025 - Now</span>
-          </div>
-          <p>Contributed to research and development of OSGym, a scalable data engine for computer-using agents, under Zengyi Qin (MIT CSAIL).</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Co-founder</h3>
-            <span class="company">Apply4College.org</span>
-            <span class="period">Nov. 2024 - Now</span>
-          </div>
-          <p>Apply4College.org provides the free tools and insights students need to navigate the application process with confidence for underprivileged applicants.</p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Back-end Dev.</h3>
-            <span class="company">AdventureX, biggest Hackathon in China</span>
-            <span class="period">June 2025 - July 2025</span>
-          </div>
-          <p>The biggest Hackathon in China, hosting a hackathon event for 1,000+ hackers. Built the official website's backend.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    
-    <!-- Research -->
-    <section class="cv-section">
-      <h2>Research</h2>
-      <div class="research-list">
-        <div class="research-item">
-          <h3>Co-author, OSGym: Super-Scalable Distributed Data Engine for Generalizable Computer Agents</h3>
-          <p>Contributed to the development of OSGym. Paper under submission to NeurIPS 2025, led by Zengyi Qin (MIT CSAIL).</p>
-        </div>
-
-        <div class="research-item">
-          <h3>First Author, Adaptive Robust Learning Control for a 6-DOF Robotic Arm</h3>
-          <p>Developed and implemented a novel adaptive robust control system integrated with YOLOv10 for real-time object detection and manipulation. Designed for a 6-degree-of-freedom robotic arm.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Awards -->
-    <section class="cv-section">
-      <h2>Awards</h2>
-      <div class="awards-list">
-        <div class="award-item">
-          <h3>USA Computing Olympiad (USACO) – Gold Medal, 2023</h3>
-          <p>Currently Platinum Division</p>
-        </div>
-        <div class="award-item">
-          <h3>AdventureX 2025 Moonshot AI Kimi Track – 1st Place Winner</h3>
-        </div>
-        <div class="award-item">
-          <h3>AdventureX 2025 中控技术 (SUPCON) Track - 2nd Place Winner</h3>
-        </div>
-      </div>
-    </section>
-    <!-- Skills -->
-    <section class="cv-section">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Software Engineering</h3>
-          <p>Swift, Xcode, Go/Gin, TypeScript, JavaScript, React, Python, Java, C++</p>
-          <div class="skill-level">◾◾◾◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>Hardware Engineering</h3>
-          <p>Fusion 360, LiChuang EDA, PCB Design</p>
-          <div class="skill-level">◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>AI</h3>
-          <p>TensorFlow, PyTorch, CUDA</p>
-          <div class="skill-level">◾◾◾◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>Design</h3>
-          <p>Figma, Adobe Illustrator, Blender, Photography</p>
-          <div class="skill-level">◾◾</div>
-        </div>
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <div class="language-skills">
-            <div class="language-item">
-              <span>Chinese</span>
-              <span class="skill-level">◾◾◾◾◾</span>
-            </div>
-            <div class="language-item">
-              <span>English</span>
-              <span class="skill-level">◾◾◾◾</span>
-            </div>
-            <div class="language-item">
-              <span>Spanish</span>
-              <span class="skill-level">◾</span>
-            </div>
+          <h1 class="sidebar-name">Jiace Zhao</h1>
+          <div class="sidebar-meta">
+            <span>Haidian, Beijing, China</span>
+            <span>Born: February 2008</span>
           </div>
         </div>
-        <div class="skill-category">
-          <h3>Side Hustles</h3>
-          <p>Jiace's Gallery, Photography Collections, Cardistry</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Projects -->
-    <section class="cv-section">
-      <h2>Technical Projects</h2>
-      <div class="projects-content">
-        <p class="projects-intro">
-          Explore my technical work and open-source contributions on GitHub. From AI research implementations 
-          to mobile applications and web technologies, I'm constantly building and experimenting with new ideas.
-        </p>
-        <div class="github-showcase">
-          <div class="github-card">
-            <div class="github-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        <div class="sidebar-section">
+          <h3>Identity</h3>
+          <div class="icon-row">
+            <a href="https://scholar.google.com/citations?user=FLmG3JYAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Google Scholar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm7 13c-2.7 0-5.2.9-7 2.4V22h14v-2.6c-1.8-1.5-4.3-2.4-7-2.4z"/>
               </svg>
+            </a>
+            <a href="https://openreview.net/profile?id=~Jiace_Zhao1" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="OpenReview">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h12v16H4z"/>
+                <path d="M16 8h4v12H16z"/>
+                <path d="M7 7h7"/>
+                <path d="M7 11h7"/>
+                <path d="M7 15h7"/>
+              </svg>
+            </a>
+            <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.53-1.52.12-3.17 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.83 1.1.83 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <main class="about-main">
+        <section class="cv-section">
+          <h2>Profile</h2>
+          <p class="profile-text">A start-uper, a poet, an engineer, an artist, a photographer, a hacker — always hopeful for change.</p>
+        </section>
+        <section class="cv-section">
+          <h2>Experience</h2>
+          <div class="experience-list">
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Founder</h3>
+                <span class="company">Singularity Spaces</span>
+                <span class="period">Nov. 2024 - Now</span>
+              </div>
+              <p>A China-wide hacker space under the SINGULARITY banner. We bring together researchers, industry leaders, students, and founders to build, learn, and push boundaries.</p>
             </div>
-            <div class="github-content">
-              <h3>GitHub Portfolio</h3>
-              <p>Discover my technical projects, research implementations, and contributions to open source. From AI algorithms to mobile apps and web applications.</p>
-              <div class="github-stats">
-                <span class="stat-badge">🚀 Active Developer</span>
-                <span class="stat-badge">🤖 AI Research</span>
-                <span class="stat-badge">📱 Mobile Apps</span>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Founder</h3>
+                <span class="company">Singularity Voices</span>
+                <span class="period">Nov. 2024 - Now</span>
+              </div>
+              <p>A long-form interview series with AI founders and researchers. We share deep, practical stories for the next generation of builders.</p>
+              <div class="icon-row item-links">
+                <a href="https://singularity-v.com/introduce/001" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3a15 15 0 0 1 0 18"/>
+                    <path d="M12 3a15 15 0 0 0 0 18"/>
+                  </svg>
+                </a>
+                <a href="https://www.xiaoyuzhoufm.com/podcast/68afef16bb5765ea80c6f652" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Xiaoyuzhou FM">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M8 12h8"/>
+                    <path d="M6 9l12 6"/>
+                  </svg>
+                </a>
+                <a href="https://www.youtube.com/watch?v=3tgzhnH9dTo" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="YouTube">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="6" width="18" height="12" rx="3"/>
+                    <path d="M10 9l6 3-6 3z" fill="#fff"/>
+                  </svg>
+                </a>
+                <a href="https://open.spotify.com/show/60Ro9aUNCPyxmjvtnfbK0S" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Spotify">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M7 11c3-1 7-.8 10 1"/>
+                    <path d="M7 14c3-.7 6-.5 8 .8"/>
+                    <path d="M7 17c2-.5 4-.4 5 .6"/>
+                  </svg>
+                </a>
+                <a href="https://www.xiaohongshu.com/discovery/item/68ad55f2000000001b0362ea?source=webshare&xhsshare=pc_web&xsec_token=ABCPQD9Lov_GokEpm5tvpCeb6axI54Eu6sMON3F7wb2Lo=&xsec_source=pc_share" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Xiaohongshu">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="5" width="14" height="14" rx="3"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </a>
+                <a href="https://m.ximalaya.com/album/103905168" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Himalaya">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 18l6-8 4 5 3-4 5 7H3z"/>
+                  </svg>
+                </a>
+                <a href="https://podcasts.apple.com/us/podcast/17%E5%B2%81%E9%AB%98%E4%B8%AD%E7%94%9F%E5%AF%B9%E8%AF%9Dfellou%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%9B%E5%A7%8B%E5%9B%A2%E9%98%9F-%E5%A5%87%E7%82%B9%E4%B9%8B%E5%A3%B0-ep-1/id1835702431?i=1000723609619" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Apple Podcasts">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="3"/>
+                    <path d="M12 11v8"/>
+                    <path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                  </svg>
+                </a>
+                <a href="https://y.qq.com/n/ryqq_v2/songDetail/601156332?ADTAG=h5_play_song&redirecttag=mn.redirect.custom&mnst=1.40#webchat_redirect" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="QQ Music">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 3v10c0 2-1.5 3.5-3.5 3.5"/>
+                    <circle cx="6" cy="18" r="2"/>
+                    <path d="M15 5v8c0 2-1.5 3.5-3.5 3.5"/>
+                    <circle cx="12" cy="20" r="2"/>
+                  </svg>
+                </a>
+                <a href="https://www.douyin.com/user/MS4wLjABAAAAynCZkqSu_eMl6zIdfog9e06XGa1aM2QcLhpdfI1JSQHmsInzxS1HI1eJWsEw0cn2?from_tab_name=main" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Douyin">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 4v10c0 2.5-2 4.5-4.5 4.5"/>
+                    <circle cx="5" cy="20" r="2"/>
+                    <path d="M12 4c0 3 2 5 5 5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Founder</h3>
+                <span class="company">Singularity Academy</span>
+                <span class="period">Jan. 2024 - Now</span>
+              </div>
+              <p>An AI-powered learning platform under SINGULARITY. Personalized tutoring, adaptive paths, and community learning; supported 100+ homeschooling families.</p>
+              <div class="icon-row item-links">
+                <a href="https://sacademe.org" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3a15 15 0 0 1 0 18"/>
+                    <path d="M12 3a15 15 0 0 0 0 18"/>
+                  </svg>
+                </a>
+                <a href="https://x.com/KrypotoZ" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="X">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4l16 16M20 4L4 20"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/singularacademe/" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="4" width="16" height="16" rx="4"/>
+                    <circle cx="12" cy="12" r="3"/>
+                    <circle cx="17" cy="7" r="1"/>
+                  </svg>
+                </a>
+                <a href="https://sacademe.org/pic.mp4" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Video">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M10 9l6 3-6 3z"/>
+                  </svg>
+                </a>
+                <a href="https://www.douyin.com/user/MS4wLjABAAAAynCZkqSu_eMl6zIdfog9e06XGa1aM2QcLhpdfI1JSQHmsInzxS1HI1eJWsEw0cn2?from_tab_name=main" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Douyin">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 4v10c0 2.5-2 4.5-4.5 4.5"/>
+                    <circle cx="5" cy="20" r="2"/>
+                    <path d="M12 4c0 3 2 5 5 5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Founder</h3>
+                <span class="company">ClickMood</span>
+                <span class="period">Sept. 2024 - Now</span>
+              </div>
+              <p>An iOS/iPadOS/macOS app that helps people track moods and reflect with gentle feedback.</p>
+              <div class="icon-row item-links">
+                <a href="https://clickmood.krymusic.top/" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3a15 15 0 0 1 0 18"/>
+                    <path d="M12 3a15 15 0 0 0 0 18"/>
+                  </svg>
+                </a>
+                <a href="https://apps.apple.com/cn/app/clickmood/id6740691852?l=en-GB" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="App Store">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 6h10l-2 12H9z"/>
+                    <path d="M9 6l1-2h4l1 2"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Researcher</h3>
+                <span class="company">Myshell.ai & MIT CSAIL, led by Zengyi Qin</span>
+                <span class="period">Jan. 2025 - Now</span>
+              </div>
+              <p>Worked on OSGym, a scalable data engine for computer-using agents, mentored by Zengyi Qin (MIT CSAIL).</p>
+              <div class="icon-row item-links">
+                <a href="https://arxiv.org/abs/2511.11672" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="arXiv">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 4h9l3 3v13H6z"/>
+                    <path d="M15 4v3h3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Co-founder</h3>
+                <span class="company">Apply4College.org</span>
+                <span class="period">Nov. 2024 - Now</span>
+              </div>
+              <p>Free tools and guidance for under-resourced students applying to college.</p>
+              <div class="icon-row item-links">
+                <a href="https://www.Apply4College.org" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3a15 15 0 0 1 0 18"/>
+                    <path d="M12 3a15 15 0 0 0 0 18"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <h3>Back-end Dev.</h3>
+                <span class="company">AdventureX, biggest Hackathon in China</span>
+                <span class="period">June 2025 - July 2025</span>
+              </div>
+              <p>China’s largest hackathon serving 1,000+ hackers. I built the official website backend.</p>
+              <div class="icon-row item-links">
+                <a href="https://adventure-x.org/zh" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3a15 15 0 0 1 0 18"/>
+                    <path d="M12 3a15 15 0 0 0 0 18"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
-          <div class="github-actions">
-            <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer" class="github-button">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              <span>View GitHub Profile</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                <polyline points="15,3 21,3 21,9"/>
-                <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-            </a>
-            <div class="tech-highlights">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Swift</span>
-              <span class="tech-tag">AI/ML</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Robotics</span>
+        </section>
+
+    <!-- Education -->
+    
+        <section class="cv-section">
+          <h2>Research</h2>
+          <div class="research-list">
+            <div class="research-item">
+              <h3>Co-author, OSGym: Super-Scalable Distributed Data Engine for Generalizable Computer Agents</h3>
+              <p>Co-author on OSGym, a distributed data engine for generalizable computer agents (NeurIPS 2025 submission).</p>
+              <div class="icon-row">
+                <a href="https://arxiv.org/abs/2511.11672" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="arXiv">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 4h9l3 3v13H6z"/>
+                    <path d="M15 4v3h3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="research-item">
+              <h3>First Author, Adaptive Robust Learning Control for a 6-DOF Robotic Arm</h3>
+              <p>Designed an adaptive robust controller for a 6‑DOF arm with real‑time YOLOv10 detection.</p>
+              <div class="icon-row">
+                <a href="https://www.researchgate.net/publication/389421356_Adaptive_Robust_Learning_Control_for_a_6-DOF_Robotic_Arm_with_Real-Time_Object_Detection_Using_YOLO_v10" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="ResearchGate">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 4h12v16H6z"/>
+                    <path d="M10 8h4"/>
+                    <path d="M10 12h4"/>
+                    <path d="M10 16h4"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Links -->
-    <section class="cv-section">
-      <h2>Links</h2>
-      <div class="links-list">
-        <div class="link-item">
-          <strong>GitHub:</strong> <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer">https://github.com/JiaceZhao</a>
-        </div>
-        <div class="link-item">
-          <strong>X:</strong> <a href="https://x.com/KrypotoZ" target="_blank" rel="noopener noreferrer">https://x.com/KrypotoZ</a>
-        </div>
-        <div class="link-item">
-          <strong>Homepage:</strong> <a href="https://www.jczhao.info/about" target="_blank" rel="noopener noreferrer">https://www.jczhao.info/about</a>
-        </div>
-        <div class="link-item">
-          <strong>OpenReview:</strong> <a href="https://openreview.net/profile?id=~Jiace_Zhao1" target="_blank" rel="noopener noreferrer">https://openreview.net/profile?id=~Jiace_Zhao1</a>
-        </div>
-        <div class="link-item">
-          <strong>Cardistry Orbit:</strong> <router-link to="/cardistry-orbit">View the collection</router-link>
-        </div>
-        <div class="link-item">
-          <strong>Singularity Voices:</strong> <a href="https://singularity-v.com/introduce/001" target="_blank" rel="noopener noreferrer">Website</a>
-        </div>
-        <div class="link-item"><a href="https://www.xiaoyuzhoufm.com/podcast/68afef16bb5765ea80c6f652" target="_blank" rel="noopener noreferrer">Xiaoyuzhou</a></div>
-        <div class="link-item"><a href="https://www.youtube.com/watch?v=3tgzhnH9dTo" target="_blank" rel="noopener noreferrer">YouTube</a></div>
-        <div class="link-item"><a href="https://open.spotify.com/show/60Ro9aUNCPyxmjvtnfbK0S" target="_blank" rel="noopener noreferrer">Spotify</a></div>
-        <div class="link-item"><a href="https://www.xiaohongshu.com/discovery/item/68ad55f2000000001b0362ea?source=webshare&xhsshare=pc_web&xsec_token=ABCPQD9Lov_GokEpm5tvpCeb6axI54Eu6sMON3F7wb2Lo=&xsec_source=pc_share" target="_blank" rel="noopener noreferrer">Xiaohongshu</a></div>
-        <div class="link-item"><a href="https://m.ximalaya.com/album/103905168" target="_blank" rel="noopener noreferrer">Himalaya</a></div>
-        <div class="link-item"><a href="https://podcasts.apple.com/us/podcast/17%E5%B2%81%E9%AB%98%E4%B8%AD%E7%94%9F%E5%AF%B9%E8%AF%9Dfellou%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%9B%E5%A7%8B%E5%9B%A2%E9%98%9F-%E5%A5%87%E7%82%B9%E4%B9%8B%E5%A3%B0-ep-1/id1835702431?i=1000723609619" target="_blank" rel="noopener noreferrer">Apple Podcasts</a></div>
-        <div class="link-item"><a href="https://y.qq.com/n/ryqq_v2/songDetail/601156332?ADTAG=h5_play_song&redirecttag=mn.redirect.custom&mnst=1.40#webchat_redirect" target="_blank" rel="noopener noreferrer">QQ Music</a></div>
-        <div class="link-item"><a href="https://www.douyin.com/user/MS4wLjABAAAAynCZkqSu_eMl6zIdfog9e06XGa1aM2QcLhpdfI1JSQHmsInzxS1HI1eJWsEw0cn2?from_tab_name=main" target="_blank" rel="noopener noreferrer">Douyin (Voices)</a></div>
+        <section class="cv-section">
+          <h2>Awards</h2>
+          <div class="awards-list">
+            <div class="award-item">
+              <h3>USA Computing Olympiad (USACO) – Gold Medal, 2023</h3>
+              <p>Currently Platinum Division</p>
+            </div>
+            <div class="award-item">
+              <h3>AdventureX 2025 Moonshot AI Kimi Track – 1st Place Winner</h3>
+            </div>
+            <div class="award-item">
+              <h3>AdventureX 2025 中控技术 (SUPCON) Track - 2nd Place Winner</h3>
+            </div>
+          </div>
+        </section>
+        <section class="cv-section">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Software Engineering</h3>
+              <p>Swift, Xcode, Go/Gin, TypeScript, JavaScript, React, Python, Java, C++</p>
+              <div class="skill-level">◾◾◾◾◾</div>
+            </div>
+            <div class="skill-category">
+              <h3>Hardware Engineering</h3>
+              <p>Fusion 360, LiChuang EDA, PCB Design</p>
+              <div class="skill-level">◾◾</div>
+            </div>
+            <div class="skill-category">
+              <h3>AI</h3>
+              <p>TensorFlow, PyTorch, CUDA</p>
+              <div class="skill-level">◾◾◾◾◾</div>
+            </div>
+            <div class="skill-category">
+              <h3>Design</h3>
+              <p>Figma, Adobe Illustrator, Blender, Photography</p>
+              <div class="skill-level">◾◾</div>
+            </div>
+            <div class="skill-category">
+              <h3>Languages</h3>
+              <div class="language-skills">
+                <div class="language-item">
+                  <span>Chinese</span>
+                  <span class="skill-level">◾◾◾◾◾</span>
+                </div>
+                <div class="language-item">
+                  <span>English</span>
+                  <span class="skill-level">◾◾◾◾</span>
+                </div>
+                <div class="language-item">
+                  <span>Spanish</span>
+                  <span class="skill-level">◾</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Side Hustles</h3>
+              <p>Jiace's Gallery, Photography Collections, Cardistry</p>
+            </div>
+          </div>
+        </section>
 
-        <div class="link-item">
-          <strong>Singularity Academy:</strong> <a href="https://sacademe.org" target="_blank" rel="noopener noreferrer">Website</a>
-        </div>
-        <div class="link-item"><a href="https://x.com/KrypotoZ" target="_blank" rel="noopener noreferrer">X</a></div>
-        <div class="link-item"><a href="https://www.instagram.com/singularacademe/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
-        <div class="link-item"><a href="https://sacademe.org/pic.mp4" target="_blank" rel="noopener noreferrer">Intro Video</a></div>
-        <div class="link-item"><a href="https://www.douyin.com/user/MS4wLjABAAAAynCZkqSu_eMl6zIdfog9e06XGa1aM2QcLhpdfI1JSQHmsInzxS1HI1eJWsEw0cn2?from_tab_name=main" target="_blank" rel="noopener noreferrer">Douyin (Academy)</a></div>
+        <section class="cv-section">
+          <h2>Technical Projects</h2>
+          <div class="projects-content">
+            <p class="projects-intro">Explore my technical work and open-source projects on GitHub.</p>
+            <div class="github-showcase">
+              <div class="github-card">
+                <div class="github-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.53-1.52.12-3.17 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.83 1.1.83 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </div>
+                <div class="github-content">
+                  <h3>GitHub Portfolio</h3>
+                  <p>Discover my projects, research implementations, and contributions to open source.</p>
+                  <div class="github-stats">
+                    <span class="stat-badge">🚀 Active Developer</span>
+                    <span class="stat-badge">🤖 AI Research</span>
+                    <span class="stat-badge">📱 Mobile Apps</span>
+                  </div>
+                </div>
+              </div>
+              <div class="github-actions">
+                <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="Open GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.53-1.52.12-3.17 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.83 1.1.83 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+                <div class="tech-highlights">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Swift</span>
+                  <span class="tech-tag">AI/ML</span>
+                  <span class="tech-tag">Vue.js</span>
+                  <span class="tech-tag">Robotics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div class="link-item">
-          <strong>ClickMood:</strong> <a href="https://clickmood.krymusic.top/" target="_blank" rel="noopener noreferrer">Website</a>
-        </div>
-        <div class="link-item"><a href="https://apps.apple.com/cn/app/clickmood/id6740691852?l=en-GB" target="_blank" rel="noopener noreferrer">App Store</a></div>
-
-        <div class="link-item">
-          <strong>AdventureX:</strong> <a href="https://adventure-x.org/zh" target="_blank" rel="noopener noreferrer">https://adventure-x.org/zh</a>
-        </div>
-
-        <div class="link-item">
-          <strong>OSGym (MIT CSAIL, Myshell.ai):</strong> <a href="https://arxiv.org/abs/2511.11672" target="_blank" rel="noopener noreferrer">arXiv</a>
-        </div>
-
-        <div class="link-item">
-          <strong>Robotic Arm Research:</strong> <a href="https://www.researchgate.net/publication/389421356_Adaptive_Robust_Learning_Control_for_a_6-DOF_Robotic_Arm_with_Real-Time_Object_Detection_Using_YOLO_v10" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-        </div>
-
-        <div class="link-item">
-          <strong>Apply4College:</strong> <a href="https://www.Apply4College.org" target="_blank" rel="noopener noreferrer">https://www.Apply4College.org</a>
-        </div>
-      </div>
-    </section>
+      </main>
+    </div>
   </div>
-</template>
+  </template>
 
 <script setup lang="ts">
 // No reactive data needed for this static CV page
@@ -402,13 +400,64 @@
 
 <style lang="scss" scoped>
 .about-view {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: #333;
   background: white;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.about-sidebar {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.sidebar-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+.sidebar-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 0.4rem;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
 }
 
 .cv-header {
@@ -794,12 +843,43 @@
   }
 }
 
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.icon-link {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2c3e50;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-2px);
+  background: #f3f6f9;
+  border-color: #dfe6eb;
+}
+
 // Responsive design
 @media (max-width: 768px) {
   .about-view {
     padding: 1rem;
   }
   
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
   .name-title h1 {
     font-size: 2rem;
   }
@@ -823,44 +903,6 @@
   
   .cv-section h2 {
     font-size: 1.3rem;
-  }
-}
-
-.identity-sidebar {
-  position: fixed;
-  right: 24px;
-  top: 120px;
-  width: 260px;
-  background: #fff;
-  border: 1px solid #ecf0f1;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border-radius: 8px;
-  padding: 1rem;
-  z-index: 10;
-}
-
-.identity-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-}
-
-.identity-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.identity-link-item {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-@media (max-width: 1024px) {
-  .identity-sidebar {
-    display: none;
   }
 }
 </style>
