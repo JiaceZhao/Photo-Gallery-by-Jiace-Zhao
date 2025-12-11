@@ -14,33 +14,40 @@
         </div>
         <div class="sidebar-section">
           <h3>Identity</h3>
-          <div class="icon-row">
-            <a href="https://scholar.google.com/citations?user=FLmG3JYAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Google Scholar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm7 13c-2.7 0-5.2.9-7 2.4V22h14v-2.6c-1.8-1.5-4.3-2.4-7-2.4z"/>
-              </svg>
-            </a>
-            <a href="https://openreview.net/profile?id=~Jiace_Zhao1" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="OpenReview">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h12v16H4z"/>
-                <path d="M16 8h4v12H16z"/>
-                <path d="M7 7h7"/>
-                <path d="M7 11h7"/>
-                <path d="M7 15h7"/>
-              </svg>
-            </a>
-            <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.53-1.52.12-3.17 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.83 1.1.83 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
+          <ul class="sidebar-links">
+            <li>
+              <a href="https://scholar.google.com/citations?user=FLmG3JYAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                <img src="https://cdn.simpleicons.org/googlescholar/2c3e50" alt="Google Scholar" class="brand-icon" />
+                <span>Google Scholar</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://openreview.net/profile?id=~Jiace_Zhao1" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                <img src="https://cdn.simpleicons.org/openreview/2c3e50" alt="OpenReview" class="brand-icon" />
+                <span>OpenReview</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/JiaceZhao" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                <img src="https://cdn.simpleicons.org/github/2c3e50" alt="GitHub" class="brand-icon" />
+                <span>GitHub</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </aside>
       <main class="about-main">
         <section class="cv-section">
           <h2>Profile</h2>
-          <p class="profile-text">A start-uper, a poet, an engineer, an artist, a photographer, a hacker — always hopeful for change.</p>
+          <div class="profile-text">
+            <p>I am a high school senior at HDKWA in Beijing, deeply passionate about educational technology, education policy, and technology for social good. I'm also a competitive programmer mainly played at USACO which builds me solid foundation in software engineering. I love connecting with thoughtful people, so feel free to reach out at krypotozhao [at] gmail [dot] com.</p>
+
+            <p>Beyond my research and project interests, I host a podcast that explores the intersection of humanity, public policy, technology, research, and personal stories. Recent guests include Dr Ma Xiaoteng, co founder of Macro and Fellou, Fansheng, and Luoluo Lee from MIT and XAI.</p>
+
+            <p>I am also an architecture photographer with a special love for traditional Chinese temples, as you can see from my collection. Outside of academics, I enjoy cardistry, playing the trumpet and guitar, and composing electronic music for fun and for my podcast.</p>
+
+            <p>Some of my rest experience includes a wide array of things, as show below....</p>
+          </div>
         </section>
         <section class="cv-section">
           <h2>Experience</h2>
@@ -51,7 +58,7 @@
                 <span class="company">Singularity Spaces</span>
                 <span class="period">Nov. 2024 - Now</span>
               </div>
-              <p>A China-wide hacker space under the SINGULARITY banner. We bring together researchers, industry leaders, students, and founders to build, learn, and push boundaries.</p>
+              <p>A values‑driven hacker space across China under SINGULARITY. We bring researchers, founders, and students together to learn from each other and build things that matter.</p>
             </div>
 
             <div class="experience-item">
@@ -60,7 +67,7 @@
                 <span class="company">Singularity Voices</span>
                 <span class="period">Nov. 2024 - Now</span>
               </div>
-              <p>A long-form interview series with AI founders and researchers. We share deep, practical stories for the next generation of builders.</p>
+              <p>An interview series where I sit with AI founders and researchers to talk about the real decisions behind their work—the doubts, detours, and lessons. Made for young builders who want stories, not slogans.</p>
               <div class="icon-row item-links">
                 <a href="https://singularity-v.com/introduce/001" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -133,7 +140,7 @@
                 <span class="company">Singularity Academy</span>
                 <span class="period">Jan. 2024 - Now</span>
               </div>
-              <p>An AI-powered learning platform under SINGULARITY. Personalized tutoring, adaptive paths, and community learning; supported 100+ homeschooling families.</p>
+              <p>An AI‑powered learning space under SINGULARITY. We design personal tutoring and adaptive paths so students—including 100+ homeschooling families—can learn for meaning, not just tests.</p>
               <div class="icon-row item-links">
                 <a href="https://sacademe.org" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -177,7 +184,7 @@
                 <span class="company">ClickMood</span>
                 <span class="period">Sept. 2024 - Now</span>
               </div>
-              <p>An iOS/iPadOS/macOS app that helps people track moods and reflect with gentle feedback.</p>
+              <p>A small iOS/iPadOS/macOS app that helps people notice their moods and reflect with gentle feedback.</p>
               <div class="icon-row item-links">
                 <a href="https://clickmood.krymusic.top/" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -202,7 +209,7 @@
                 <span class="company">Myshell.ai & MIT CSAIL, led by Zengyi Qin</span>
                 <span class="period">Jan. 2025 - Now</span>
               </div>
-              <p>Worked on OSGym, a scalable data engine for computer-using agents, mentored by Zengyi Qin (MIT CSAIL).</p>
+              <p>I contributed to OSGym—a scalable data engine for computer‑using agents—mentored by Zengyi Qin (MIT CSAIL).</p>
               <div class="icon-row item-links">
                 <a href="https://arxiv.org/abs/2511.11672" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="arXiv">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -219,7 +226,7 @@
                 <span class="company">Apply4College.org</span>
                 <span class="period">Nov. 2024 - Now</span>
               </div>
-              <p>Free tools and guidance for under-resourced students applying to college.</p>
+              <p>We build free tools and plain‑spoken guidance for under‑resourced students applying to college.</p>
               <div class="icon-row item-links">
                 <a href="https://www.Apply4College.org" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -238,7 +245,7 @@
                 <span class="company">AdventureX, biggest Hackathon in China</span>
                 <span class="period">June 2025 - July 2025</span>
               </div>
-              <p>China’s largest hackathon serving 1,000+ hackers. I built the official website backend.</p>
+              <p>At China’s largest hackathon (1,000+ hackers), I built the official website backend.</p>
               <div class="icon-row item-links">
                 <a href="https://adventure-x.org/zh" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Website">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -455,6 +462,37 @@
   padding-bottom: 0.4rem;
 }
 
+.sidebar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background: #eef3f7;
+  transform: translateY(-1px);
+}
+
+.brand-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
 .about-main {
   display: flex;
   flex-direction: column;
@@ -524,11 +562,24 @@
 }
 
 .profile-text {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-style: italic;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
+}
+
+.profile-text p {
+  margin: 0.5rem 0;
+}
+
+.profile-text p:first-child {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.profile-text p:nth-child(2) {
+  font-weight: 600;
 }
 
 .skills-grid {
