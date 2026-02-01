@@ -8,8 +8,8 @@
           </div>
           <h1 class="sidebar-name">Jiace Zhao</h1>
           <div class="sidebar-meta">
-            <span>Haidian, Beijing, China</span>
-            <span>Born: February 2008</span>
+            <span>China</span>
+            <span>Born: 2008</span>
           </div>
         </div>
         <div class="sidebar-section">
@@ -40,7 +40,7 @@
         <section class="cv-section">
           <h2>Profile</h2>
           <div class="profile-text">
-            <p>I am a high school senior at HDKWA in Beijing, deeply passionate about educational technology, education policy, and technology for social good. I'm also a competitive programmer mainly played at USACO which builds me solid foundation in software engineering. I love connecting with thoughtful people, so feel free to reach out at krypotozhao [at] gmail [dot] com.</p>
+            <p>I'm a highschool senior deeply passionate about educational technology, education policy, and technology for social good. I'm also a competitive programmer mainly played at USACO which builds me solid foundation in software engineering. I love connecting with thoughtful people, so feel free to reach out at krypotozhao [at] gmail [dot] com.</p>
 
             <p>Beyond my research and project interests, I host a podcast that explores the intersection of humanity, public policy, technology, research, and personal stories. Recent guests include Dr Ma Xiaoteng, co founder of Macro and Fellou, Fansheng, and Luoluo Lee from MIT and XAI.</p>
 
